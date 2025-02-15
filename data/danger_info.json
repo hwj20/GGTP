@@ -1,0 +1,4036 @@
+[
+    {
+        "type1": "Baby",
+        "type2": "Adult",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall",
+            "chemical",
+            "thermal"
+        ],
+        "llm_reason": "Babies are highly vulnerable due to their developmental stage, making them at high risk for physical injuries from falls, exposure to chemicals, and thermal injuries from hot surfaces or liquids. Adults can unintentionally create hazards for babies through actions that may lead to these risks."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Pet",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall",
+            "chemical"
+        ],
+        "llm_reason": "Both babies and pets can pose a risk to each other, as pets may inadvertently injure a baby during play or by being overly excited. Additionally, babies may reach for pet items like food or toys, leading to choking or poisoning hazards. The risk of falls is also significant, as pets can trip a crawling baby. Overall, the interaction requires close supervision to prevent accidents."
+    },
+    {
+        "type1": "Baby",
+        "type2": "AlarmClock",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall",
+            "thermal"
+        ],
+        "llm_reason": "A baby is at high risk of physical harm due to the potential for falling, as they may knock over or reach for an alarm clock. Additionally, if an alarm clock is plugged in and has exposed wires or gets too hot, it poses a thermal and electrical risk."
+    },
+    {
+        "type1": "Baby",
+        "type2": "AluminumFoil",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "thermal"
+        ],
+        "llm_reason": "Babies are at high risk of choking on small objects, including pieces of torn aluminum foil. Additionally, aluminum foil can pose thermal risks if it is used improperly in cooking or baking, potentially leading to burns."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Apple",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "choking"
+        ],
+        "llm_reason": "Babies are at high risk of choking on small objects, including apples, which can pose a physical danger. Additionally, if an apple is cut or prepared improperly, it could present a choking hazard or could lead to other risks."
+    },
+    {
+        "type1": "Baby",
+        "type2": "ArmChair",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Babies are at a high risk of physical injury due to their vulnerability and inability to perceive danger. Armchairs can pose a risk of the baby falling off if left unattended or if the baby attempts to climb on or off the chair."
+    },
+    {
+        "type1": "Baby",
+        "type2": "BaseballBat",
+        "danger_level": "high",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "A baseball bat presents a significant physical danger to a baby, as it can be swung with force and cause serious injury if misused or accidentally dropped on the child."
+    },
+    {
+        "type1": "Baby",
+        "type2": "BasketBall",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "A baby may unintentionally get hurt due to the presence of a basketball. The ball can be a tripping hazard, leading to falls, and the baby may also accidentally hit themselves with the ball, causing physical injury."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Bathtub",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "water",
+            "fall"
+        ],
+        "llm_reason": "Babies are at a high risk of drowning in bathtubs due to their inability to keep their heads above water. Additionally, they can slip and fall if not properly supported, leading to physical injury."
+    },
+    {
+        "type1": "Baby",
+        "type2": "BathtubBasin",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "water"
+        ],
+        "llm_reason": "Babies can easily slip or drown in bathtubs, even in shallow water, making the risk of physical harm and drowning very significant."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Bed",
+        "danger_level": "high",
+        "risk_type": [
+            "fall",
+            "physical"
+        ],
+        "llm_reason": "Babies are at significant risk of falling out of beds, which can result in serious injuries. Additionally, there is a physical danger due to the possibility of suffocation or entrapment in or around the bed."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Blinds",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Blinds can pose a significant risk to babies due to the potential for strangulation from cords or the risk of falling when a baby pulls on them or tries to climb near them."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Book",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "A baby can be physically harmed by a book if it falls on them or if they handle it improperly. The risk of falling books is present, especially if books are stacked or stored at a height accessible to a baby."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Boots",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Babies are at a high risk of physical injuries from boots, which can be hard and may cause injury if stepped on or if a baby pulls them and falls. Additionally, tripping hazards are present with scattered footwear."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Bottle",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "thermal",
+            "chemical"
+        ],
+        "llm_reason": "A baby may be at risk of physical harm from a bottle if handled improperly, such as choking hazards if the baby is left unattended with it. There can also be thermal risks if the bottle contains hot liquids, and certain chemicals may pose a risk if the baby consumes formula or milk contaminated with harmful substances."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Bowl",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall",
+            "thermal"
+        ],
+        "llm_reason": "Babies are at risk of physical harm from bowls that can break and cause cuts, can fall if a bowl is pulled off a surface, or may encounter hot contents if a bowl is used for food. The risk of thermal injury increases if hot items are placed in the bowl and the baby comes into contact with it."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Box",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Babies are at risk of physical injury if they come into contact with boxes that are heavy, sharp-edged, or if they try to climb on them. Additionally, there is a significant risk of falls if a baby attempts to pull themselves up or climbs on the box."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Bread",
+        "danger_level": "medium",
+        "risk_type": [
+            "choking",
+            "foodborne illness"
+        ],
+        "llm_reason": "A baby may be at risk of choking on bread, which poses a medium danger. Additionally, if bread is not stored properly, it can lead to foodborne illnesses, particularly if mold develops, posing another risk."
+    },
+    {
+        "type1": "Baby",
+        "type2": "ButterKnife",
+        "danger_level": "high",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "Babies are at a high risk of injury when interacting with sharp objects like butter knives, which can cause cuts or lacerations. The physical threat posed by a butter knife in the hands of a baby is significant, as they may inadvertently harm themselves or others."
+    },
+    {
+        "type1": "Baby",
+        "type2": "CD",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Babies are at high risk of physical harm from sharp objects or small parts of a CD that could pose choking hazards. Additionally, a CD could cause a fall if knocked over due to clutter, presenting a risk for infants who are starting to crawl or walk."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Cabinet",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall",
+            "chemical"
+        ],
+        "llm_reason": "Babies are at a high risk of injury when around cabinets because they can pull open doors, potentially causing the cabinet doors to fall on them. Additionally, cabinets often contain cleaning supplies or other chemicals that can be harmful if ingested or spilled, posing a serious hazard to infants."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Candle",
+        "danger_level": "high",
+        "risk_type": [
+            "thermal",
+            "physical"
+        ],
+        "llm_reason": "Candles pose a significant thermal risk to babies due to their open flame, which can cause burns or fires if knocked over or if a baby gets too close. Additionally, there's a physical danger if a baby pulls down a candle, leading to potential injuries."
+    },
+    {
+        "type1": "Baby",
+        "type2": "CellPhone",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall",
+            "chemical"
+        ],
+        "llm_reason": "Babies are at a high risk of physical harm from sharp edges, choking hazards, and falls, especially in environments where cell phones could be left within reach. Additionally, cell phones can contain hazardous chemicals in their batteries, posing a risk if a baby accesses or damages the device."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Chair",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Babies are at high risk of falling from chairs or getting injured by falling off or getting trapped in furniture, leading to physical harm."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Cloth",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "thermal",
+            "fall"
+        ],
+        "llm_reason": "Babies are at a high risk of danger from cloth objects due to suffocation hazards, risk of entanglement, and the potential for overheating if a cloth is not used appropriately. Additionally, there is a risk of falls if a baby interacts with or pulls on hanging cloth items."
+    },
+    {
+        "type1": "Baby",
+        "type2": "CoffeeMachine",
+        "danger_level": "high",
+        "risk_type": [
+            "thermal",
+            "electrical",
+            "water"
+        ],
+        "llm_reason": "A baby may be at high risk around a coffee machine due to potential exposure to hot surfaces, spills of hot coffee or water, electrical components that could pose shock hazards, and any water leakage which could lead to slips or falls."
+    },
+    {
+        "type1": "Baby",
+        "type2": "CoffeeTable",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Babies are highly vulnerable to physical injuries, especially from sharp edges and corners of furniture like coffee tables. Additionally, there is a risk of a baby pulling themselves up and potentially falling onto or off the table."
+    },
+    {
+        "type1": "Baby",
+        "type2": "CounterTop",
+        "danger_level": "high",
+        "risk_type": [
+            "fall",
+            "physical"
+        ],
+        "llm_reason": "Babies are prone to falling from countertops, which poses a significant risk of injury. Additionally, the physical danger comes from the fact that countertops can provide access to sharp objects, chemicals, or hot surfaces, which could harm a baby."
+    },
+    {
+        "type1": "Baby",
+        "type2": "CreditCard",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "choking"
+        ],
+        "llm_reason": "Babies are often at high risk of choking on small objects, and credit cards can pose physical hazards if they have sharp edges."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Cup",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "thermal",
+            "fall",
+            "chemical"
+        ],
+        "llm_reason": "Babies are at high risk of physical harm from cups, particularly if they are made of glass or contain hot liquids. There is also a risk of falling if a baby attempts to reach for a cup. Additionally, cups can contain chemicals if they are not made from baby-safe materials, and spills can lead to dangerous situations."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Curtains",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Babies can get physically hurt by pulling on curtains or entangling themselves in them, which poses a medium risk of falls or physical harm."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Desk",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "A baby may unintentionally climb on or pull down a desk, posing a risk of physical injury or falling. Desks can also have sharp edges or heavy items that can fall and cause harm."
+    },
+    {
+        "type1": "Baby",
+        "type2": "DeskLamp",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "thermal",
+            "electrical"
+        ],
+        "llm_reason": "Babies are curious and may reach for a desk lamp, which poses risks of burns from hot surfaces, electrical shock from exposed wiring, and potential physical injury if the lamp is pulled down."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Desktop",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall",
+            "chemical",
+            "electrical"
+        ],
+        "llm_reason": "Babies are highly vulnerable to their environment, and desktops pose several risks. The weight and sharp edges of a desktop can lead to physical harm, while the risk of falling when a baby attempts to climb or reach for items can be significant. Additionally, desktops often contain chemicals (such as printer ink or cleaning supplies) and electrical components that are hazardous to a baby."
+    },
+    {
+        "type1": "Baby",
+        "type2": "DiningTable",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Babies are at a high risk of physical injury around dining tables due to their height and mobility. They may pull themselves up, fall off the edge, or get caught between the table and another object, leading to serious injuries."
+    },
+    {
+        "type1": "Baby",
+        "type2": "DishSponge",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "Dish sponges can harbor harmful bacteria and chemicals, which could pose a significant health risk to a baby if ingested or if they come into contact with sensitive skin. Additionally, the physical risk of a baby choking on a sponge is also considerable."
+    },
+    {
+        "type1": "Baby",
+        "type2": "DogBed",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "While babies are typically safe around dog beds, there is a potential for physical injury if the baby crawls on or pulls themselves up on the bed, which could result in a fall. Additionally, the baby might accidentally bump into the dog bed or the dog, leading to potential injury. However, the overall risk is not considered high."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Drawer",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "A baby may pull on a drawer or climb into it, which poses a significant risk of injury from the drawer itself as it can tip over or cause a fall. Additionally, the sharp edges and weight of the drawer can cause physical harm."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Dresser",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "A baby can easily pull on or climb furniture like a dresser, which poses a high risk of the dresser tipping over and causing serious injury."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Dumbbell",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Babies are vulnerable and can be injured by falling objects or being struck by a dumbbell. The weight of the dumbbell poses a significant risk if it were to fall on a baby, leading to serious injuries."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Egg",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Babies are vulnerable to physical harm if they accidentally drop or throw an egg, which can cause injury. Additionally, if an egg breaks, there may be a risk of slipping on the contents, presenting a fall hazard."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Faucet",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "thermal",
+            "water"
+        ],
+        "llm_reason": "Babies are naturally curious and may reach for or interact with faucets, which can pose significant risks. There is a high potential for physical injury from slips or falls, as well as the danger of burns from hot water, making the combination of a baby and a faucet a serious safety concern."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Floor",
+        "danger_level": "high",
+        "risk_type": [
+            "fall",
+            "physical"
+        ],
+        "llm_reason": "Babies are prone to falls as they crawl or walk, which presents a high risk of physical injury when interacting with floors."
+    },
+    {
+        "type1": "Baby",
+        "type2": "FloorLamp",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall",
+            "thermal"
+        ],
+        "llm_reason": "Babies are at a high risk of physical injury if they come into contact with a floor lamp, which could tip over or have sharp edges. Additionally, floor lamps generate heat, posing a thermal risk if a baby touches the lamp. The presence of a lamp also increases the risk of a baby pulling it over, leading to a potential fall hazard."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Footstool",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "A baby is at a high risk of falling from or colliding with a footstool, which could result in serious physical injury. Babies are also prone to climbing onto furniture, increasing the likelihood of accidents."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Fork",
+        "danger_level": "high",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "A fork is a sharp object that poses a significant risk of injury to a baby, who may not understand the danger associated with it. Babies are prone to exploring objects with their mouths and hands, making the presence of a fork particularly hazardous."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Fridge",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "thermal",
+            "fall",
+            "chemical",
+            "electrical"
+        ],
+        "llm_reason": "Babies are at significant risk of injury around fridges due to their size, mobility, and curiosity. Physical threats include the potential of heavy fridge doors closing on fingers or feet. Thermal risks arise from exposure to cold surfaces or items inside. Babies can also pull themselves up on the fridge leading to falls. Additionally, if the fridge contains harmful chemicals (like cleaning supplies) or is improperly maintained, there can be additional hazards."
+    },
+    {
+        "type1": "Baby",
+        "type2": "GarbageBag",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "Babies are at a high risk of physical injury if they come into contact with garbage bags, which can pose choking hazards or suffocation risks. Additionally, garbage bags may contain chemicals or residues that could be harmful if ingested or if the baby comes into contact with them."
+    },
+    {
+        "type1": "Baby",
+        "type2": "GarbageCan",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "Babies are naturally curious and may interact with a garbage can, leading to the risk of physical injury from sharp objects or heavy lids, as well as potential chemical exposure from hazardous waste or substances that could be present."
+    },
+    {
+        "type1": "Baby",
+        "type2": "HandTowel",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "A baby may accidentally pull on a hand towel producing a small risk of minor physical harm or frustration, but there are no significant dangers related to thermal, fall, chemical, electrical, or water risks between these two object types."
+    },
+    {
+        "type1": "Baby",
+        "type2": "HandTowelHolder",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "A baby can easily pull on or grab a hand towel holder which can lead to the holder falling, causing physical injury. Additionally, if the hand towel holder is not securely mounted, it poses a risk of falling onto the baby."
+    },
+    {
+        "type1": "Baby",
+        "type2": "HousePlant",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "Babies can be at risk of physical harm from sharp leaves or pots of houseplants. Additionally, some houseplants are toxic if ingested, posing a chemical risk to babies who might put plant parts in their mouths."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Kettle",
+        "danger_level": "high",
+        "risk_type": [
+            "thermal",
+            "physical",
+            "water"
+        ],
+        "llm_reason": "A kettle, when in use, can become extremely hot and poses a risk of burns or scalds to a baby. Additionally, if a kettle is tipped over, it can lead to significant injury. The risk of water spillage further increases the danger as it can lead to slips or electrical hazards if near power outlets."
+    },
+    {
+        "type1": "Baby",
+        "type2": "KeyChain",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "A baby can accidentally choke on small objects like a keychain or may be injured by it if it falls from a height. Keychains are typically small and can pose a choking hazard for infants, leading to a high danger level in terms of physical harm."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Knife",
+        "danger_level": "high",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "Knives are sharp objects that pose a significant risk of cuts and injuries to babies due to their lack of awareness and mobility."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Ladle",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "thermal"
+        ],
+        "llm_reason": "A baby can be at high risk of physical harm if interacting with a ladle, as they might grab it and potentially cause injury. There is also a risk of thermal injury if the ladle is heated or used with hot substances, posing a danger to a baby who may reach for or touch it."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Laptop",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall",
+            "thermal",
+            "chemical"
+        ],
+        "llm_reason": "A baby is highly vulnerable and can be at risk of physical harm if they come into contact with a laptop, which may have sharp edges or can topple over. Additionally, there is a risk of burns if the laptop is overheating or if the baby encounters a power source. Chemicals from batteries and other components may pose ingestion risks, while also posing a fall risk if the laptop is left unsecured on a high surface."
+    },
+    {
+        "type1": "Baby",
+        "type2": "LaundryHamper",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Babies are at a high risk of physical harm from falling into or over laundry hampers, which can lead to injury. Additionally, hampers can contain items that may pose choking hazards or other physical dangers."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Lettuce",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "Babies are at high risk of physical harm from choking on food items, including lettuce, and chemical risks if the lettuce has been treated with pesticides or other harmful substances."
+    },
+    {
+        "type1": "Baby",
+        "type2": "LightSwitch",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "electrical"
+        ],
+        "llm_reason": "A baby can easily access a LightSwitch, which may lead to them turning it on or off unexpectedly, posing a risk of electrical shock or injury from sudden changes in lighting. Additionally, the presence of a LightSwitch at a low height can lead to physical accidents if a baby attempts to climb or interact with surrounding furniture, leading to falls."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Microwave",
+        "danger_level": "high",
+        "risk_type": [
+            "thermal",
+            "physical",
+            "electrical"
+        ],
+        "llm_reason": "Microwaves can pose severe risks to babies due to their size and curiosity. The high heat from the microwave can cause burns or thermal injuries if touched or if hot food is accessed. Additionally, there is a risk of physical injury if a baby manages to pull the microwave down or access it unsupervised. The electrical components also present a potential hazard if tampered with."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Mirror",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Babies are curious and may try to reach for or grab a mirror, which can lead to falls or injury if the mirror is knocked over or falls. Additionally, if the mirror is made of glass, there is a significant risk of cuts or lacerations."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Mug",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "thermal",
+            "fall"
+        ],
+        "llm_reason": "A baby may be at risk of physical harm if they interact with a mug, as it could be heavy, lead to spills (thermal hazard), or cause a fall if they pull it down. While the risk is notable, it is not classified as high."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Newspaper",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Babies are vulnerable and can be at significant risk of physical harm from newspapers, which can pose choking hazards or lead to falls if they slip on them or if newspapers are piled up in an unsafe manner. Additionally, the ink and chemicals in newspapers can be harmful if ingested."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Ottoman",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "A baby can easily tip over or climb onto an ottoman, leading to potential falls and physical injuries. Ottomans can also be sharp-edged, posing a risk of cuts or bruises."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Painting",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "A baby is at a high risk of physical injury when in proximity to a painting, especially if it is not securely mounted or is heavy, as it could fall. The baby may also reach for or pull on the painting, leading to potential falls or injuries."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Pan",
+        "danger_level": "high",
+        "risk_type": [
+            "thermal",
+            "fall"
+        ],
+        "llm_reason": "Babies are at high risk of burns from hot pans and can also be in danger of falling if they reach or pull on the stove where a pan is placed."
+    },
+    {
+        "type1": "Baby",
+        "type2": "PaperTowelRoll",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "A baby may accidentally pull down a paper towel roll or get caught in the roll itself, leading to physical risks. Additionally, if the roll is on a high surface or not secured properly, there could be a risk of it falling and causing injury to the baby or others."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Pen",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "Babies have a high risk of choking on small objects like pens, which can also have toxic inks or materials that could pose a chemical risk if ingested."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Pencil",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "While a pencil is generally safe, there are risks associated with a baby accidentally ingesting small parts or getting injured by the sharp tip. Additionally, if the pencil contains toxic materials, there could be a chemical risk as well."
+    },
+    {
+        "type1": "Baby",
+        "type2": "PepperShaker",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "A baby may be at high risk of physical harm if they interact with a pepper shaker due to the potential for choking on small parts, as well as the risk of falling if they try to reach for or grab it. Additionally, the contents of a pepper shaker could cause irritation if ingested or inhaled."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Pillow",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Babies are at a heightened risk of suffocation when near pillows, as they can obstruct breathing. Additionally, they are prone to falling if they roll over onto the pillow, which can lead to potential injuries."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Plate",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "A baby can easily grab or reach for a plate, which could lead to injuries from sharp edges or broken pieces if the plate is dropped. Additionally, a baby might pull a plate down from a low surface, leading to a fall or other injuries."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Plunger",
+        "danger_level": "high",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "A plunger is a tool typically used for unclogging drains and can pose a physical risk to a baby, including potential choking hazards or injury if handled improperly."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Poster",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "A baby could potentially pull down a poster, leading to a physical risk or a fall if it causes an object to topple over or if the baby climbs on furniture to reach it."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Pot",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "thermal",
+            "fall"
+        ],
+        "llm_reason": "A baby is at a high risk when near a pot due to potential physical injuries from tipping over, burns from the pot's surface or contents, and the risk of falling if climbing or trying to reach the pot."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Potato",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "thermal",
+            "fall"
+        ],
+        "llm_reason": "While potatoes themselves are generally safe, there are risks associated with babies and food items. A baby may choke on a potato, particularly if it is not prepared safely. Additionally, hot dishes containing potatoes can cause thermal burns if not handled properly, and a baby could fall while attempting to reach for food items, which presents a moderate physical risk."
+    },
+    {
+        "type1": "Baby",
+        "type2": "RemoteControl",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "Babies are naturally curious and may put small objects like remote controls in their mouths, posing a choking hazard. Additionally, remote controls may have batteries, which can leak chemicals that are hazardous if ingested."
+    },
+    {
+        "type1": "Baby",
+        "type2": "RoomDecor",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall",
+            "chemical"
+        ],
+        "llm_reason": "Babies are at a high risk of physical injury due to their natural curiosity and tendency to explore. Room decor items may pose tripping hazards or may be made from materials that are unsafe or have sharp edges. Additionally, decorative items may contain chemicals that are harmful if ingested."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Safe",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "chemical",
+            "thermal"
+        ],
+        "llm_reason": "Babies are vulnerable to various dangers in the home, including physical injuries from safe objects that can become hazards, exposure to chemicals in household items, and risks associated with thermal injuries from hot surfaces or liquids."
+    },
+    {
+        "type1": "Baby",
+        "type2": "SaltShaker",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "A baby may be at high risk around a salt shaker due to the potential for choking or ingestion of salt, which can be harmful in large amounts. Additionally, the act of grabbing or shaking the salt shaker may lead to spills, posing a physical hazard."
+    },
+    {
+        "type1": "Baby",
+        "type2": "ScrubBrush",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "A scrub brush can have harsh cleaning chemicals on it, which could be harmful if a baby ingests them or comes into contact with them. Additionally, the hard bristles can pose a physical risk if the baby grabs or trips over it."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Shelf",
+        "danger_level": "high",
+        "risk_type": [
+            "fall",
+            "physical"
+        ],
+        "llm_reason": "Babies are at a high risk of falling from shelves or pulling them down, which can cause serious physical injuries."
+    },
+    {
+        "type1": "Baby",
+        "type2": "ShelvingUnit",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Babies are at high risk of physical injury from falling objects, and unsecured shelving units can tip over, posing a significant danger to infants who may pull on them."
+    },
+    {
+        "type1": "Baby",
+        "type2": "ShowerCurtain",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall",
+            "water"
+        ],
+        "llm_reason": "Babies are at high risk of drowning or slipping in water-related scenarios, especially with shower curtains which can create hazardous situations if a baby gets access to a wet area. Additionally, the potential for the baby to get tangled in the shower curtain poses a significant physical risk."
+    },
+    {
+        "type1": "Baby",
+        "type2": "ShowerDoor",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall",
+            "water"
+        ],
+        "llm_reason": "A baby is highly vulnerable to physical injuries, especially in the presence of a shower door which can cause cuts or bruises. Additionally, the risk of falling is significant if a baby is in a wet area near a shower door. Water hazards also pose a danger to infants, increasing the overall danger level."
+    },
+    {
+        "type1": "Baby",
+        "type2": "ShowerGlass",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "There is a high potential danger when a baby is in proximity to shower glass due to the risk of the glass breaking and causing cuts, as well as the risk of falls occurring in a wet environment where a baby may slip."
+    },
+    {
+        "type1": "Baby",
+        "type2": "ShowerHead",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "water"
+        ],
+        "llm_reason": "A baby may be at high risk of physical harm and drowning when near a shower head, especially if left unattended. The risk of water exposure can lead to slips and falls."
+    },
+    {
+        "type1": "Baby",
+        "type2": "SideTable",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "A baby is at high risk when near a side table due to the potential for physical harm from sharp edges and the risk of falling if they attempt to pull themselves up or stand unsupported. Additionally, if objects are placed on the table, they could fall onto the baby, leading to further injury."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Sink",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall",
+            "water"
+        ],
+        "llm_reason": "Babies are at high risk of drowning in sinks due to their inability to swim and lack of awareness. They can easily fall into the sink, leading to physical injuries. Moreover, sinks contain water, which increases the drowning hazard significantly."
+    },
+    {
+        "type1": "Baby",
+        "type2": "SinkBasin",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "water"
+        ],
+        "llm_reason": "A sink basin poses a high danger to babies primarily due to the risk of drowning in water, even in small amounts. Babies are also at risk of physical injuries from falls if they attempt to climb into or out of a sink basin."
+    },
+    {
+        "type1": "Baby",
+        "type2": "SoapBar",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "Babies are at a high risk of physical harm from choking or ingestion of soap, which can be toxic. The presence of a soap bar introduces significant chemical hazard if ingested, making it a dangerous combination."
+    },
+    {
+        "type1": "Baby",
+        "type2": "SoapBottle",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "A baby is at high risk when in proximity to a soap bottle, as ingesting soap can lead to serious chemical poisoning. Additionally, the physical danger arises from the potential for the baby to handle and break the bottle, leading to cuts or injuries."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Sofa",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Babies are at high risk of physical harm due to their inability to stabilize themselves, which can lead to falls from sofas or being trapped between cushions. Sofas may also pose a risk of suffocation or injury if a baby is left unattended."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Spatula",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "thermal"
+        ],
+        "llm_reason": "A spatula, especially if it is metal, can become very hot when used on a stove or grill, posing a thermal risk to a baby. Additionally, there is a high risk of physical injury if a baby comes into contact with or tries to handle a spatula, which can be heavy and have sharp edges."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Spoon",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "A baby can choke on a spoon, which presents a physical risk. Moreover, if a baby pulls on a tablecloth with a spoon or is playing with a spoon that is not secure, it may lead to falls, presenting a high level of danger."
+    },
+    {
+        "type1": "Baby",
+        "type2": "SprayBottle",
+        "danger_level": "high",
+        "risk_type": [
+            "chemical",
+            "physical"
+        ],
+        "llm_reason": "A Baby may ingest or come into contact with harmful chemicals from a Spray Bottle, leading to poisoning or physical harm."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Statue",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Babies are vulnerable to physical harm from objects in their environment, and statues can pose a risk if they are unstable or heavy, leading to potential falls that could harm the child."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Stool",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Babies are at high risk of falling off stools, which can lead to serious injuries. Additionally, the physical risk arises from the potential hazards of a baby climbing or being placed on a stool, making it crucial to supervise such interactions closely."
+    },
+    {
+        "type1": "Baby",
+        "type2": "StoveBurner",
+        "danger_level": "high",
+        "risk_type": [
+            "thermal",
+            "physical"
+        ],
+        "llm_reason": "A baby is at high risk around a stove burner due to the potential for burns from hot surfaces or flames, which poses a significant thermal danger. Additionally, a baby may physically reach for the burner or pull on cords, leading to accidental injuries."
+    },
+    {
+        "type1": "Baby",
+        "type2": "StoveKnob",
+        "danger_level": "high",
+        "risk_type": [
+            "thermal",
+            "physical"
+        ],
+        "llm_reason": "Babies are at a high risk of burns or scalds from hot stove knobs, which can be easily reached and turned by curious infants, leading to potentially serious injuries."
+    },
+    {
+        "type1": "Baby",
+        "type2": "TVStand",
+        "danger_level": "high",
+        "risk_type": [
+            "fall",
+            "physical"
+        ],
+        "llm_reason": "A TV stand can tip over or become a falling hazard if not secured properly, posing significant risks to a baby who may pull on or climb against it. The physical risk of injury from a falling object is a primary concern."
+    },
+    {
+        "type1": "Baby",
+        "type2": "TableTopDecor",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Babies are at a high risk of physical injury when interacting with tabletop decor, as they may pull objects down onto themselves or fall when trying to reach for them. The height of the table combined with the fragility of decorative items can lead to falls and physical harm."
+    },
+    {
+        "type1": "Baby",
+        "type2": "TeddyBear",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "A baby may accidentally suffocate or choke on a teddy bear if it is large or has small detachable parts. Additionally, certain teddy bears might be treated with chemicals during manufacturing that could pose a risk if the baby chews on or bites the toy."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Television",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall",
+            "electrical"
+        ],
+        "llm_reason": "Babies are at high risk of injury from televisions due to their tendency to pull or climb on furniture, which can lead to TVs tipping over. Additionally, exposed cords can pose electrical hazards, and physical injuries may occur from falls or contact with the TV."
+    },
+    {
+        "type1": "Baby",
+        "type2": "TennisRacket",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "A baby is vulnerable and can be harmed by a tennis racket due to its weight and structure. There is a significant risk of physical injury if a baby were to fall or be struck by a tennis racket."
+    },
+    {
+        "type1": "Baby",
+        "type2": "TissueBox",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "A baby can pose a risk of physical harm if they interact with a tissue box, especially if they pull it down or use it to climb, potentially leading to falls. While the tissue box itself is not inherently dangerous, the combination of a curious baby and household items can lead to unsafe situations."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Toaster",
+        "danger_level": "high",
+        "risk_type": [
+            "thermal",
+            "electrical"
+        ],
+        "llm_reason": "A toaster presents significant thermal and electrical risks to a baby. Babies are naturally curious and may touch or get too close to a hot toaster, leading to burns. Additionally, if a baby interacts with the toaster's electrical components, it could pose a risk of electrical shock."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Toilet",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "water"
+        ],
+        "llm_reason": "Babies are at a high risk of drowning in toilets due to their small size and inability to self-rescue. The combination of a baby's exploration habits and the presence of water in the toilet presents a significant physical danger."
+    },
+    {
+        "type1": "Baby",
+        "type2": "ToiletPaper",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Babies are at high risk of physical injury from suffocation or choking on items such as toilet paper, and they may also fall if they try to reach for it or if it creates a slippery surface."
+    },
+    {
+        "type1": "Baby",
+        "type2": "ToiletPaperHanger",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Babies are at a high risk of physical injury and falls when interacting with or climbing onto objects, including toilet paper hangers which could be unstable or located in an area where a baby could pull them down or climb onto them."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Tomato",
+        "danger_level": "high",
+        "risk_type": [
+            "choking",
+            "chemical"
+        ],
+        "llm_reason": "Babies are at a high risk of choking on small objects, including tomatoes, which can also pose a risk of chemical exposure if pesticides are present."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Towel",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "water"
+        ],
+        "llm_reason": "A baby can potentially get tangled in a towel or slip on a wet surface when a towel is used, leading to physical injury. Also, if a towel is left in a bath area, it may lead to a risk of drowning if not supervised properly."
+    },
+    {
+        "type1": "Baby",
+        "type2": "TowelHolder",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "A Baby can experience serious injuries if left unsupervised near a TowelHolder, as they may pull on it or climb onto it, leading to falls or physical harm. Additionally, sharp edges or protruding parts can pose a risk of cuts or bruises."
+    },
+    {
+        "type1": "Baby",
+        "type2": "VacuumCleaner",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Babies are at a high risk of physical injury when interacting with vacuum cleaners due to their moving parts, weight, and potential for tipping over. Additionally, babies are prone to falls, especially if they are near or trying to access low-lying vacuum cleaners."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Vase",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "A baby can cause a vase to fall due to curiosity or unintentional actions, leading to potential injuries from broken glass. Additionally, the baby itself can get hurt by sharp edges or heavy pieces if the vase falls."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Watch",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall",
+            "thermal"
+        ],
+        "llm_reason": "Babies are at high risk due to their vulnerability to physical injuries, falls, and exposure to thermal hazards. They cannot adequately protect themselves from potential dangers such as choking on small objects or toppling over onto hard surfaces, and they may also be affected by hot surfaces or liquids."
+    },
+    {
+        "type1": "Baby",
+        "type2": "WateringCan",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "water"
+        ],
+        "llm_reason": "A baby may be at risk of physical harm if they encounter a watering can, as it can be heavy and can cause injury if dropped. Additionally, if the watering can is filled with water, there is a risk of drowning, particularly in the case of small amounts of water where a baby could tip over or fall in."
+    },
+    {
+        "type1": "Baby",
+        "type2": "Window",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Windows pose a significant risk to babies due to their potential for falls if the baby is near an open window, as well as the physical danger of sharp edges or glass. Babies are naturally curious and can easily reach windows, making them a high-risk area."
+    },
+    {
+        "type1": "Baby",
+        "type2": "WineBottle",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "A Baby is at high risk when around Wine Bottles due to the potential for physical injury if the bottle is dropped or broken, as well as the risk of chemical ingestion if the baby accesses the wine."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Pet",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall",
+            "chemical"
+        ],
+        "llm_reason": "Adults may be at medium risk due to potential falls caused by pets, as well as physical interactions that could lead to injuries. There could also be risks associated with chemicals, such as pet-related allergens or ingestion of harmful substances."
+    },
+    {
+        "type1": "Adult",
+        "type2": "AlarmClock",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "thermal"
+        ],
+        "llm_reason": "An adult interacting with an alarm clock poses minimal risks. The primary concerns would revolve around physical interactions (e.g., tripping over the cord) and thermal risks if the clock has a heating element, which is rare. Overall, the likelihood of significant danger is low."
+    },
+    {
+        "type1": "Adult",
+        "type2": "AluminumFoil",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "Aluminum foil itself poses minimal danger to adults unless misused. It can be a choking hazard if ingested or can cause minor cuts if mishandled, but typically presents low risk in normal use."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Apple",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "The interaction between an adult and an apple is generally safe, with low potential for any severe risks. The only conceivable danger is physical, such as choking if the apple is not adequately chewed."
+    },
+    {
+        "type1": "Adult",
+        "type2": "ArmChair",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "An adult using an armchair poses a low risk primarily due to the potential for physical discomfort or minor falls if the adult stands up or sits down improperly. However, the inherent design of an armchair is meant to provide support and comfort, reducing significant hazards."
+    },
+    {
+        "type1": "Adult",
+        "type2": "BaseballBat",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "An adult wielding a baseball bat poses a medium risk of physical harm, particularly if used inappropriately or aggressively. However, when used as intended for sports, the risk is low."
+    },
+    {
+        "type1": "Adult",
+        "type2": "BasketBall",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "While an adult can be at risk of falling or physical injury while playing with a basketball, the overall danger level is considered low as the activity is generally safe when proper precautions are taken."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Bathtub",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall",
+            "water"
+        ],
+        "llm_reason": "While adults can safely use bathtubs, there are potential hazards such as slipping leading to falls, the risk of drowning in certain situations, and physical strain from getting in and out of the tub, especially for older adults."
+    },
+    {
+        "type1": "Adult",
+        "type2": "BathtubBasin",
+        "danger_level": "high",
+        "risk_type": [
+            "fall",
+            "water",
+            "thermal"
+        ],
+        "llm_reason": "An adult in a bathtub can easily slip and fall, leading to potential injuries. There's also the risk of drowning if the adult is incapacitated. The water temperature can cause burns or other thermal injuries if the water is too hot."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Bed",
+        "danger_level": "low",
+        "risk_type": [
+            "fall"
+        ],
+        "llm_reason": "While an adult can potentially fall out of bed, the overall risk associated with an adult and a bed is relatively low compared to other household hazards. The primary concern would be falls, especially for older adults, but this risk is manageable with precautions."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Blinds",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Blinds can pose a physical risk to adults, particularly if they are corded and can lead to strangulation hazards or if improperly installed and can fall. However, they do not typically pose high risks in other categories such as thermal, chemical, electrical, or water."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Book",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "While an adult can potentially cause physical harm if mishandling a book, the overall interaction between an adult and a book poses minimal risk. The primary concern would be physical injury from tripping over a book left on the floor, but this is generally low risk."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Boots",
+        "danger_level": "low",
+        "risk_type": [
+            "fall"
+        ],
+        "llm_reason": "While boots can cause tripping hazards if they are poorly fitted or have worn soles, the overall risk of danger when comparing adult individuals to boots is low as boots are primarily a protective footwear item."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Bottle",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "An adult can potentially be harmed by a bottle, especially if it's made of glass and breaks, causing cuts or bruises. Additionally, if the bottle contains hazardous materials, there is a chemical risk. However, the risk is not as high as for some other objects."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Bowl",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "An adult and a bowl generally do not pose significant risks to each other. The potential for danger is minimal, primarily involving physical interactions such as tripping over a bowl left on the floor, but this is relatively uncommon."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Box",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "An adult can be at risk of physical harm if they trip over a box, leading to potential falls. However, the inherent danger is not extremely high unless the box contains hazardous materials or is improperly stacked."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Bread",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "While adults can potentially pose a physical risk when acting irresponsibly around food (e.g., choking), bread itself is generally safe and poses minimal risk in a household setting."
+    },
+    {
+        "type1": "Adult",
+        "type2": "ButterKnife",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "While a ButterKnife can be physically harmful if used improperly, it generally poses a low risk of injury when handled by an adult who understands its use. It does not have sharp edges like other knives and is designed for safe use."
+    },
+    {
+        "type1": "Adult",
+        "type2": "CD",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "Adults and CDs generally do not pose significant danger to each other in a home environment. The risk is primarily physical due to potential tripping hazards from CDs, but this is minimal and manageable."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Cabinet",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Adults can be at risk of injury if they try to open or move heavy cabinets, especially if they are not securely fastened to the wall. There is also a potential for falls if cabinets are placed inappropriately or if items inside them fall out unexpectedly."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Candle",
+        "danger_level": "medium",
+        "risk_type": [
+            "thermal",
+            "fire"
+        ],
+        "llm_reason": "Candles pose a risk of fire and burns, especially if left unattended around adults or in enclosed spaces. While adults can manage the use of candles responsibly, the potential for accidents increases if proper precautions are not taken."
+    },
+    {
+        "type1": "Adult",
+        "type2": "CellPhone",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "electrical"
+        ],
+        "llm_reason": "While adults can inadvertently cause physical harm when handling a cellphone (such as dropping it or being distracted while walking), the overall risk is low. The electrical risk is minimal if the phone is used responsibly and according to safety guidelines."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Chair",
+        "danger_level": "low",
+        "risk_type": [
+            "fall"
+        ],
+        "llm_reason": "While adults can potentially tip over a chair or trip when moving around it, the inherent risk of injury in an adult interacting with a chair is generally low when precautions are taken."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Cloth",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "Cloths typically do not pose significant risks to adults unless they become tripping hazards or create suffocation risks in certain scenarios. Overall, the risk associated with cloth interacting with adults is minimal."
+    },
+    {
+        "type1": "Adult",
+        "type2": "CoffeeMachine",
+        "danger_level": "medium",
+        "risk_type": [
+            "thermal",
+            "electrical",
+            "burn"
+        ],
+        "llm_reason": "The interaction between an adult and a coffee machine presents a medium danger level primarily due to the risk of burns from hot surfaces and liquids, potential electrical hazards from improper use or malfunction, and slips or falls if spills occur. Adults should exercise caution when operating coffee machines to minimize these risks."
+    },
+    {
+        "type1": "Adult",
+        "type2": "CoffeeTable",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Adults may trip over or bump into coffee tables, leading to potential physical injuries. However, the risk is not extremely high compared to other hazards."
+    },
+    {
+        "type1": "Adult",
+        "type2": "CounterTop",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "An adult may encounter physical risks when interacting with a countertop, especially if they are reaching for items, which could lead to a fall or injury if proper care is not taken. Other risks such as thermal (from hot surfaces), chemical (from cleaning agents), electrical (if appliances are used), and water (from spills) exist but are not primary concerns compared to the likelihood of physical hazards."
+    },
+    {
+        "type1": "Adult",
+        "type2": "CreditCard",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "Adults can inadvertently cause damage to credit cards by bending or exposing them to heat, but the overall risk to the adult from the credit card is minimal. There are no significant thermal, fall, electrical, or water risks associated with this object interaction."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Cup",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "thermal",
+            "chemical"
+        ],
+        "llm_reason": "Cups generally pose minimal danger to adults. The physical risk is low as they are not heavy or sharp, thermal risk exists if containing hot liquids, and chemical risk may arise from certain materials used in making cups if they are not food-safe."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Curtains",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "thermal"
+        ],
+        "llm_reason": "Curtains pose a minimal danger to adults. The primary concerns could be physical risks, such as tripping over loose curtains or a thermal risk if curtains near a heat source catch fire, but this is generally low with appropriate safety measures."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Desk",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "While an adult may be at risk of tripping over a desk or bumping into it, the overall danger level is low as desks are generally stable and not inherently hazardous."
+    },
+    {
+        "type1": "Adult",
+        "type2": "DeskLamp",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "thermal",
+            "electrical"
+        ],
+        "llm_reason": "The interaction between an adult and a desk lamp generally poses low risk. While there is a potential for electrical hazards if the lamp is damaged or improperly used, the lamp is typically designed for safe use around adults. Physical risks include tripping over the cord, and thermal risks relate to the heat produced by the bulb, which can be mitigated with proper usage."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Desktop",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "electrical"
+        ],
+        "llm_reason": "While there is a minor risk of tripping over a desktop or potential electrical hazards if a desktop is not properly maintained, these risks are generally low when appropriate safety measures are taken."
+    },
+    {
+        "type1": "Adult",
+        "type2": "DiningTable",
+        "danger_level": "medium",
+        "risk_type": [
+            "fall",
+            "physical"
+        ],
+        "llm_reason": "Adults may trip over or bump into a dining table, posing a medium risk of physical harm. The risk of falling can be heightened in crowded or poorly lit spaces."
+    },
+    {
+        "type1": "Adult",
+        "type2": "DishSponge",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "While dish sponges can harbor bacteria, they do not pose a significant physical danger to adults. The primary risks involve potential slip hazards when sponges are wet and the chemical risks associated with any cleaning agents used with them."
+    },
+    {
+        "type1": "Adult",
+        "type2": "DogBed",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "The interaction between an adult and a dog bed generally poses a low risk. While a physical risk exists if the adult trips over the bed, it is typically minimal. There are no significant thermal, chemical, electrical, or water risks associated with this interaction."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Drawer",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "An adult interacting with a drawer may lead to physical injury if the drawer is pulled out too quickly or too far, causing it to tip over or hit the individual. Additionally, there is a risk of falling if the adult attempts to reach for items stored in a high drawer without proper support."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Dresser",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "An adult can be at risk of physical injury if a dresser is not securely anchored to the wall and tips over. This can lead to serious injuries, especially if children are involved, making the danger level significant."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Dumbbell",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "An adult using a dumbbell could be at risk of physical injury from improper use or dropping the weight. Additionally, there is a potential risk of falling during exercise routines, particularly if the environment is not adequately cleared of obstacles."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Egg",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "Adults generally pose a low threat to eggs, as they are not inherently dangerous unless mishandled. The only potential risk arises from physical interactions, where an adult might accidentally crush or damage the egg."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Faucet",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "water"
+        ],
+        "llm_reason": "While a faucet itself is generally safe, the potential danger arises when an adult uses a faucet incorrectly, leading to risks such as slips on wet surfaces or physical injuries from hot water exposure. Therefore, the overall risk is moderate."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Floor",
+        "danger_level": "medium",
+        "risk_type": [
+            "fall",
+            "physical"
+        ],
+        "llm_reason": "Adults may be at risk of falling when walking on floors, especially if the floor is slippery or uneven. This presents a physical danger, but generally, the risk can be mitigated with proper safety measures."
+    },
+    {
+        "type1": "Adult",
+        "type2": "FloorLamp",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "thermal",
+            "electrical"
+        ],
+        "llm_reason": "An adult can potentially knock over a floor lamp, leading to physical injury, burns from bulb heat, or electrical shock if the lamp is damaged."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Footstool",
+        "danger_level": "medium",
+        "risk_type": [
+            "fall"
+        ],
+        "llm_reason": "An adult may trip over a footstool, leading to a fall. While footstools themselves do not pose significant dangers, their presence can contribute to tripping hazards, especially in poorly lit areas or when not used properly."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Fork",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "A fork can pose a physical hazard to an adult, particularly if used improperly. There is a risk of cuts or punctures if the fork is misused or if there is a fall while handling it."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Fridge",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "thermal",
+            "electrical"
+        ],
+        "llm_reason": "An adult and a fridge typically do not pose a significant danger to each other. However, there are minor risks such as the adult bumping into the fridge (physical risk), potential burns from hot fridge surfaces (thermal risk), and electrical hazards if the fridge has faulty wiring or if water is spilled near it (electrical risk). Overall, the interactions are generally safe with proper precautions."
+    },
+    {
+        "type1": "Adult",
+        "type2": "GarbageBag",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "The presence of a garbage bag typically poses a low risk to adults unless it contains hazardous materials or is placed in a position that may cause tripping. Generally, garbage bags are not inherently dangerous."
+    },
+    {
+        "type1": "Adult",
+        "type2": "GarbageCan",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "The interaction between an adult and a garbage can generally presents a low risk, as the potential dangers are mainly physical in nature, such as tripping over the can or contact with sharp objects inside it. Other risks like thermal, chemical, electrical, or water-related dangers are minimal in this context."
+    },
+    {
+        "type1": "Adult",
+        "type2": "HandTowel",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "thermal"
+        ],
+        "llm_reason": "A hand towel presents minimal danger to an adult. The risks primarily involve tripping if the towel is left on the floor or mild burns if a towel is used to handle hot items. Overall, these risks are not significant."
+    },
+    {
+        "type1": "Adult",
+        "type2": "HandTowelHolder",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "An adult could potentially bump into or trip over a hand towel holder, which could lead to minor physical injuries or falls. However, the overall risk is low as hand towel holders are typically stationary and not designed to cause harm."
+    },
+    {
+        "type1": "Adult",
+        "type2": "HousePlant",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "The presence of house plants generally poses minimal risk to adults, primarily presenting a low physical risk such as tripping over pots or watering them. There may be minor chemical risks if a plant is ingested, but it is uncommon for adults to be significantly harmed by house plants."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Kettle",
+        "danger_level": "medium",
+        "risk_type": [
+            "thermal",
+            "electrical",
+            "water"
+        ],
+        "llm_reason": "An adult can experience burns from a hot kettle, potential electric shock from faulty kettles, and risk of scalding from hot water. However, with proper supervision and safety measures, the risks can be managed."
+    },
+    {
+        "type1": "Adult",
+        "type2": "KeyChain",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "A keychain itself poses minimal threat to adults, primarily representing a low physical risk in terms of injury, such as minor cuts if improperly handled. Other risks such as thermal, fall, chemical, electrical, and water are not applicable between an adult and a keychain."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Knife",
+        "danger_level": "high",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "Knives are sharp objects that can cause serious injuries to adults if mishandled or used carelessly. The potential for cuts or stabs makes the interaction between an adult and a knife inherently dangerous."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Ladle",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "A ladle is generally a benign kitchen tool when used properly by an adult. The risk of physical harm is minimal in a typical usage scenario."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Laptop",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "thermal",
+            "electrical"
+        ],
+        "llm_reason": "While laptops can pose some physical risks if dropped, and potential electrical hazards, the overall danger when an adult is handling a laptop is minimal. The risks are primarily related to improper use, such as overheating or electrical faults, but these are typically manageable."
+    },
+    {
+        "type1": "Adult",
+        "type2": "LaundryHamper",
+        "danger_level": "low",
+        "risk_type": [
+            "fall"
+        ],
+        "llm_reason": "While adults may occasionally trip over or stumble due to a laundry hamper being in an unexpected location, the overall likelihood of serious harm is minimal. Proper placement and use of the hamper can further reduce any associated risks."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Lettuce",
+        "danger_level": "low",
+        "risk_type": [],
+        "llm_reason": "Lettuce poses minimal risk to adults in terms of physical, thermal, fall, chemical, electrical, or water hazards. The interaction is generally safe."
+    },
+    {
+        "type1": "Adult",
+        "type2": "LightSwitch",
+        "danger_level": "low",
+        "risk_type": [
+            "electrical"
+        ],
+        "llm_reason": "The potential danger from an adult interacting with a light switch is generally low, as light switches are designed for safe operation. However, risks exist if the adult behaves recklessly or if the electrical system is faulty."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Microwave",
+        "danger_level": "medium",
+        "risk_type": [
+            "thermal",
+            "electrical"
+        ],
+        "llm_reason": "Microwaves pose a medium danger to adults mainly due to the risk of burns from hot surfaces or food, and potential electrical hazards if the microwave is damaged or improperly used."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Mirror",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "Mirrors can be a physical hazard if broken, but there is generally a low risk of injury when adults interact with mirrors under normal circumstances."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Mug",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "While an adult can physically handle a mug, the inherent risks are minimal unless the mug is hot or contains a hazardous substance. Generally, mugs present a low danger level when used appropriately."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Newspaper",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "While an adult can potentially pose a risk when interacting with a newspaper, such as reading while walking, the inherent risks involved are minimal. Newspapers do not have inherent dangers like chemicals or electrical hazards."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Ottoman",
+        "danger_level": "low",
+        "risk_type": [
+            "fall"
+        ],
+        "llm_reason": "While ottomans present a tripping hazard, especially in cluttered spaces, the overall risk of injury is low when compared to other household furniture. Adults are generally able to navigate around ottomans with caution."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Painting",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "The potential danger between an adult and a painting is minimal. An adult may physically interact with a painting, but the risk of harm is low, primarily involving risks of minor physical injury or the painting falling if not properly secured."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Pan",
+        "danger_level": "medium",
+        "risk_type": [
+            "thermal",
+            "physical"
+        ],
+        "llm_reason": "The potential danger arises when an adult uses a pan for cooking. There is a risk of burns from hot surfaces (thermal) and the possibility of cuts or falls if the adult is not careful while handling the pan (physical)."
+    },
+    {
+        "type1": "Adult",
+        "type2": "PaperTowelRoll",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "An adult interacting with a paper towel roll poses minimal danger, primarily related to physical risk if the roll is misused or falls, but there are no significant risks in other categories."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Pen",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "While a pen is a physical object that can potentially cause minor injuries if thrown or misused, the overall risk of harm to an adult is minimal under normal circumstances."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Pencil",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "Adults can pose a low risk of physical harm to themselves or others when using a pencil, mainly due to the potential for accidents like accidentally poking or stabbing, but the overall danger is minimal."
+    },
+    {
+        "type1": "Adult",
+        "type2": "PepperShaker",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "A Pepper Shaker posed minimal inherent dangers to an adult, primarily representing a low risk of physical harm such as minor spills or accidental drops."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Pillow",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "A pillow poses a low risk to an adult, as it is primarily a soft object used for resting and provides no inherent danger. Physical risk may be considered in the context of choking or suffocation, but generally, pillows are safe."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Plate",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "The potential danger between an adult and a plate is minimal, as the plate is an inanimate object and unlikely to pose significant risks beyond the possibility of being accidentally broken or causing minor cuts when handled."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Plunger",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "While an adult using a plunger may encounter minor physical risks such as slipping or straining, the overall danger is low as plungers are generally safe tools when used correctly."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Poster",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "Posters are typically paper objects and do not pose significant risks to adults, aside from potential tripping hazards if laid on the floor. Physical risks are minimal since adults can easily manage or interact with posters safely."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Pot",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "thermal"
+        ],
+        "llm_reason": "An adult can be at risk of physical injury if they trip over a pot, and a pot used for cooking can pose a thermal risk if it contains hot substances."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Potato",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "The interaction between an adult and a potato poses minimal risks. While a potato is an inanimate object, the primary risk might involve physical injuries if the adult slips on or trips over a potato. There are no significant risks related to thermal, chemical, electrical, or water hazards in this scenario."
+    },
+    {
+        "type1": "Adult",
+        "type2": "RemoteControl",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "electrical"
+        ],
+        "llm_reason": "The interaction between an adult and a remote control generally poses low dangers. The primary risks would be minor physical injury from improper handling or mishaps with batteries in the remote control, which could lead to low electrical hazards. Overall, the situation is largely safe."
+    },
+    {
+        "type1": "Adult",
+        "type2": "RoomDecor",
+        "danger_level": "medium",
+        "risk_type": [
+            "fall",
+            "chemical",
+            "thermal"
+        ],
+        "llm_reason": "Adults in a room with decor may face medium risk due to potential falls from clutter, exposure to chemicals from certain decor materials, and thermal risks if decorative items are near heat sources."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Safe",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "thermal",
+            "fall",
+            "chemical",
+            "electrical",
+            "water"
+        ],
+        "llm_reason": "Adults generally have the capability to avoid or mitigate dangers associated with safe objects. Safe objects are designed to minimize risk, but there could be low-level risks depending on the context in which they are used."
+    },
+    {
+        "type1": "Adult",
+        "type2": "SaltShaker",
+        "danger_level": "low",
+        "risk_type": [
+            "chemical"
+        ],
+        "llm_reason": "The potential danger primarily arises from the risk of choking or accidental ingestion of salt by an adult. However, the overall risk is considered low because adults are generally aware of the potential hazards associated with household items like a salt shaker."
+    },
+    {
+        "type1": "Adult",
+        "type2": "ScrubBrush",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "While an adult could potentially use a scrub brush in a way that might cause physical injury (e.g., slipping or scratching), the overall risk is minimal. Scrub brushes are typically safe household items and pose no significant threat."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Shelf",
+        "danger_level": "medium",
+        "risk_type": [
+            "fall",
+            "physical"
+        ],
+        "llm_reason": "Adult may interact with the shelf, leading to potential falls if the shelf is unstable or if the adult attempts to climb it."
+    },
+    {
+        "type1": "Adult",
+        "type2": "ShelvingUnit",
+        "danger_level": "high",
+        "risk_type": [
+            "fall"
+        ],
+        "llm_reason": "Adults can be at high risk of injury if a shelving unit is not properly secured, as it may tip over causing falls or injuries."
+    },
+    {
+        "type1": "Adult",
+        "type2": "ShowerCurtain",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "water"
+        ],
+        "llm_reason": "Adults may slip in the shower if a shower curtain is not properly used, posing a low physical risk. Water from the shower could also create a wet environment, leading to a minor risk of slipping, but overall the combination is generally safe."
+    },
+    {
+        "type1": "Adult",
+        "type2": "ShowerDoor",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall",
+            "water"
+        ],
+        "llm_reason": "An adult may encounter physical risks when using a shower door, especially if it is slippery or if there are sudden movements that could lead to falls. Additionally, there is a risk of water-related incidents if the shower door does not seal properly."
+    },
+    {
+        "type1": "Adult",
+        "type2": "ShowerGlass",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "While adults using a shower glass could face risks of cuts or falls, the overall danger posed is moderate. The glass can break and cause injury, and slipping in the shower could lead to falls."
+    },
+    {
+        "type1": "Adult",
+        "type2": "ShowerHead",
+        "danger_level": "medium",
+        "risk_type": [
+            "slip",
+            "water",
+            "thermal"
+        ],
+        "llm_reason": "The presence of an adult in a wet environment with a shower head increases the risk of slips and falls due to water on the floor, as well as thermal risks from potentially hot water. While these risks are significant, they are generally manageable with proper precautions."
+    },
+    {
+        "type1": "Adult",
+        "type2": "SideTable",
+        "danger_level": "medium",
+        "risk_type": [
+            "fall",
+            "physical"
+        ],
+        "llm_reason": "An adult may trip over a side table leading to a fall, or may accidentally bump into it causing injury. However, side tables are typically stable and do not pose a high risk."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Sink",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "thermal",
+            "water"
+        ],
+        "llm_reason": "Adults may be at risk of physical injury from slips and falls near sinks, especially when the surface is wet. Additionally, hot water can cause thermal burns if the sink's temperature is not monitored. While sinks are water sources, the danger is not as critical as other household hazards."
+    },
+    {
+        "type1": "Adult",
+        "type2": "SinkBasin",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall",
+            "water"
+        ],
+        "llm_reason": "Sinks can present a medium level of danger to adults due to risks of slips and falls if the floor is wet. Additionally, there is a potential for physical injuries from sharp edges or breakage, and the presence of water can cause drowning risks in certain circumstances."
+    },
+    {
+        "type1": "Adult",
+        "type2": "SoapBar",
+        "danger_level": "high",
+        "risk_type": [
+            "chemical",
+            "physical"
+        ],
+        "llm_reason": "SoapBars may contain harmful chemicals or substances that could pose a danger if ingested or misused around adults, especially if there are children present."
+    },
+    {
+        "type1": "Adult",
+        "type2": "SoapBottle",
+        "danger_level": "medium",
+        "risk_type": [
+            "chemical",
+            "physical"
+        ],
+        "llm_reason": "Soap bottles may contain substances that can be harmful if ingested or if they come into contact with the skin, particularly for children or vulnerable adults. While the risk is not high if used properly, there is potential for physical slips or falls if the soap causes the floor to become slippery."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Sofa",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "While an adult can potentially fall off a sofa or trip over it, the overall risk associated with the interaction between an adult and a sofa is generally low, as sofas are designed for seating and stability. There are minimal risks of thermal, chemical, electrical, or water hazards in this scenario."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Spatula",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "A spatula typically poses minimal risk to adults, mainly associated with potential cuts or minor injuries while cooking. There are no significant thermal, chemical, electrical, or water hazards involved."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Spoon",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "A spoon is generally safe for adults to use, as it poses minimal risk of physical harm. The primary risk may involve minor injuries if misused or if dropped, but overall the danger is low."
+    },
+    {
+        "type1": "Adult",
+        "type2": "SprayBottle",
+        "danger_level": "medium",
+        "risk_type": [
+            "chemical"
+        ],
+        "llm_reason": "Spray bottles may contain cleaning agents or chemicals that, if misused, can pose a danger to adults, particularly if ingested or if they come into contact with skin or eyes."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Statue",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "A statue typically poses minimal risk to adults unless it is very heavy or unstable, potentially causing physical harm or a fall if dislodged."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Stool",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "While there is a potential for physical hazards if an adult stumbles over a stool, the overall danger level is considered low, as adults are generally capable of avoiding such hazards in a typical home environment."
+    },
+    {
+        "type1": "Adult",
+        "type2": "StoveBurner",
+        "danger_level": "high",
+        "risk_type": [
+            "thermal",
+            "physical"
+        ],
+        "llm_reason": "An adult can be at high risk of suffering severe burns or injuries when interacting with a stove burner due to the high temperatures involved. The potential for accidental contact with the hot surface presents significant thermal and physical dangers."
+    },
+    {
+        "type1": "Adult",
+        "type2": "StoveKnob",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "thermal"
+        ],
+        "llm_reason": "Adults may accidentally leave stove knobs turned on, leading to a high risk of burns and fire hazards. Additionally, there is a risk of physical injury if the adult tries to adjust or handle hot items near the stove."
+    },
+    {
+        "type1": "Adult",
+        "type2": "TVStand",
+        "danger_level": "medium",
+        "risk_type": [
+            "fall",
+            "physical"
+        ],
+        "llm_reason": "An adult may be at risk of injury if they fall against or trip over a TV stand, particularly if it is unstable or not securely anchored to the wall. Additionally, if the TV stand is overloaded or poorly designed, it could pose a physical hazard during a fall."
+    },
+    {
+        "type1": "Adult",
+        "type2": "TableTopDecor",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "An adult may accidentally bump into or knock over tabletop decor, which could lead to physical injuries or falls. However, the overall risk is moderate as precautions can often be taken to secure the decor."
+    },
+    {
+        "type1": "Adult",
+        "type2": "TeddyBear",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "A teddy bear is a soft toy and poses little to no threat to an adult. The only risk may arise from physical interactions, such as tripping over it, but this is not significant and manageable."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Television",
+        "danger_level": "medium",
+        "risk_type": [
+            "fall",
+            "electrical"
+        ],
+        "llm_reason": "When an adult is around a television, there is a medium risk of danger primarily due to the potential for the television to fall over if not secured properly, which can cause physical harm. Additionally, there is an electrical risk associated with the use of electronics, particularly if there are frayed wires or improper usage."
+    },
+    {
+        "type1": "Adult",
+        "type2": "TennisRacket",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "While an adult can be injured by a tennis racket, the likelihood of serious harm is low under normal conditions. The risks primarily involve minor injuries such as bruises or cuts, usually in a recreational setting."
+    },
+    {
+        "type1": "Adult",
+        "type2": "TissueBox",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "A tissue box presents minimal danger to an adult. The primary risk is tripping over it or a minor physical interaction, as it is generally harmless and poses no thermal, chemical, electrical, or water hazards."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Toaster",
+        "danger_level": "medium",
+        "risk_type": [
+            "thermal",
+            "electrical"
+        ],
+        "llm_reason": "Adults may face risks from toasters, primarily due to thermal burns from hot surfaces or toast, and electrical hazards if the toaster is damaged or improperly used. However, adults are generally aware of these risks and can take precautions, hence the medium danger level."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Toilet",
+        "danger_level": "medium",
+        "risk_type": [
+            "fall",
+            "water"
+        ],
+        "llm_reason": "Toilets can present risks for adults, primarily due to the potential for slips and falls around wet surfaces. Water exposure could also pose a risk if not managed properly, but generally, toilets do not create many other high-risk scenarios."
+    },
+    {
+        "type1": "Adult",
+        "type2": "ToiletPaper",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "There is minimal risk when an adult interacts with toilet paper. The primary concern is a physical one, such as a slip if the toilet paper is wet or creates clutter, but overall, the danger level is low."
+    },
+    {
+        "type1": "Adult",
+        "type2": "ToiletPaperHanger",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "The interaction between an adult and a toilet paper hanger is generally safe, as the toilet paper hanger is a stationary object designed for use. The primary risk could involve minor physical injury if the adult were to bump into it or if it were improperly installed, but overall, there is no significant danger present."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Tomato",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "The interaction between an adult and a tomato generally presents low danger. While there are physical risks associated with slipping on a tomato or choking on it, these are minor. Additionally, while tomatoes can cause allergic reactions in some individuals, this is not common, keeping the overall risk low."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Towel",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "The interaction between an adult and a towel presents a low level of danger primarily due to the risk of tripping or slipping if the towel is left on the floor. There are no significant thermal, chemical, electrical, or water hazards involved in this scenario."
+    },
+    {
+        "type1": "Adult",
+        "type2": "TowelHolder",
+        "danger_level": "low",
+        "risk_type": [
+            "fall"
+        ],
+        "llm_reason": "The interaction between an adult and a towel holder typically poses minimal risk. The primary concern may be a minor fall if the towel holder is unstable or positioned in a way that could cause tripping. However, the overall risk remains low with appropriate safety measures in place."
+    },
+    {
+        "type1": "Adult",
+        "type2": "VacuumCleaner",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall",
+            "electrical"
+        ],
+        "llm_reason": "Vacuum cleaners can pose a medium risk to adults primarily due to physical hazards such as tripping over the device, as well as the risk of electrical shock if the vacuum cleaner is damaged or improperly used."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Vase",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "An adult may accidentally knock over a vase leading to potential injury from broken glass or the vase itself. The risk of falling is elevated if the vase is placed in a precarious location."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Watch",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "A watch is generally a safe object that poses minimal risk to adults. The main risks may involve physical interactions, such as tripping hazards if the watch has a strap that can catch on objects, but these are rare and predictable."
+    },
+    {
+        "type1": "Adult",
+        "type2": "WateringCan",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "The interaction between an adult and a watering can presents low danger, primarily due to low risks of physical injury like tripping or falling while using the watering can, and minimal chemical risk unless hazardous substances are used in the watering can."
+    },
+    {
+        "type1": "Adult",
+        "type2": "Window",
+        "danger_level": "high",
+        "risk_type": [
+            "fall",
+            "physical"
+        ],
+        "llm_reason": "An adult can potentially fall from a window, posing a significant risk to their physical safety. Additionally, the window can pose a physical danger if it is broken or improperly secured."
+    },
+    {
+        "type1": "Adult",
+        "type2": "WineBottle",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "An adult may be at risk of physical harm if they handle a wine bottle improperly, such as by breaking it. There is also a chemical risk associated with the consumption of alcohol."
+    },
+    {
+        "type1": "Pet",
+        "type2": "AlarmClock",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "electrical"
+        ],
+        "llm_reason": "While pets may inadvertently knock over an alarm clock, leading to potential physical injury or damage, the overall risk is generally low in households where proper placement of both objects is observed. Additionally, unless the alarm clock has specific electrical issues, the electrical risk remains minimal."
+    },
+    {
+        "type1": "Pet",
+        "type2": "AluminumFoil",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "Pets may chew on aluminum foil, but generally it is not toxic unless ingested in large quantities. The risk is primarily physical, as sharp edges may pose a minor injury risk."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Apple",
+        "danger_level": "low",
+        "risk_type": [
+            "chemical"
+        ],
+        "llm_reason": "While pets may occasionally consume apples, they are not typically harmful unless too many are consumed or if the seeds are ingested, which contain small amounts of cyanide. Therefore, the overall danger level is considered low."
+    },
+    {
+        "type1": "Pet",
+        "type2": "ArmChair",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Generally, pets and armchairs do not pose significant danger to each other. The potential risks are primarily physical in nature, such as a pet climbing on or jumping off the armchair which could lead to a fall. However, these situations are typically low risk."
+    },
+    {
+        "type1": "Pet",
+        "type2": "BaseballBat",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "While pets can pose risks of physical injury (e.g., biting or scratching), the presence of a baseball bat does not inherently increase that risk significantly. However, improper handling of either can lead to accidents or injuries."
+    },
+    {
+        "type1": "Pet",
+        "type2": "BasketBall",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "The primary concern between a pet and a basketball is physical interaction, where pets may trip over a ball or it may cause minor physical injury if they play roughly. However, the overall risk is low as the ball is not inherently dangerous."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Bathtub",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall",
+            "water"
+        ],
+        "llm_reason": "Pets, especially small ones, may slip or fall into the bathtub, which poses a risk of drowning or injury. Additionally, water in the bathtub may create a slick surface, increasing the risk of pets slipping or falling. While the risk is not high, it is significant enough to warrant caution."
+    },
+    {
+        "type1": "Pet",
+        "type2": "BathtubBasin",
+        "danger_level": "high",
+        "risk_type": [
+            "physical",
+            "fall",
+            "water"
+        ],
+        "llm_reason": "Pets can easily slip or fall into bathtubs, leading to potential drowning risks or physical injuries. Additionally, pets may struggle in water, making it a high-risk scenario where their safety is at significant risk."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Bed",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "thermal"
+        ],
+        "llm_reason": "While pets can potentially damage beds or cause accidents, the overall risk of physical harm from the interaction between pets and beds is typically low. Thermal risks are minimal unless bedding materials are flammable or if a pet's movement causes them to become entangled. Other risks such as fall, chemical, electrical, and water are generally not relevant to the interaction between these two objects."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Blinds",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Pets may become entangled in blinds cords, leading to physical injury, and there is a risk of falling if pets jump onto or off furniture to reach the blinds."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Book",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "Pets may accidentally damage books, but generally, there is low risk of serious danger between pets and books."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Boots",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "Pets may accidentally chew on boots, which could lead to ingestion of materials causing mild digestive issues, but overall, the risk is not significant. There is minimal risk of physical injury from boots unless they are improperly stored or used in a way that could cause tripping or falling."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Bottle",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "Pets may chew on or play with bottles, which can result in physical injury. Additionally, if the bottle contains harmful substances, there is a risk of chemical exposure."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Bowl",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "water"
+        ],
+        "llm_reason": "Pets may knock over bowls, causing spills that could result in slipping hazards. Additionally, if the bowl contains water, there is a risk for drowning in the case of smaller pets if left unattended, though this is generally low. However, the potential for injury is not negligible, hence the medium danger level."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Box",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "Pets may chew on or ingest harmful contents from boxes, leading to potential physical injury or chemical poisoning, especially if the boxes contain harmful substances or sharp objects."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Bread",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "While pets may occasionally chew on bread or knock it off surfaces, the overall risk is minimal. Bread does not pose significant dangers like choking or toxicity, and typical interactions between pets and bread do not result in serious physical harm."
+    },
+    {
+        "type1": "Pet",
+        "type2": "ButterKnife",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "While a butter knife is not typically hazardous, there is a potential risk of cuts or injury if a pet interacts with it in a dangerous way. Care must be taken to prevent pets from ingesting any kitchen utensils that could pose a risk."
+    },
+    {
+        "type1": "Pet",
+        "type2": "CD",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "While CDs can pose a physical risk if broken or if pets chew on them, the overall danger to pets from CDs is considered low compared to other household hazards."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Cabinet",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "Pets may be at risk of injury from cabinet doors or items inside cabinets, while some cabinet contents (like cleaning supplies) could be hazardous if ingested by a pet."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Candle",
+        "danger_level": "high",
+        "risk_type": [
+            "thermal",
+            "physical"
+        ],
+        "llm_reason": "Candles can pose a significant risk to pets due to the open flame, which can result in burns or fires if a pet knocks over the candle, and pets may also be injured if they attempt to investigate the flame."
+    },
+    {
+        "type1": "Pet",
+        "type2": "CellPhone",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "thermal",
+            "fall",
+            "electrical"
+        ],
+        "llm_reason": "A pet may pose a risk to a cellphone through physical damage (like chewing or dropping) or thermal risks (pets can spill liquids on phones). Additionally, if a cellphone is charging, pets may cause a fall or electrical risk if they tug on the cord."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Chair",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "While pets can occasionally knock over chairs and cause minor accidents, the overall risk of significant danger is low. Pets may also chew on furniture, but this poses minimal danger compared to other safety hazards."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Cloth",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "thermal",
+            "chemical"
+        ],
+        "llm_reason": "Pets can potentially chew on cloth items, posing a risk of choking or ingestion. Additionally, certain fabrics may contain chemicals that are harmful if ingested or if the pet has an allergic reaction. There is a moderate risk of burns if pets come into contact with heated cloth items like blankets heated in a dryer."
+    },
+    {
+        "type1": "Pet",
+        "type2": "CoffeeMachine",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "thermal",
+            "electrical",
+            "water"
+        ],
+        "llm_reason": "Pets may interact with a coffee machine, potentially causing physical injury or electrical hazards if the machine spills hot coffee or if the pet pulls on cords. There is also a risk of burns from hot surfaces or liquids, as well as water-related hazards from spills."
+    },
+    {
+        "type1": "Pet",
+        "type2": "CoffeeTable",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Pets may accidentally knock over coffee tables or trip over them, leading to potential physical harm or falls, especially in households with small or active pets."
+    },
+    {
+        "type1": "Pet",
+        "type2": "CounterTop",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "chemical",
+            "fall"
+        ],
+        "llm_reason": "Pets can potentially climb on countertops leading to falls or accessing harmful substances. However, the risk is moderate since not all pets are inclined to jump onto countertops and risks can be mitigated."
+    },
+    {
+        "type1": "Pet",
+        "type2": "CreditCard",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "Pets may chew on or ingest credit cards, leading to potential choking hazards or exposure to chemicals found in plastic. However, the overall risk is manageable with supervision."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Cup",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Pets can accidentally knock over cups, which may lead to physical hazards or falls, but the overall risk is generally low compared to other potential dangers."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Curtains",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "thermal"
+        ],
+        "llm_reason": "Pets may tug on or play with curtains, leading to potential physical risks such as choking or injury from falling curtain rods. Additionally, curtains can catch fire if they come into contact with heat sources, posing a thermal risk."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Desk",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall",
+            "thermal"
+        ],
+        "llm_reason": "Pets can accidentally knock over a desk, causing it to fall and potentially injure themselves or others. Additionally, pets may be at risk of injury from sharp corners or heavy objects on the desk. There's a medium risk associated with thermal hazards if the desk contains items like lamps or heaters that could overheat and cause burns."
+    },
+    {
+        "type1": "Pet",
+        "type2": "DeskLamp",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "thermal",
+            "electrical"
+        ],
+        "llm_reason": "Pets may play with or knock over desk lamps, which can cause physical injuries to the pet and potentially lead to thermal burns if the lamp is hot. Additionally, if a lamp is damaged, there is a risk of electrical hazards, such as exposed wires or short circuits."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Desktop",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "electrical",
+            "thermal"
+        ],
+        "llm_reason": "A pet might accidentally knock over a desktop or its components, leading to physical hazards, potential electrical risks if damaged, and thermal risks if any heat generating devices are present, but the overall danger is manageable with supervision."
+    },
+    {
+        "type1": "Pet",
+        "type2": "DiningTable",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Pets may cause physical harm to themselves or damage dining tables by knocking items off or jumping on them. Additionally, there is a risk of pets falling off tables if they are allowed on them."
+    },
+    {
+        "type1": "Pet",
+        "type2": "DishSponge",
+        "danger_level": "low",
+        "risk_type": [
+            "chemical"
+        ],
+        "llm_reason": "While dish sponges may have chemical cleaning agents that could be dangerous if ingested by a pet, the overall risk is low compared to other household items. Proper storage and keeping cleaning supplies out of reach can mitigate this risk."
+    },
+    {
+        "type1": "Pet",
+        "type2": "DogBed",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "While pets can occasionally chew on or displace dog beds, which could lead to minor physical risks such as tripping, the overall danger between a pet and a dog bed is generally low. There are no significant thermal, fall, chemical, electrical, or water hazards associated with the interaction of these two object types."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Drawer",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "Pets may be at risk of injury if they get inside drawers, leading to potential physical harm. Additionally, if any chemicals or harmful substances are stored in the drawer, there is a risk of the pet ingesting them, which poses a further danger."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Dresser",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Pets can potentially climb on dressers or knock items off, leading to injury. Additionally, if a dresser is unstable or not secured to a wall, it could fall if a pet attempts to jump on it, posing a physical risk."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Dumbbell",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Pets may accidentally knock over dumbbells or get injured while playing around them, leading to potential physical injuries. The likelihood of significant injury remains moderate, particularly if precautions are not taken to keep the dumbbells secured and out of the pet's way."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Egg",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "Generally, pets and eggs do not present a significant danger to each other. Pets may accidentally break eggs, which could pose a minor physical risk in terms of slipping on the eggshells, but the overall risk remains low."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Faucet",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "water"
+        ],
+        "llm_reason": "Pets may accidentally knock over or chew on faucet fixtures, leading to potential injury or water exposure. While not inherently dangerous, the interaction between pets and faucets can create scenarios where both the pet and the environment are at risk."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Floor",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Pets can be prone to tripping over objects on the floor, which may lead to physical injury for both the pet and humans. Additionally, loose rugs or toys can increase the risk of falling."
+    },
+    {
+        "type1": "Pet",
+        "type2": "FloorLamp",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "thermal",
+            "fall",
+            "electrical"
+        ],
+        "llm_reason": "Pets may accidentally bump into or knock over a floor lamp, posing a risk of physical injury to themselves or damaging the lamp. Additionally, floor lamps can generate heat which, if a pet comes into contact with it, could lead to burns. There's also a potential risk of electrical hazards if a pet chews on the lamp's cord."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Footstool",
+        "danger_level": "medium",
+        "risk_type": [
+            "fall",
+            "physical"
+        ],
+        "llm_reason": "Pets can trip over or climb on footstools, potentially leading to falls or injuries for both the pet and individuals nearby."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Fork",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "While pets can pose a physical risk through bites or scratches, and they may trip someone if they run underfoot, forks do not pose a significant risk unless mishandled. The combined presence of both objects can lead to moderate physical hazards in a home environment."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Fridge",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "thermal",
+            "chemical"
+        ],
+        "llm_reason": "Pets may accidentally knock over or get their paws near a fridge, potentially leading to physical injury. Additionally, if the fridge has chemicals like cleaners stored near it or if the pet ingests spoiled food from it, there are chemical risks. The fridge can also pose a thermal risk if it contains very cold items that might harm a pet if accessed."
+    },
+    {
+        "type1": "Pet",
+        "type2": "GarbageBag",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "Pets may encounter garbage bags that can pose physical risks if they become entangled or suffocate, and there is also potential for them to ingest harmful substances from the contents of the garbage bags."
+    },
+    {
+        "type1": "Pet",
+        "type2": "GarbageCan",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "Pets may be at risk of ingesting harmful garbage or getting injured by sharp objects in the garbage can, leading to potential physical harm. Additionally, some garbage may contain chemical substances that can be toxic to pets."
+    },
+    {
+        "type1": "Pet",
+        "type2": "HandTowel",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "water"
+        ],
+        "llm_reason": "The presence of a pet and a hand towel may pose a low physical risk due to potential interactions such as the pet chewing on the towel or the towel becoming a tripping hazard if left on the floor. There is also a minor risk of water-related incidents if a pet spills water from its bowl onto the towel, but overall the risks are minimal."
+    },
+    {
+        "type1": "Pet",
+        "type2": "HandTowelHolder",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "Generally, pets and hand towel holders do not pose significant risks to each other. However, a pet could potentially knock over or break a hand towel holder, which may cause minor injuries or mess. The risk is minimal and typically manageable."
+    },
+    {
+        "type1": "Pet",
+        "type2": "HousePlant",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "Pets may injure themselves by playing with or chewing on houseplants, particularly if the plants are toxic. There is also a risk of physical harm to the pet and potential poisoning from ingesting harmful plant substances."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Kettle",
+        "danger_level": "medium",
+        "risk_type": [
+            "thermal",
+            "water"
+        ],
+        "llm_reason": "Kettles pose a medium level of danger when used around pets. The primary risks include thermal injuries from hot water or steam and the potential for pets to accidentally knock over a kettle, leading to water spills that could cause slips and falls."
+    },
+    {
+        "type1": "Pet",
+        "type2": "KeyChain",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall",
+            "chemical"
+        ],
+        "llm_reason": "Pets may pose a physical risk if they accidentally swallow or chew on keychains, leading to choking or intestinal blockage. Additionally, the risk of chemical exposure could arise if the keychain contains toxic materials or if it has been exposed to hazardous substances. Lastly, pets could cause falls by tangling their leashes around keychains or other items."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Knife",
+        "danger_level": "high",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "Knives can cause severe injuries to pets, including cuts and lacerations, especially if a pet is curious or attempts to play with the knife. The combination of a pet's unpredictable behavior and the sharpness of knives presents a significant risk of physical harm."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Ladle",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "While both pets and ladles can pose potential risks, the interaction between them is generally low risk. Pets may occasionally knock over a ladle or cause a minor physical incident, but there are no inherent dangers such as those related to thermal, chemical, electrical, or water hazards."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Laptop",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "thermal",
+            "electrical"
+        ],
+        "llm_reason": "While pets can pose a risk to laptops by physically damaging them or causing spills, the overall danger level is moderate. Laptops can overheat if obstructed, potentially leading to thermal hazards. Additionally, there is a risk of electrical dangers if pet-related accidents lead to cords being chewed or exposed."
+    },
+    {
+        "type1": "Pet",
+        "type2": "LaundryHamper",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Pets may play around or jump onto laundry hampers, potentially causing them to topple over or causing injury to the pet or damaging the hamper."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Lettuce",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "Pets may interact with lettuce, but the physical risk is low as lettuce is not harmful to pets. However, some pets might consume lettuce that could lead to digestive issues, which is a minor risk."
+    },
+    {
+        "type1": "Pet",
+        "type2": "LightSwitch",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "electrical"
+        ],
+        "llm_reason": "Pets may interact with light switches in a way that could lead to accidental switching, causing potential electrical risks. Additionally, a pet might get physically harmed by being in close proximity to electrical connections or cords associated with light fixtures."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Microwave",
+        "danger_level": "medium",
+        "risk_type": [
+            "thermal",
+            "physical"
+        ],
+        "llm_reason": "Pets can be at risk of burns or injuries if they come into contact with a hot microwave or attempt to access food that has been heated. Additionally, there is a risk of physical harm if a pet accidentally knocks over a microwave or if the microwave is improperly secured."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Mirror",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Pets may inadvertently knock over mirrors or get injured by sharp edges if they jump or play near them. The risk of injury is higher for playful or active pets that may not be aware of their surroundings."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Mug",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "thermal"
+        ],
+        "llm_reason": "While pets can potentially cause accidents by bumping into or knocking over mugs, the overall risk of serious danger is low. Mugs themselves may pose a thermal risk if hot liquids are spilled, but this is generally manageable with care. Therefore, the combination of these two types results in low danger levels."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Newspaper",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "While pets can potentially cause a mess with newspapers, the interaction does not pose significant risks. Physical risks may arise if a pet chews or ingests paper, but this is generally low danger compared to other household hazards."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Ottoman",
+        "danger_level": "low",
+        "risk_type": [
+            "fall",
+            "physical"
+        ],
+        "llm_reason": "While pets may occasionally trip over or bump into ottomans leading to a risk of falling, the overall risk is minimal. Additionally, physical injuries may occur if a pet jumps onto or off the ottoman, but the danger is not significant."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Painting",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "While pets can sometimes knock over paintings leading to potential physical harm or create a tripping hazard, the overall risk is minimal compared to other hazards found in the home."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Pan",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "thermal"
+        ],
+        "llm_reason": "Pets can accidentally knock over pans leading to potential physical injuries, and hot pans can pose a thermal risk if a pet touches them or if the pet is startled by sudden movements around a hot surface."
+    },
+    {
+        "type1": "Pet",
+        "type2": "PaperTowelRoll",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Pets may chew on or play with PaperTowelRolls, which can lead to ingestion of materials or create a choking hazard. Additionally, if the roll is knocked over, it could cause a pet to trip or fall."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Pen",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "While pets can sometimes chew on pens, leading to potential ingestion of non-toxic materials or ink, the overall risk is low as long as the pen is not made of hazardous materials. Additionally, supervision can prevent any physical harm from occurring."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Pencil",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "While pets can occasionally cause physical injury through playful behavior, pencils pose minimal risk. The primary danger with pencils is the potential for choking or injury if pets chew and swallow them, but this risk is generally low compared to other household dangers."
+    },
+    {
+        "type1": "Pet",
+        "type2": "PepperShaker",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "While a pet could potentially interact with a pepper shaker, the risks are minimal. Physical risk might arise if the pepper shaker is knocked over or ingested by the pet, but significant dangers are unlikely."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Pillow",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "Generally, pets and pillows do not present significant danger to each other. However, pets may chew or tear pillows which could pose a physical hazard if stuffing is ingested. Some pillows may contain materials that could be harmful if chewed on or ingested, representing a low-level chemical risk."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Plate",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "Pets may accidentally break plates, leading to physical injury from sharp edges. Additionally, some plates may have chemical coatings that could be harmful if ingested."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Plunger",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "While a plunger can pose a risk if mishandled, such as causing minor injuries, the overall danger to pets is low. Pets may be curious about the plunger but are unlikely to face serious harm from it. Supervision can mitigate any risks."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Poster",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "While a pet may pose a minor risk of physical interaction with a poster (e.g., scratching or chewing), the overall danger is low as posters do not typically present significant safety hazards."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Pot",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "Pets may be tempted to knock over pots, leading to physical injuries or burns if the pot contains hot substances. Additionally, if the pot contains chemicals or toxic plants, there is a potential risk to the pet's health."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Potato",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "Pets may pose a low risk due to physical interactions or possible ingestion of parts of a potato (e.g., raw potato can be toxic to some pets), but the overall danger is minimal as long as basic precautions are taken."
+    },
+    {
+        "type1": "Pet",
+        "type2": "RemoteControl",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "While pets may occasionally interfere with remote controls, leading to potential physical disruption or accidental damage, the overall risk of significant danger from this interaction is minimal."
+    },
+    {
+        "type1": "Pet",
+        "type2": "RoomDecor",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall",
+            "chemical"
+        ],
+        "llm_reason": "Pets can potentially interact with room decor in ways that may lead to physical harm, such as knocking over objects or ingesting small decorative items that could be hazardous. The risk of falling is present if decor affects pet movement or creates obstacles. Additionally, some decor materials or cleaning agents may pose chemical risks if pets come into contact with them."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Safe",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "Pets may interact with certain household items that could pose a risk, such as chewing on cables (electrical risks) or accidentally ingesting harmful substances (chemical risks). However, 'Safe' typically mitigates many of these risks through proper storage and functionality."
+    },
+    {
+        "type1": "Pet",
+        "type2": "SaltShaker",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "Pets may cause unintended spills or damage to salt shakers, leading to a risk of physical injury due to broken glass or sharp edges, as well as potential chemical ingestion if pets consume salt, which can be harmful."
+    },
+    {
+        "type1": "Pet",
+        "type2": "ScrubBrush",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "While pets can pose some physical risks such as tripping over them or being scratched, they generally do not pose significant dangers associated with scrub brushes. Scrub brushes may contain chemicals if used with cleaning agents, but when used properly and kept away from pets, they usually present low overall risk."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Shelf",
+        "danger_level": "medium",
+        "risk_type": [
+            "fall",
+            "physical"
+        ],
+        "llm_reason": "Pets may accidentally knock over shelves while playing or climbing, which could lead to injuries for both the pet and damage to the shelf. Additionally, if shelves are not secured properly, they pose a risk of falling onto pets, leading to potential physical harm."
+    },
+    {
+        "type1": "Pet",
+        "type2": "ShelvingUnit",
+        "danger_level": "medium",
+        "risk_type": [
+            "fall",
+            "physical"
+        ],
+        "llm_reason": "Pets may climb or attempt to jump on shelving units, which can lead to falls or physical injuries both for the pet and the shelving unit if it is unstable or improperly secured."
+    },
+    {
+        "type1": "Pet",
+        "type2": "ShowerCurtain",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "water"
+        ],
+        "llm_reason": "Pets can interact with shower curtains, but the primary risk is minor physical injuries from pulling or entangling with the curtain. There\u2019s also a low risk of water-related incidents if pets jump in the shower area."
+    },
+    {
+        "type1": "Pet",
+        "type2": "ShowerDoor",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall",
+            "water"
+        ],
+        "llm_reason": "Pets can accidentally slip or disturb shower doors, leading to potential injuries. Wet floors from the shower can also create slipping hazards for pets. Although not primarily dangerous, these situations pose moderate risks."
+    },
+    {
+        "type1": "Pet",
+        "type2": "ShowerGlass",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall",
+            "water"
+        ],
+        "llm_reason": "Pets can accidentally slip or jump against shower glass, which poses a risk of breaking the glass and causing cuts or injuries. Additionally, the presence of water increases the risk of slipping for both pets and humans."
+    },
+    {
+        "type1": "Pet",
+        "type2": "ShowerHead",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "water",
+            "thermal"
+        ],
+        "llm_reason": "Pets can be at risk of slipping in a wet area where a showerhead is used, potentially leading to physical injuries. Additionally, if the showerhead is malfunctioning or leaking, it may pose a risk of water damage or encourage pets to play in water, which could lead to thermal injuries from hot water. However, the overall danger is mitigated if proper precautions are taken."
+    },
+    {
+        "type1": "Pet",
+        "type2": "SideTable",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Pets may potentially knock over side tables, which can lead to physical injuries for the pet or damage to the furniture. Additionally, if the side table holds items that could be harmful to pets (like fragile decorations), this raises the risk of injury."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Sink",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "water"
+        ],
+        "llm_reason": "Pets can be at risk of physical injuries from accessing sinks (e.g., slipping, falling in, or getting trapped) and can also be exposed to potential drowning hazards if they jump into or around open sinks filled with water."
+    },
+    {
+        "type1": "Pet",
+        "type2": "SinkBasin",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "water"
+        ],
+        "llm_reason": "Pets may accidentally fall into sink basins, leading to drowning risks or injuries. Additionally, pets might cause water to spill or overflow, creating slippery conditions that could result in falls."
+    },
+    {
+        "type1": "Pet",
+        "type2": "SoapBar",
+        "danger_level": [
+            "medium"
+        ],
+        "risk_type": [
+            "chemical",
+            "physical"
+        ],
+        "llm_reason": "Soap bars can be harmful to pets if ingested, which poses a chemical risk. Additionally, physical risks may arise if pets attempt to play with or chew on soap bars, leading to potential choking hazards."
+    },
+    {
+        "type1": "Pet",
+        "type2": "SoapBottle",
+        "danger_level": "high",
+        "risk_type": [
+            "chemical"
+        ],
+        "llm_reason": "Soap bottles often contain chemicals that can be harmful if ingested by pets, leading to potential poisoning or other health issues."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Sofa",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Pets, particularly small or active ones, may jump onto or off of furniture, posing a risk of falling or injuring themselves or the furniture. Additionally, pets may scratch or damage the upholstery, leading to potential physical hazards."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Spatula",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "While pets can potentially cause physical harm if they are startled or overwhelmed, a spatula is not inherently dangerous. The combination of the two does not pose significant risks compared to other objects or scenarios."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Spoon",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "While pets can pose a physical risk by accidentally knocking over spoons or other objects, the inherent danger of a spoon itself is minimal, primarily involving the risk of minor cuts or scratches, which is considered low."
+    },
+    {
+        "type1": "Pet",
+        "type2": "SprayBottle",
+        "danger_level": "medium",
+        "risk_type": [
+            "chemical",
+            "physical"
+        ],
+        "llm_reason": "Spray bottles may contain chemicals that can be harmful if ingested or inhaled by pets. Furthermore, physical dangers may arise if a pet knocks over the spray bottle, potentially leading to spills or breaking of the bottle."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Statue",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Pets may knock over statues, but the overall risk is minimal as long as statues are placed securely and pets are supervised."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Stool",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "Pet encounters with stool can lead to physical hazards such as slipping, as well as potential chemical risks due to pathogens in animal waste that can affect health."
+    },
+    {
+        "type1": "Pet",
+        "type2": "StoveBurner",
+        "danger_level": "high",
+        "risk_type": [
+            "thermal",
+            "physical"
+        ],
+        "llm_reason": "Pets can accidentally knock over hot pots or pans on a stove burner, leading to severe burns or injuries. Additionally, pets may attempt to jump onto the stove, posing a physical risk to themselves and potentially causing fires."
+    },
+    {
+        "type1": "Pet",
+        "type2": "StoveKnob",
+        "danger_level": "high",
+        "risk_type": [
+            "thermal",
+            "chemical"
+        ],
+        "llm_reason": "Pet animals may accidentally turn on stove knobs, leading to the risk of burns or fires (thermal hazard) and could also potentially come into contact with dangerous substances if cooking is not monitored (chemical hazard)."
+    },
+    {
+        "type1": "Pet",
+        "type2": "TVStand",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Pets can potentially knock over a TV stand, leading to physical injuries either to themselves or a person nearby. While the risk of serious injury is moderate, it is important to ensure that heavy items are secured and that pets are monitored around furniture."
+    },
+    {
+        "type1": "Pet",
+        "type2": "TableTopDecor",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Pets may accidentally knock over tabletop decor, leading to potential injuries to both the pet and individuals nearby. Additionally, if the tabletop decor contains sharp edges or fragile materials, there is a risk of physical harm."
+    },
+    {
+        "type1": "Pet",
+        "type2": "TeddyBear",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "Pets, depending on their size and behavior, can pose some physical risk, especially if they are large or energetic. However, teddy bears are inanimate objects and pose no risk beyond potential tripping hazards associated with clutter."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Television",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall",
+            "electrical"
+        ],
+        "llm_reason": "Pets may interact with televisions by jumping on furniture to access them, which could lead to falls or damage to the television. Additionally, pets can chew on electrical cords, posing a risk of electric shock or fire."
+    },
+    {
+        "type1": "Pet",
+        "type2": "TennisRacket",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "A pet may accidentally knock over a tennis racket while playing, which could result in a minor physical risk, but overall the danger is minimal. There are no significant thermal, fall, chemical, electrical, or water hazards associated with the interaction between a pet and a tennis racket."
+    },
+    {
+        "type1": "Pet",
+        "type2": "TissueBox",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "While pets may interact with a tissue box, the potential for injury is minimal. The primary concern would be if a pet ingests any tissue, which could cause a mild digestive issue, but this is generally low risk."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Toaster",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "thermal",
+            "electrical"
+        ],
+        "llm_reason": "While pets can pose a risk of physical injury by interacting with appliances, toasters can cause burns or fires if misused or if pets knock them over, resulting in a medium overall danger level."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Toilet",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "chemical",
+            "water"
+        ],
+        "llm_reason": "Pets may ingest harmful substances from toilet cleaners or other chemicals present in or around the toilet. Additionally, a pet could slip or fall near the toilet, leading to physical injury. However, the overall risk is not as high as with other household dangers."
+    },
+    {
+        "type1": "Pet",
+        "type2": "ToiletPaper",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "Pets may occasionally chew on or play with toilet paper, which poses a low physical risk (such as choking) but is generally not dangerous. There are no significant risks related to thermal, fall, chemical, electrical, or water hazards in this context."
+    },
+    {
+        "type1": "Pet",
+        "type2": "ToiletPaperHanger",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Pets may accidentally knock over a toilet paper hanger, leading to minor injuries or messes, but the overall risk is low and manageable."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Tomato",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "Pets may have a slight risk of ingesting tomatoes, as certain parts of the plant can be toxic, but generally, the risk is low if the tomatoes are ripe and used properly. Physical interactions can occur, but are typically harmless."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Towel",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "thermal",
+            "water"
+        ],
+        "llm_reason": "Pets can accidentally cause physical harm to themselves or others due to playing with or becoming entangled in towels. Towels, when wet, can create slip hazards, and pets may unintentionally knock over hot liquids or items when excited, posing a thermal risk."
+    },
+    {
+        "type1": "Pet",
+        "type2": "TowelHolder",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Pets may interact with towel holders, potentially causing them to fall if they are tugged or jumped on. While this could pose a risk of injury to both the pet and individuals nearby, the overall risk is manageable and not highly dangerous."
+    },
+    {
+        "type1": "Pet",
+        "type2": "VacuumCleaner",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "electrical"
+        ],
+        "llm_reason": "Pets may be at risk of physical injury from a vacuum cleaner, as they might get caught in moving parts or be startled by the noise. There is also a low risk of electrical hazards if the vacuum cleaner is damaged or improperly used, which could pose a risk to pets."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Vase",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Pets can accidentally knock over vases, leading to breakage and potential injury from sharp shards. Additionally, pets may be curious and could get injured by interacting with fragile objects."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Watch",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "water"
+        ],
+        "llm_reason": "Pets can pose a physical risk to watches, including scratching or damaging them. Additionally, there is a potential risk of water damage if a pet knocks a watch into water or if the watch is not water-resistant and gets wet during play."
+    },
+    {
+        "type1": "Pet",
+        "type2": "WateringCan",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "water"
+        ],
+        "llm_reason": "The interaction between a pet and a watering can is generally low risk. Although a pet could potentially knock over a watering can, leading to water spillage, the physical risk remains minimal. There are no significant chemical, thermal, electrical, or fall hazards involved in this scenario."
+    },
+    {
+        "type1": "Pet",
+        "type2": "Window",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Pets may accidentally fall from open windows or may try to escape through them, which can lead to injuries. However, the overall risk is not as high as it could be with other dangerous objects."
+    },
+    {
+        "type1": "Pet",
+        "type2": "WineBottle",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "Pets may accidentally knock over wine bottles, leading to physical injuries from broken glass. Additionally, if a pet consumes wine or the alcohol from the bottle, it poses a chemical risk to their health."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "AluminumFoil",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "thermal",
+            "chemical",
+            "electrical"
+        ],
+        "llm_reason": "Alarm clocks can pose a low risk of electrical hazards if not properly maintained, but they are generally safe. Aluminum foil is mainly used for food storage and cooking, with no significant inherent dangers unless misused. Therefore, when considering these two objects, the overall danger is low."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "Apple",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "An Alarm Clock poses a low risk as it is generally safe to use and is designed for household purposes. The primary risk could be minor physical hazards, such as tripping over cords, or chemical hazards from battery leakage, if applicable. An Apple, being food, presents low risk unless there are allergies or choking concerns, which are typically rare."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "ArmChair",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "electrical"
+        ],
+        "llm_reason": "An AlarmClock poses minimal danger as it is primarily a stationary object that can potentially cause minor electrical hazards if faulty, and the risk of physical injury is low. An ArmChair generally does not present significant hazards unless it is unstable or improperly placed, which could lead to falls."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "BaseballBat",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "An AlarmClock is generally safe, functioning only to keep time and wake individuals. A BaseballBat, although it can cause injury if used inappropriately, is typically a sports equipment item and not inherently dangerous. Therefore, the overall danger level is low."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "BasketBall",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "An AlarmClock is generally safe with low risk of harm, while a Basketball could cause physical injury if thrown or not handled properly. Overall, the likelihood of serious danger between the two is minimal."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "Bathtub",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "fall",
+            "electrical",
+            "water"
+        ],
+        "llm_reason": "The presence of an alarm clock near a bathtub can pose a medium danger level primarily due to the risk of electrical hazards if the alarm clock were to come in contact with water. Additionally, it may lead to physical risks if someone were to stretch or reach for the clock while in the bathtub, which could result in falls."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "BathtubBasin",
+        "danger_level": "medium",
+        "risk_type": [
+            "fall",
+            "water",
+            "electrical"
+        ],
+        "llm_reason": "Alarm clocks can pose an electrical risk and may lead to accidental falls when placed near bathtubs, especially if cords are involved. Additionally, if dropped in water, the electrical components may cause further danger."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "Bed",
+        "danger_level": "low",
+        "risk_type": [
+            "electrical"
+        ],
+        "llm_reason": "Alarm clocks are typically low-risk objects that can pose a minor electrical hazard if there are faulty wiring or overloaded outlets. Beds, on the other hand, generally do not contribute to significant danger when used as intended. Overall, the interaction between the two objects is minimal, leading to a low danger assessment."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "Blinds",
+        "danger_level": "low",
+        "risk_type": [
+            "electrical"
+        ],
+        "llm_reason": "Both AlarmClocks and Blinds pose minimal danger in a typical home environment. AlarmClocks primarily involve low voltages and are relatively safe when used properly. Blinds do not usually pose any significant hazards unless they have long drawstrings, which can present a strangulation risk for small children. Overall, their associated risks are low and manageable."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "Book",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "thermal",
+            "electrical"
+        ],
+        "llm_reason": "While an alarm clock can pose minor physical risks if dropped or misused, and it can have electrical hazards if malfunctioning, the risks associated with a book are minimal. Therefore, the overall danger level is low."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "Boots",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "Alarm clocks generally pose minimal danger as they are passive electronic devices. The primary risk might be physical injury from a falls if someone trips over a power cord or the clock itself. Boots, on the other hand, are worn for protection and typically do not carry significant risks unless improperly used, such as tripping hazards if they have poor tread or fit. Overall, the interaction between these two objects presents a low danger level."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "Bottle",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "thermal",
+            "electrical"
+        ],
+        "llm_reason": "The Alarm Clock presents a low risk of physical harm as it is typically placed on a stable surface and is not inherently dangerous. However, if it malfunctions, there could be a minor risk of electrical hazards. The Bottle, depending on its contents, may pose a minimal risk if it contains a non-hazardous liquid, but overall both objects present low danger levels."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "Bowl",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "thermal",
+            "fall",
+            "electrical"
+        ],
+        "llm_reason": "An alarm clock can pose a low risk mainly due to potential hazards such as electrical issues or minor physical accidents if knocked over. However, a bowl generally presents minimal risk unless it is made of breakable material, which can lead to physical injuries if broken. The two objects are generally safe when used properly."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "Box",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "thermal",
+            "electrical"
+        ],
+        "llm_reason": "An Alarm Clock generally presents a low level of danger as it is designed for safe use in homes. The risks are minimal, such as potential for burns if it overheats (thermal), minor injury if it falls from a height (physical), and low-level electrical hazards associated with improper use or faulty wiring."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "Bread",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "thermal"
+        ],
+        "llm_reason": "An AlarmClock generally poses a low danger when compared to bread. The main risks associated with an AlarmClock could be physical injuries if it falls, and minor thermal risks if it overheats. Bread, while it can mold and pose a slight risk if consumed after its shelf life, typically does not present significant danger on its own. Therefore, both objects have low danger levels with minimal risk types."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "ButterKnife",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "An AlarmClock poses minimal danger, primarily being a small electronic device that may cause tripping hazards if not placed securely. A ButterKnife is a blunt knife that generally doesn\u2019t pose significant risk but can cause minor cuts if used improperly. The overall risk is low for both objects under normal usage conditions."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "CD",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "electrical"
+        ],
+        "llm_reason": "An AlarmClock poses a low risk primarily because it primarily involves electrical components and does not have significant hazards. A CD also presents low risk as it is not likely to cause physical harm or have chemical hazards. The potential for danger from these objects is minimal under normal use conditions."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "Cabinet",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "An AlarmClock poses minimal risk of physical harm or falls, as it is a small, stationary object meant for bedside use. A Cabinet may have some risk if it is unstable or improperly secured, but overall, both items present low overall danger when used correctly."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "Candle",
+        "danger_level": "medium",
+        "risk_type": [
+            "thermal",
+            "fire"
+        ],
+        "llm_reason": "Candle use poses a risk of fire due to an open flame, especially if left unattended or near flammable materials. An alarm clock generally presents a low risk, primarily electrical, but does not have an inherent fire hazard like candles do. When combined, the risk increases because the candle's flame could pose a danger to items near the alarm clock."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "CellPhone",
+        "danger_level": "low",
+        "risk_type": [
+            "electrical",
+            "thermal"
+        ],
+        "llm_reason": "Both AlarmClocks and CellPhones are generally safe for use when properly maintained. The primary risks involve electrical failure or overheating, which can occur but are infrequent. There is minimal risk of physical injury or fall related to these objects."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "Chair",
+        "danger_level": "low",
+        "risk_type": [
+            "fall",
+            "physical"
+        ],
+        "llm_reason": "An Alarm Clock is typically placed on a stable surface and poses minimal risk. A Chair can present a risk of falling if not used correctly, but the combination of the two objects does not create significant danger."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "Cloth",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "thermal",
+            "electrical"
+        ],
+        "llm_reason": "An Alarm Clock poses minimal danger when used properly. Its main risks involve minor physical hazards from mishandling, potential overheating (thermal risk) if used improperly, and a small risk of electrical hazards if the wiring is faulty. Cloth, on the other hand, presents minimal risks and would primarily pose a physical risk if it obstructs the use of the Alarm Clock, with no significant thermal or electrical risks involved."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "CoffeeMachine",
+        "danger_level": "low",
+        "risk_type": [
+            "electrical",
+            "thermal"
+        ],
+        "llm_reason": "Both objects operate using electricity, which poses a minor electrical risk, especially if used improperly or if there are faulty wires. The Coffee Machine has a higher thermal risk due to hot water and steam, but incidents are rare with proper use. Overall, the combined risks from both appliances are low."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "CoffeeTable",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "thermal",
+            "electrical"
+        ],
+        "llm_reason": "An AlarmClock could pose a low risk primarily due to electrical hazards or slight physical risks if it falls off a surface. CoffeeTables generally do not present significant dangers beyond potential physical injuries from tripping or bumping into them, and the thermal risks are minimal unless they are placed close to heat sources."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "CounterTop",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "electrical",
+            "thermal"
+        ],
+        "llm_reason": "An AlarmClock, if not properly maintained, can pose a risk of electrical shock or fire due to faulty wiring or overheating. A CounterTop doesn't typically pose a direct danger but can be a risk area for falls if items are mistakenly placed or if it becomes cluttered. Therefore, the interaction of these two types can create moderate risk."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "CreditCard",
+        "danger_level": "low",
+        "risk_type": [
+            "electrical"
+        ],
+        "llm_reason": "An Alarm Clock poses minimal danger as it mainly functions using low voltage electricity. However, if damaged or used incorrectly, it could potentially cause electrical hazards. A Credit Card has no inherent dangers but may lead to financial risks if lost or misused."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "Cup",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "thermal",
+            "electrical"
+        ],
+        "llm_reason": "While an Alarm Clock can pose risks such as electrical hazards or mild thermal hazards if overheated, and a Cup can present a risk of physical injuries if broken, the overall interaction between these two objects is typically safe under normal circumstances. The likelihood of severe danger is minimal."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "Curtains",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "electrical"
+        ],
+        "llm_reason": "The AlarmClock can pose a minor electrical hazard if poorly designed or damaged, but generally, it does not directly interact with the Curtains in a hazardous way. The risk of physical entrapment is minimal, and there are no significant thermal or chemical risks involved."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "Desk",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "electrical"
+        ],
+        "llm_reason": "An Alarm Clock poses minimal risk as it is designed to be safe for everyday use. The primary concerns involve electric shock from malfunctioning devices or potential physical hazards if the clock falls. However, when placed properly on a stable desk, the risks are greatly reduced."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "DeskLamp",
+        "danger_level": "low",
+        "risk_type": [
+            "electrical",
+            "thermal"
+        ],
+        "llm_reason": "Both the AlarmClock and DeskLamp are common household items that primarily pose low risks. The main dangers arise from electrical issues, such as short circuits or overheating, but with proper usage and maintenance, these risks are minimal. There is a negligible risk of physical injury or fall associated with these devices unless they are improperly used or placed."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "Desktop",
+        "danger_level": "low",
+        "risk_type": [
+            "thermal",
+            "electrical"
+        ],
+        "llm_reason": "An AlarmClock and a Desktop typically pose a low danger level. While both can have electrical hazards, generally they are designed with safety standards in mind. The potential for thermal issues exists, particularly if devices overheat or are poorly ventilated, but this is a common risk managed with proper usage."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "DiningTable",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "thermal",
+            "electrical"
+        ],
+        "llm_reason": "While both objects can pose some risks, the dangers are generally low. An AlarmClock may pose a minor risk of electrical shock if damaged or misused, and a DiningTable might present minor physical risks such as bumping into it or bruising. Thermal risks are minimal unless hot items are placed on the table without precaution. Overall, the interaction between these two objects under normal circumstances is safe."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "DishSponge",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "chemical"
+        ],
+        "llm_reason": "An Alarm Clock poses low danger primarily from electrical hazards and minimal risk of falling. A Dish Sponge has very low physical risk and can harbor bacteria, leading to chemical contamination if not maintained properly, but does not pose significant danger compared to more hazardous household items."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "DogBed",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "An AlarmClock poses a slight risk of physical injury if it falls from a surface, while a DogBed presents minimal danger as it is designed for pet comfort and does not typically contribute to household hazards."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "Drawer",
+        "danger_level": "medium",
+        "risk_type": [
+            "physical",
+            "electrical"
+        ],
+        "llm_reason": "Alarm clocks may have electrical components that can pose a risk of shock or fire if damaged, while drawers can be a physical hazard if they are overloaded or if their contents fall out, potentially leading to injury."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "Dresser",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "electrical"
+        ],
+        "llm_reason": "An AlarmClock may pose a low level of danger primarily due to its electrical components, but it is generally safe if used properly. A Dresser poses minimal risk unless it is unstable, which could cause it to tip over and lead to physical injury."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "Dumbbell",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "fall"
+        ],
+        "llm_reason": "An alarm clock poses minimal risk as it is generally lightweight and non-toxic, while a dumbbell can cause physical injury if mishandled or dropped, leading to a potential fall hazard. However, both objects are commonly found in households and do not present significant dangers when used as intended."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "Egg",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "thermal"
+        ],
+        "llm_reason": "An alarm clock generally poses minimal risk in terms of falling, thermal burns, or electrical hazards, while an egg has a low risk of physical harm unless it is broken and creates a slip hazard. The two objects do not interact in a way that enhances danger."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "Faucet",
+        "danger_level": "low",
+        "risk_type": [
+            "water",
+            "electrical"
+        ],
+        "llm_reason": "An AlarmClock and a Faucet generally pose low danger when evaluated together. The AlarmClock can potentially pose a minor electrical hazard, especially if it malfunctions, but it is unlikely to cause serious harm. The Faucet can pose a water risk, such as slipping if the floor becomes wet, but it does not have a significant interaction with the AlarmClock to elevate any combined risks. Overall, both items are common household objects that can be managed safely with proper use."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "Floor",
+        "danger_level": "medium",
+        "risk_type": [
+            "fall",
+            "electrical"
+        ],
+        "llm_reason": "An AlarmClock can pose a medium danger as it may lead to falls if placed on elevated surfaces or cause electrical risks if faulty or improperly used. However, in general, it is not considered highly dangerous."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "FloorLamp",
+        "danger_level": "low",
+        "risk_type": [
+            "electrical",
+            "thermal"
+        ],
+        "llm_reason": "Both the AlarmClock and FloorLamp have low inherent danger when used correctly. The primary risks involve electrical hazards if the devices are damaged or improperly used. Thermal risks are also present due to heat generation in the lamp, but generally, they pose a low overall danger."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "Footstool",
+        "danger_level": "low",
+        "risk_type": [
+            "fall",
+            "physical"
+        ],
+        "llm_reason": "Alarm clocks are generally stationary and do not pose significant danger, while footstools can cause falls if not used properly. However, their overall risk is low when used as intended."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "Fork",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "While both an Alarm Clock and a Fork have the potential for physical injury, the Alarm Clock poses minimal risk as it is primarily used for timekeeping and does not have sharp edges or points. In contrast, a Fork can cause cuts or puncture wounds if handled improperly. Therefore, the overall danger between the two objects is considered low."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "Fridge",
+        "danger_level": "low",
+        "risk_type": [
+            "electrical",
+            "thermal"
+        ],
+        "llm_reason": "Both the Alarm Clock and Fridge are generally low risk household items when used properly. The main concerns are limited to electrical issues or overheating, which are uncommon in well-maintained devices."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "GarbageBag",
+        "danger_level": "low",
+        "risk_type": [
+            "physical"
+        ],
+        "llm_reason": "An AlarmClock is mainly an electronic device used for timekeeping, while a GarbageBag is used for waste disposal. The potential danger between these two objects is minimal, with a low risk of physical hazards such as tripping over a misplaced bag or minor injuries from sharp objects accidentally placed in a garbage bag. Overall, they do not present significant hazards in a typical home environment."
+    },
+    {
+        "type1": "AlarmClock",
+        "type2": "GarbageCan",
+        "danger_level": "low",
+        "risk_type": [
+            "physical",
+            "chemical",
+            "electrical"
+        ],
+        "llm_reason": "An AlarmClock presents minimal danger primarily limited to physical risks like tripping, and possibly electrical risks if there are faulty components. A GarbageCan poses low chemical risks if waste is improperly stored and potential physical risks if it tips over but does not present serious danger in typical home settings."
+    }
+]
