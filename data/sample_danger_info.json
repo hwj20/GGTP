@@ -1,0 +1,9 @@
+{
+    "danger_info": {
+        "type1": objectType,
+        "type2":  objectType, 
+        "danger_level": ["high"/ "medium" /"low"],
+        "risk_type":["sharp", "thermal", "fall", "chemical", "electrical", "water"],
+        "llm reason": "Knife is close to a child",
+    }
+}

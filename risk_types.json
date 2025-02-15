@@ -1,0 +1,116 @@
+{
+    "ai2thor_objects": [
+        {
+            "objectType": "Knife",
+            "risk_category": "sharp",
+            "risk_description": "Potential for cutting injuries"
+        },
+        {
+            "objectType": "Fork",
+            "risk_category": "sharp",
+            "risk_description": "Potential for piercing injuries"
+        },
+        {
+            "objectType": "Scissors",
+            "risk_category": "sharp",
+            "risk_description": "Potential for cutting injuries"
+        },
+        {
+            "objectType": "StoveBurner",
+            "risk_category": "thermal",
+            "risk_description": "High heat can cause burns"
+        },
+        {
+            "objectType": "Microwave",
+            "risk_category": "thermal",
+            "risk_description": "High heat can cause burns"
+        },
+        {
+            "objectType": "Toaster",
+            "risk_category": "thermal",
+            "risk_description": "Hot surfaces can cause burns"
+        },
+        {
+            "objectType": "SprayBottle",
+            "risk_category": "chemical",
+            "risk_description": "Potential for chemical exposure"
+        },
+        {
+            "objectType": "Bottle",
+            "risk_category": "chemical",
+            "risk_description": "May contain hazardous liquids"
+        },
+        {
+            "objectType": "Bathtub",
+            "risk_category": "water",
+            "risk_description": "Potential for drowning"
+        },
+        {
+            "objectType": "SinkBasin",
+            "risk_category": "water",
+            "risk_description": "Potential for drowning"
+        },
+        {
+            "objectType": "Stairs",
+            "risk_category": "fall",
+            "risk_description": "Potential fall risk"
+        },
+        {
+            "objectType": "BalconyEdge",
+            "risk_category": "fall",
+            "risk_description": "Potential fall risk"
+        }
+    ],
+    "custom_objects": [
+        {
+            "objectType": "PowerOutlet",
+            "risk_category": "electrical",
+            "risk_description": "Potential for electric shock"
+        },
+        {
+            "objectType": "PowerStrip",
+            "risk_category": "electrical",
+            "risk_description": "Potential for electric shock"
+        },
+        {
+            "objectType": "CleaningBottle",
+            "risk_category": "chemical",
+            "risk_description": "May contain toxic cleaning agents"
+        },
+        {
+            "objectType": "SpaceHeater",
+            "risk_category": "thermal",
+            "risk_description": "High heat surface may cause burns"
+        },
+        {
+            "objectType": "BabyCribEdge",
+            "risk_category": "fall",
+            "risk_description": "Risk of falling from crib edge"
+        },
+        {
+            "objectType": "WaterBucket",
+            "risk_category": "water",
+            "risk_description": "Potential drowning hazard"
+        }
+    ],
+    "human_entities": [
+        {
+            "objectType": "Baby",
+            "risk_category": "human",
+            "priority": 1,
+            "risk_description": "Vulnerable individual requiring highest safety priority"
+        },
+        {
+            "objectType": "Adult",
+            "risk_category": "human",
+            "priority": 2,
+            "risk_description": "Primary household resident with standard safety priority"
+        },
+        {
+            "objectType": "Pet",
+            "risk_category": "animal",
+            "priority": 3,
+            "risk_description": "Non-human companion with lower safety priority"
+        }
+    ]
+}
