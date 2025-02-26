@@ -38,7 +38,7 @@ def get_environment_data(controller):
             'name': obj['name'],
             'type': obj['objectType'],
             'pos': obj['position'],
-            'risk_level': 'high' if obj['objectType'] in ['Knife', 'StoveKnob'] else 'low',
+            # 'risk_level': 'high' if obj['objectType'] in ['Knife', 'StoveKnob'] else 'low',
             'state':'default'
         })
     print(object_info)

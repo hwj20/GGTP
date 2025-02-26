@@ -1,11 +1,11 @@
+import os
 from openai import OpenAI
 
 # 初始化 OpenAI 接口
 api_key = os.getenv("OPENAI_API_KEY")
 
 
-def generate_task_sequence(task_description, environment_objects):
-    # TODO: 去掉 coordinates
+def generate_task_sequence(task_description, action_list, environment_objects):
     
     """
     调用 LLM 根据任务描述和环境信息生成任务序列
@@ -13,7 +13,7 @@ def generate_task_sequence(task_description, environment_objects):
     response_json = '''
     {
     "action": "<action_name>",  // Available: "GoToObject", "PickupObject", "PutObject", "SwitchOn", "SwitchOff"
-    "target": {"name": "<object_name>", "coordinates": [x, y, z]}  // 
+    "object_id": "<object_id>"  // object_id in envirnoment
     }
     '''
     prompt = f"""

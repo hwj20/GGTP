@@ -1,3 +1,4 @@
+from dangerous_types import dangerous_types
 import torch.nn.functional as F
 import collections
 import json
@@ -11,6 +12,8 @@ import random
 import numpy as np
 import matplotlib.pyplot as plt
 
+
+
 # Set random seed for reproducibility
 def set_seed(seed=42):
     random.seed(seed)
@@ -21,6 +24,36 @@ def set_seed(seed=42):
     torch.backends.cudnn.benchmark = False
 
 set_seed(42)
+
+# def ltl_baseline_evaluate(loader):
+#     """ Simulates an LTL-based model that only considers object types, ignoring spatial awareness. """
+#     total_1 = 0  # True positive count
+#     correct_1 = 0  # Correctly classified danger edges
+#     predicted_1 = 0  # Total predicted danger edges
+
+#     with torch.no_grad():
+#         for batch in loader:
+#             batch = batch.to(device)
+            
+#             # LTL-based rule: classify based on "object type" instead of actual risk
+#             ltl_preds = torch.zeros_like(batch.y, device=device)  # Assume all edges are safe
+            
+#             for i, (src, dst) in enumerate(batch.edge_index.T):
+#                 src_type = batch.x[src][-1].item()  # find it in Edge index
+#                 dst_type = batch.x[dst][-1].item()
+                
+#                 if src_type in dangerous_types or dst_type in dangerous_types:
+#                     ltl_preds[i] = 1  # Mark as risky, ignoring actual spatial position
+
+#             total_1 += (batch.y == 1).sum().item()
+#             correct_1 += ((ltl_preds == 1) & (batch.y == 1)).sum().item()
+#             predicted_1 += (ltl_preds == 1).sum().item()
+
+#     recall = correct_1 / total_1 if total_1 > 0 else 0
+#     precision = correct_1 / predicted_1 if predicted_1 > 0 else 0
+
+#     print(f"LTL Baseline -> Recall: {recall:.4f}, Precision: {precision:.4f}")
+#     return recall, precision
 
 # Load dataset
 with open("./data/graph_dataset.json", "r") as f:
@@ -41,6 +74,7 @@ def process_graph(data):
             *node["features"].get("position", [0.0, 0.0, 0.0])
         ]
 
+    # nodes_type = {node['node_id']:node['node_type'] for node in nodes}
     node_feats = torch.tensor([get_features(node) for node in nodes], dtype=torch.float32)
 
     edge_feats, edge_labels, edge_index = [], [], []
@@ -190,95 +224,61 @@ def evaluate_random(loader, threshold=0.1):
     return recall, precision
 
 train()
-def plot_threshold_evaluation():
-    thresholds = np.linspace(0.0, 1.0, 20)
-    model_recalls, model_precisions = [], []
-    random_recalls, random_precisions = [], []
+# def plot_threshold_evaluation():
+#     thresholds = np.linspace(0.0, 1.0, 20)
+#     model_recalls, model_precisions = [], []
+#     random_recalls, random_precisions = [], []
     
-    for threshold in thresholds:
-        recall, precision = evaluate(test_loader, threshold=threshold)
-        model_recalls.append(recall)
-        model_precisions.append(precision)
+#     for threshold in thresholds:
+#         recall, precision = evaluate(test_loader, threshold=threshold)
+#         model_recalls.append(recall)
+#         model_precisions.append(precision)
         
-        random_recall, random_precision = evaluate_random(test_loader, threshold=threshold)  # Evaluate random predictions
-        random_recalls.append(random_recall)
-        random_precisions.append(random_precision)
+#         random_recall, random_precision = evaluate_random(test_loader, threshold=threshold)  # Evaluate random predictions
+#         random_recalls.append(random_recall)
+#         random_precisions.append(random_precision)
     
-    plt.figure(figsize=(10, 6))
-    plt.plot(thresholds, model_recalls, label="Model Recall", linestyle='-', linewidth=2, marker='o')
-    plt.plot(thresholds, model_precisions, label="Model Precision", linestyle='--', linewidth=2, marker='s')
-    plt.plot(thresholds, random_recalls, label="Random Guess Recall", linestyle='-', linewidth=2, marker='o', color='gray', alpha=0.6)
-    plt.plot(thresholds, random_precisions, label="Random Guess Precision", linestyle='--', linewidth=2, marker='s', color='black', alpha=0.6)
+#     plt.figure(figsize=(10, 6))
+#     plt.plot(thresholds, model_recalls, label="Model Recall", linestyle='-', linewidth=2, marker='o')
+#     plt.plot(thresholds, model_precisions, label="Model Precision", linestyle='--', linewidth=2, marker='s')
+#     plt.plot(thresholds, random_recalls, label="Random Guess Recall", linestyle='-', linewidth=2, marker='o', color='gray', alpha=0.6)
+#     plt.plot(thresholds, random_precisions, label="Random Guess Precision", linestyle='--', linewidth=2, marker='s', color='black', alpha=0.6)
 
-    plt.xlabel("Threshold")
-    plt.ylabel("Score")
-    plt.title("Model vs. Random Guess: Recall and Precision")
-    plt.legend()
-    plt.grid(True)
-    plt.show()
+#     plt.xlabel("Threshold")
+#     plt.ylabel("Score")
+#     plt.title("Model vs. Random Guess: Recall and Precision")
+#     plt.legend()
+#     plt.grid(True)
+#     plt.show()
 
-plot_threshold_evaluation()
+# plot_threshold_evaluation()
 
 
-import torch
-import torch.nn.functional as F
-from collections import Counter
-import numpy as np
-import matplotlib.pyplot as plt
 
-def ltl_baseline_evaluate(loader):
-    """
-    Baseline method using only the 'risk_level' feature of edges for classification.
-    Completely ignores spatial factors such as distance.
-    """
-    total_1 = 0  # True count of dangerous edges (label = 1)
-    correct_1 = 0  # Correctly classified dangerous edges
-    predicted_1 = 0  # Total edges predicted as dangerous
+# # Run baseline evaluation on validation and test sets
+# ltl_recall_val, ltl_precision_val = ltl_baseline_evaluate(val_loader)
+# ltl_recall_test, ltl_precision_test = ltl_baseline_evaluate(test_loader)
+
+# # Plot comparison against Graphormer
+# def plot_baseline_comparison():
+#     models = ["Graphormer", "LTL Baseline"]
+#     recall_scores = [evaluate(val_loader, threshold=0.1)[0], ltl_recall_val]
+#     precision_scores = [evaluate(val_loader, threshold=0.1)[1], ltl_precision_val]
     
-    with torch.no_grad():
-        for batch in loader:
-            batch = batch.to(device)
-            
-            # Extract only the risk level feature (ignoring distance)
-            risk_scores = batch.edge_attr[:, 1]  # Assumes risk level is stored as second feature
-            
-            # Use a simple threshold on risk_level for classification; only notice high risk
-            preds = (risk_scores > 0.5*2).long()  # Fixed threshold for danger classification
-            
-            total_1 += (batch.y == 1).sum().item()
-            correct_1 += ((preds == 1) & (batch.y == 1)).sum().item()
-            predicted_1 += (preds == 1).sum().item()
+#     x = np.arange(len(models))
+#     width = 0.3
     
-    recall = correct_1 / total_1 if total_1 > 0 else 0
-    precision = correct_1 / predicted_1 if predicted_1 > 0 else 0
+#     plt.figure(figsize=(8, 5))
+#     plt.bar(x - width/2, recall_scores, width, label="Recall")
+#     plt.bar(x + width/2, precision_scores, width, label="Precision")
     
-    print(f"LTL Baseline -> Recall: {recall:.4f}, Precision: {precision:.4f}")
-    return recall, precision
+#     plt.xlabel("Models")
+#     plt.ylabel("Score")
+#     plt.title("Graphormer vs. LTL Baseline (Validation Set)")
+#     plt.xticks(x, models)
+#     plt.legend()
+#     plt.grid(axis='y', linestyle='--', alpha=0.7)
+#     plt.show()
 
-# Run baseline evaluation on validation and test sets
-ltl_recall_val, ltl_precision_val = ltl_baseline_evaluate(val_loader)
-ltl_recall_test, ltl_precision_test = ltl_baseline_evaluate(test_loader)
-
-# Plot comparison against Graphormer
-def plot_baseline_comparison():
-    models = ["Graphormer", "LTL Baseline"]
-    recall_scores = [evaluate(val_loader, threshold=0.1)[0], ltl_recall_val]
-    precision_scores = [evaluate(val_loader, threshold=0.1)[1], ltl_precision_val]
-    
-    x = np.arange(len(models))
-    width = 0.3
-    
-    plt.figure(figsize=(8, 5))
-    plt.bar(x - width/2, recall_scores, width, label="Recall")
-    plt.bar(x + width/2, precision_scores, width, label="Precision")
-    
-    plt.xlabel("Models")
-    plt.ylabel("Score")
-    plt.title("Graphormer vs. LTL Baseline (Validation Set)")
-    plt.xticks(x, models)
-    plt.legend()
-    plt.grid(axis='y', linestyle='--', alpha=0.7)
-    plt.show()
-
-plot_baseline_comparison()
+# plot_baseline_comparison()
 
