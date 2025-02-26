@@ -1,0 +1,11 @@
+{
+    "id":id,
+    "node_feat":{
+        "name":name,
+        "type":type,  // object, human, pets
+        "status":
+        {温度，尺寸，化学品，能量：比如电池，插座，或者运行的搅拌器！任何伤害都是来自于有能量的物品} \\ if object
+        {年龄这些基本信息，状态：是否生病受伤之类，是否在活动（如果可以，我们以后还能做个预测它是否活动的模型）} \\ if human or pets 
+    } 
+    attention_bias: int
+}
