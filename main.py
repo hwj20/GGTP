@@ -2,7 +2,7 @@ from graph import *
 from task_agent import*
 from safe_gat import *
 from execute_agent import *
-from graphormer import Graphormer  # 替换 GAT 为 Graphormer
+from model.graphormer import Graphormer  # 替换 GAT 为 Graphormer
 from safe_gat import SafeGAT
 
 kitchen_graph = build_kitchen_graph()
