@@ -1,3 +1,4 @@
+import os
 from dangerous_types import dangerous_types
 import torch.nn.functional as F
 import collections
@@ -12,7 +13,7 @@ import random
 import numpy as np
 import matplotlib.pyplot as plt
 
-
+MODEL_SAVE_PATH = "./graphormer_model.pth"
 
 # Set random seed for reproducibility
 def set_seed(seed=42):
@@ -161,12 +162,20 @@ model = Graphormer(in_feats=5, hidden_dim=64, num_classes=2, num_heads=4, edge_f
 optimizer = optim.AdamW(model.parameters(), lr=0.001, weight_decay=1e-5)
 criterion = FocalLoss(alpha=0.5, gamma=1.0)
 
+def load_model():
+    if os.path.exists(MODEL_SAVE_PATH):
+        model.load_state_dict(torch.load(MODEL_SAVE_PATH))
+        model.to(device)
+        print("Loaded trained model from disk!")
+    else:
+        print("No saved model found! Train a new one first.")
+
 # Train function
 def train():
     recall_list = []
     precision_list = []
     epochs = []
-    
+    best_recall = 0 
     for epoch in range(1, 600):
         model.train()
         total_loss = 0
@@ -184,6 +193,11 @@ def train():
             precision_list.append(precision)
             epochs.append(epoch)
             print(f"Epoch {epoch}: Loss = {total_loss / len(train_loader):.4f}")
+            # Save model if recall improves
+            if recall > best_recall:
+                best_recall = recall
+                torch.save(model.state_dict(), MODEL_SAVE_PATH)
+                print(f"Model saved at epoch {epoch} with recall {best_recall:.4f}!")
 
 # Evaluation function
 def evaluate(loader, threshold=0.1):
@@ -223,35 +237,36 @@ def evaluate_random(loader, threshold=0.1):
     
     return recall, precision
 
-train()
-# def plot_threshold_evaluation():
-#     thresholds = np.linspace(0.0, 1.0, 20)
-#     model_recalls, model_precisions = [], []
-#     random_recalls, random_precisions = [], []
+# train()
+load_model()
+def plot_threshold_evaluation():
+    thresholds = np.linspace(0.0, 1.0, 20)
+    model_recalls, model_precisions = [], []
+    random_recalls, random_precisions = [], []
     
-#     for threshold in thresholds:
-#         recall, precision = evaluate(test_loader, threshold=threshold)
-#         model_recalls.append(recall)
-#         model_precisions.append(precision)
+    for threshold in thresholds:
+        recall, precision = evaluate(test_loader, threshold=threshold)
+        model_recalls.append(recall)
+        model_precisions.append(precision)
         
-#         random_recall, random_precision = evaluate_random(test_loader, threshold=threshold)  # Evaluate random predictions
-#         random_recalls.append(random_recall)
-#         random_precisions.append(random_precision)
+        random_recall, random_precision = evaluate_random(test_loader, threshold=threshold)  # Evaluate random predictions
+        random_recalls.append(random_recall)
+        random_precisions.append(random_precision)
     
-#     plt.figure(figsize=(10, 6))
-#     plt.plot(thresholds, model_recalls, label="Model Recall", linestyle='-', linewidth=2, marker='o')
-#     plt.plot(thresholds, model_precisions, label="Model Precision", linestyle='--', linewidth=2, marker='s')
-#     plt.plot(thresholds, random_recalls, label="Random Guess Recall", linestyle='-', linewidth=2, marker='o', color='gray', alpha=0.6)
-#     plt.plot(thresholds, random_precisions, label="Random Guess Precision", linestyle='--', linewidth=2, marker='s', color='black', alpha=0.6)
+    plt.figure(figsize=(10, 6))
+    plt.plot(thresholds, model_recalls, label="Model Recall", linestyle='-', linewidth=2, marker='o')
+    plt.plot(thresholds, model_precisions, label="Model Precision", linestyle='--', linewidth=2, marker='s')
+    plt.plot(thresholds, random_recalls, label="Random Guess Recall", linestyle='-', linewidth=2, marker='o', color='gray', alpha=0.6)
+    plt.plot(thresholds, random_precisions, label="Random Guess Precision", linestyle='--', linewidth=2, marker='s', color='black', alpha=0.6)
 
-#     plt.xlabel("Threshold")
-#     plt.ylabel("Score")
-#     plt.title("Model vs. Random Guess: Recall and Precision")
-#     plt.legend()
-#     plt.grid(True)
-#     plt.show()
+    plt.xlabel("Threshold")
+    plt.ylabel("Score")
+    plt.title("Model vs. Random Guess: Recall and Precision")
+    plt.legend()
+    plt.grid(True)
+    plt.show()
 
-# plot_threshold_evaluation()
+plot_threshold_evaluation()
 
 
 

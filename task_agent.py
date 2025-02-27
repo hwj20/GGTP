@@ -5,7 +5,7 @@ from openai import OpenAI
 api_key = os.getenv("OPENAI_API_KEY")
 
 
-def generate_task_sequence(task_description, action_list, environment_objects):
+def generate_task_sequence(task_description, action_list, environment_objects, safety_notice):
     
     """
     调用 LLM 根据任务描述和环境信息生成任务序列
@@ -21,6 +21,7 @@ def generate_task_sequence(task_description, action_list, environment_objects):
     }
     '''
     prompt = f"""
+    Current Safety Situation: {safety_notice}
     Task: {task_description}
     Environment: {environment_objects}
 

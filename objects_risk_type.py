@@ -44,4 +44,4 @@ risk_objects = {
 with open("risk_types.json", "w") as f:
     json.dump(risk_objects, f, indent=4)
 
-print("✅ 风险类型映射文件 `risk_types.json` 生成完成！")
+print("风险类型映射文件 `risk_types.json` 生成完成！")
