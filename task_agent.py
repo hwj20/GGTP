@@ -15,6 +15,10 @@ def generate_task_sequence(task_description, action_list, environment_objects):
     "action": "<action_name>",  // Available: "GoToObject", "PickupObject", "PutObject", "SwitchOn", "SwitchOff"
     "object_id": "<object_id>"  // object_id in envirnoment
     }
+    or
+    {
+    "action": "Done"
+    }
     '''
     prompt = f"""
     Task: {task_description}

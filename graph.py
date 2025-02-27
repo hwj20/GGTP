@@ -41,6 +41,6 @@ def get_environment_data(controller):
             # 'risk_level': 'high' if obj['objectType'] in ['Knife', 'StoveKnob'] else 'low',
             'state':'default'
         })
-    print(object_info)
-    return object_info
+    # print(object_info)
+    return object_info, [obj['name'] for obj in object_info]
 

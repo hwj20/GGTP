@@ -19,7 +19,6 @@ from task_agent import generate_task_sequence,parse_task_sequence
 from graph import *
 from control_policy import *
 
-__file__ = 'testing'
 floor_no = 1
 c = Controller(height=1000, width=1000)
 c.reset(f"FloorPlan{floor_no}")
@@ -108,17 +107,17 @@ def build_environment_graph(objects):
 
 def main():
     # 1. **获取物体信息**
-    env_objects = get_environment_data(controller=c)
+    env_objects, obj_lists = get_environment_data(controller=c)
+    print(obj_lists)
+    # input()
 
     # 2. **构建环境图**
     nodes,edges = build_environment_graph(env_objects)
-    print(nodes,edges)
 
     # 3. **生成任务序列（使用 Graphormer 安全感知）**
-    task_description = "cut apples"
-    task_sequence_json = generate_task_sequence(task_description,robot_activities, env_objects)
+    task_description = "goto refrigerator"
+    task_sequence_json = generate_task_sequence(task_description,robot_activities, obj_lists)
     print(f"Generated Task Sequence:\n{task_sequence_json}")
-    input()
     global action_queue
     action_queue =  parse_task_sequence(task_sequence_json)
     print(action_queue)
