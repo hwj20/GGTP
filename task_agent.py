@@ -3,6 +3,119 @@ from openai import OpenAI
 
 # 初始化 OpenAI 接口
 api_key = os.getenv("OPENAI_API_KEY")
+def generate_task_sequence_safety_prompt_llm(task_description, action_list, environment_objects):
+    
+    """
+    调用 LLM 根据任务描述和环境信息生成任务序列
+    """ 
+    response_json = '''
+    {
+    "action": "<action_name>",  // Available: "GoToObject", "PickupObject", "PutObject", "SwitchOn", "SwitchOff"
+    "object_id": "<object_id>"  // object_id in envirnoment
+    }
+    or
+    {
+    "action": "Done"    // it must be put at the end of a sequence
+    }
+    or
+    {
+    "action": "HandleSafetyIssue"
+    "object_id": "<object_id>"
+    }
+    '''
+    prompt = f"""
+    Task: {task_description}
+    Environment: {environment_objects}
+    If a safety issue is detected, first move to the location of the issue and perform 'HandleSafetyIssue' on the affected entity.
+
+    Generate a step-by-step task sequence in JSON format. Each step should include:
+    1. The action to perform. 
+    2. The target object for the action, represented as an object with name and coordinates.
+
+    Response json format:{response_json}
+
+    PLEASE respond only with the JSON string without any markdown characters or additional descriptions.
+    """
+
+    system_prompt = "You are a smart robot assistant. Your job is to generate a task sequence for the given task and environment."
+
+
+    try:
+        client = OpenAI(
+            api_key=api_key,
+        )
+        completion = client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {
+                    "role": "user",
+                    "content": prompt
+                }
+            ]
+        )
+
+        generated_answer = str(completion.choices[0].message.content)
+        return generated_answer
+    except Exception as e:
+        return f"API调用错误: {e}"
+
+def generate_task_sequence_llm_only(task_description, action_list, environment_objects):
+    
+    """
+    调用 LLM 根据任务描述和环境信息生成任务序列
+    """ 
+    response_json = '''
+    {
+    "action": "<action_name>",  // Available: "GoToObject", "PickupObject", "PutObject", "SwitchOn", "SwitchOff"
+    "object_id": "<object_id>"  // object_id in envirnoment
+    }
+    or
+    {
+    "action": "Done"    // it must be put at the end of a sequence
+    }
+    or
+    {
+    "action": "HandleSafetyIssue"
+    "object_id": "<object_id>"
+    }
+    '''
+    prompt = f"""
+    Task: {task_description}
+    Environment: {environment_objects}
+
+    Generate a step-by-step task sequence in JSON format. Each step should include:
+    1. The action to perform. 
+    2. The target object for the action, represented as an object with name and coordinates.
+
+    Response json format:{response_json}
+
+    PLEASE respond only with the JSON string without any markdown characters or additional descriptions.
+    """
+
+    system_prompt = "You are a smart robot assistant. Your job is to generate a task sequence for the given task and environment."
+
+
+    try:
+        client = OpenAI(
+            api_key=api_key,
+        )
+        completion = client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {
+                    "role": "user",
+                    "content": prompt
+                }
+            ]
+        )
+
+        generated_answer = str(completion.choices[0].message.content)
+        return generated_answer
+    except Exception as e:
+        return f"API调用错误: {e}"
+
 
 
 def generate_task_sequence(task_description, action_list, environment_objects, safety_notice):

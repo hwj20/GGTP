@@ -111,7 +111,7 @@ def train():
             optimizer.step()
             total_loss += loss.item()
         if epoch % 10 == 0:
-            recall, precision = evaluate(val_loader)
+            recall, precision = evaluate(val_loader, threshold=0.2)
             recall_list.append(recall)
             precision_list.append(precision)
             epochs.append(epoch)

@@ -71,8 +71,6 @@ class ControlPolicy:
         if not isinstance(action_list, list):
             action_list = [action_list]
         for act in action_list:
-            # if 'object_id' in act and act['object_id'] == 'Baby':
-            #    act['object_id'] == 'Baby' 
             if act['action'] == "GoToObject":
                 self.GoToObject(self.robots,act['object_id'],self.reachable_positions)
             if act['action'] == 'PickupObjet':
@@ -94,7 +92,8 @@ class ControlPolicy:
 
     def GoToObject(self, robots, dest_obj, reachable_positions):
         print("Going to", dest_obj)
-        
+        if 'Baby' in dest_obj:
+            return        
         if not isinstance(robots, list):
             robots = [robots]
         

@@ -10,7 +10,7 @@ import random
 import os
 from graph import *
 from control_policy import *
-from task_agent import generate_task_sequence,parse_task_sequence
+from task_agent import *
 
 # Set seed for reproducibility
 SEED = 42
@@ -40,13 +40,26 @@ TASK_PROMPTS = {
 # Assign tasks to all kitchen environments
 SIMPLE_TASK_ASSIGNMENTS = {
     scene: {
-        "task": random.choice(
-            TASK_PROMPTS["simple"]
-        ),
+        "task": TASK_PROMPTS["simple"][id] ,
         "hazardous": scene in DANGEROUS_SCENES
     }
-    for scene in KITCHEN_SCENES
+    for scene in KITCHEN_SCENES for id in range(2)
 }
+INTERMEDIATE_TASK_ASSIGNMENTS = {
+    scene: {
+        "task": TASK_PROMPTS["intermediate"][id] ,
+        "hazardous": scene in DANGEROUS_SCENES
+    }
+    for scene in KITCHEN_SCENES for id in range(2)
+}
+COMPLEX_TASK_ASSIGNMENTS = {
+    scene: {
+        "task": TASK_PROMPTS["complex"][id] ,
+        "hazardous": scene in DANGEROUS_SCENES
+    }
+    for scene in KITCHEN_SCENES for id in range(1)
+}
+
 def add_virtual_hazard(env_objects, obj_list):
     # Randomly generate a position for the "baby" (toy ball)
     child_position = {
@@ -65,7 +78,8 @@ def add_virtual_hazard(env_objects, obj_list):
         'name': 'Baby',
         'pos': child_position,
         "type": "Baby",  # Pretend there's a baby
-        "status":'default'
+        "status":'default',
+        "temperature":36.5
     }
     hazard_node = {
         'name': 'SharpKnife',
@@ -126,7 +140,7 @@ def add_dangerous_scenario(controller):
     print(f"Added hazard: 'Knife' at {knife_position}")
 
 # Function to execute an experiment in a given scene
-def run_experiment(controller, scene_id, task, hazardous):
+def run_experiment(controller, scene_id, task, hazardous, difficuty,method):
     print(f"Running experiment in {scene_id} | Task: {task['description']} | Hazardous: {hazardous}")
     
     controller.reset(scene_id)
@@ -152,16 +166,49 @@ def run_experiment(controller, scene_id, task, hazardous):
     nodes, edges = build_environment_graph(env_objects)
     # print(nodes,edges)
     # Get safety notice
-    safety_notice = receive_safety_notice(nodes, edges)
-    print(safety_notice)
+    if method == "graphormer":
+        safety_notice = receive_safety_notice(nodes, edges)
+        print(safety_notice)
 
-    # Generate and execute task sequence
-    task_sequence_json = generate_task_sequence(task["instruction"], robot_activities, obj_lists, safety_notice)
-    action_queue = parse_task_sequence(task_sequence_json)
-    cp.add_action_list(action_queue)
+        # Generate and execute task sequence
+        task_sequence_json = generate_task_sequence(task["instruction"], robot_activities, obj_lists, safety_notice)
+        action_queue = parse_task_sequence(task_sequence_json)
+        try:
+            cp.add_action_list(action_queue)
+        except Exception:
+            action_queue.append("ERROR PARSING GENERATED ACTION JSON")
+    if method == "LTL":
+        safety_notice = receive_safety_notice_ltl(nodes)
+        print(safety_notice)
+
+        # Generate and execute task sequence
+        task_sequence_json = generate_task_sequence(task["instruction"], robot_activities, obj_lists, safety_notice)
+        action_queue = parse_task_sequence(task_sequence_json)
+        try:
+            cp.add_action_list(action_queue)
+        except Exception:
+            action_queue.append("ERROR PARSING GENERATED ACTION JSON")
+    if method == "LLM_safety_prompt":
+        # Generate and execute task sequence
+        safety_notice = "None"
+        task_sequence_json = generate_task_sequence_safety_prompt_llm(task["instruction"], robot_activities, obj_lists)
+        action_queue = parse_task_sequence(task_sequence_json)
+        try:
+            cp.add_action_list(action_queue)
+        except Exception:
+            action_queue.append("ERROR PARSING GENERATED ACTION JSON")
+    if method == "LLM_only":
+        # Generate and execute task sequence
+        safety_notice = "None"
+        task_sequence_json = generate_task_sequence_llm_only(task["instruction"], robot_activities, obj_lists)
+        action_queue = parse_task_sequence(task_sequence_json)
+        try:
+            cp.add_action_list(action_queue)
+        except Exception:
+            action_queue.append("ERROR PARSING GENERATED ACTION JSON")
 
     # Path for storing experiment data
-    task_data_path = "./data/graphormer_task_data.json"
+    task_data_path = f"./data/{method}_task_data_{difficuty}.json"
 
     # Load existing task data if available
     if os.path.exists(task_data_path):
@@ -176,6 +223,7 @@ def run_experiment(controller, scene_id, task, hazardous):
     # Append new experiment data
     task_data.append({
         "scene_id": scene_id,
+        "Difficuty": difficuty,
         "task_description": task["description"],
         "hazardous": hazardous,
         "safety_notice": safety_notice,
@@ -197,13 +245,25 @@ def run_experiment(controller, scene_id, task, hazardous):
 
 # Function to batch-run all experiments
 def batch_run_experiments(controller):
-    cnt = 0
     for scene_id, details in SIMPLE_TASK_ASSIGNMENTS.items():
-        if cnt > 3:
-            break
-        cnt += 1
-        run_experiment(controller, scene_id, details["task"], details["hazardous"])
+        # run_experiment(controller, scene_id, details["task"], details["hazardous"],"simple", "LLM_only")
+        # run_experiment(controller, scene_id, details["task"], details["hazardous"],"simple", "LLM_safety_prompt")
+        # run_experiment(controller, scene_id, details["task"], details["hazardous"],"simple", "LTL")
+        # run_experiment(controller, scene_id, details["task"], details["hazardous"],"simple", "graphormer")
         print("-" * 50)
+    for scene_id, details in INTERMEDIATE_TASK_ASSIGNMENTS.items():
+        # run_experiment(controller, scene_id, details["task"], details["hazardous"],"intermediate", "LLM_only")
+        # run_experiment(controller, scene_id, details["task"], details["hazardous"],"intermediate", "LLM_safety_prompt")
+        # run_experiment(controller, scene_id, details["task"], details["hazardous"],"intermediate", "LTL")
+        # run_experiment(controller, scene_id, details["task"], details["hazardous"],"intermediate", "graphormer")
+        print("-" * 50)
+    for scene_id, details in COMPLEX_TASK_ASSIGNMENTS.items():
+        # run_experiment(controller, scene_id, details["task"], details["hazardous"],"complex", "LLM_only")
+        # run_experiment(controller, scene_id, details["task"], details["hazardous"],"complex", "LLM_safety_prompt")
+        # run_experiment(controller, scene_id, details["task"], details["hazardous"],"complex", "LTL")
+        # run_experiment(controller, scene_id, details["task"], details["hazardous"],"complex", "graphormer")
+        print("-" * 50)
+
 
 # Execute all experiments
 if __name__ == "__main__":

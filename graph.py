@@ -43,8 +43,8 @@ def process_graph(data, get_label =True):
     edge_feats, edge_labels, edge_index = [], [], []
     for edge in edges:
         u, v = edge["node1_id"], edge["node2_id"]
-        edge_index.append([u, v])
         edge_index.append([v, u])  # Convert to an undirected graph
+        edge_index.append([u, v])
         v_map = {'None':0, 'high':1.0, 'medium':0.5, 'low':0.25}
         edge_feats.append([edge["distance"], 2*v_map[edge['risk_level']]])
         edge_feats.append([edge["distance"], 2*v_map[edge['risk_level']]])
@@ -137,6 +137,7 @@ def build_environment_graph(objects):
     # Add nodes
     for idx, obj in enumerate(objects):
         nodes.append({
+            "name":obj['name'],
             "node_id": idx,
             "node_type": obj["type"],
             "features": {
@@ -166,7 +167,7 @@ def build_environment_graph(objects):
 
                     risk_level = risk_info["danger_level"]
                     risk_type = risk_info["risk_type"]
-                    attention_bias = 1 / dist if dist > 0 else 1.0  # Distance-based risk weight
+                    attention_bias = max(1 / dist if dist > 0 else 1.0,3)  # Distance-based risk weight
 
                 edges.append({
                     "edge_id": len(edges),
@@ -208,18 +209,27 @@ def receive_safety_notice(nodes, edges):
     # Model inference
     edge_preds = model(graph_data.x, graph_data.edge_index, graph_data.edge_attr)
     probs = torch.softmax(edge_preds, dim=1)[:, 1]  # Probability of being hazardous
-    hazard_edges = (probs > 0.1).nonzero(as_tuple=True)[0]  # Identify hazardous edges
+    hazard_edges = (probs > 0.21).nonzero(as_tuple=True)[0]  # Identify hazardous edges
 
     if len(hazard_edges) == 0:
         return "No hazardous situations detected."
 
     # Convert indices to object names
-    id_to_name = {node["node_id"]: node["node_type"] for node in nodes}  # Map node IDs to object names
+    id_to_name = {node["node_id"]: node["name"] for node in nodes}  # Map node IDs to object names
     
     hazard_descriptions = []
+    added = set()
     for edge_idx in hazard_edges:
         u, v = graph_data.edge_index[:, edge_idx].cpu().numpy()
         obj1, obj2 = id_to_name.get(u, f"Object_{u}"), id_to_name.get(v, f"Object_{v}")
+        if (obj2, obj1) in added or (obj1,obj2) in added:
+            continue
         hazard_descriptions.append(f"Dangerous edge detected: {obj1} → {obj2}")
+        added.add((obj1,obj2))
 
     return "\n".join(hazard_descriptions)
+
+def receive_safety_notice_ltl(scene_objects ):
+    if "Knife" in scene_objects and "Baby" in scene_objects:
+        return "DANGER: Baby too close to knife!"
+    return "Safe"
