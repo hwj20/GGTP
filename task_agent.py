@@ -17,13 +17,19 @@ def generate_task_sequence(task_description, action_list, environment_objects, s
     }
     or
     {
-    "action": "Done"
+    "action": "Done"    // it must be put at the end of a sequence
+    }
+    or
+    {
+    "action": "HandleSafetyIssue"
+    "object_id": "<object_id>"
     }
     '''
     prompt = f"""
-    Current Safety Situation: {safety_notice}
     Task: {task_description}
     Environment: {environment_objects}
+    Current Safety Situation: {safety_notice}.
+    If a safety issue is detected, first move to the location of the issue and perform 'HandleSafetyIssue' on the affected entity.
 
     Generate a step-by-step task sequence in JSON format. Each step should include:
     1. The action to perform. 

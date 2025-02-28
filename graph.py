@@ -8,22 +8,22 @@ import torch
 from model.graphormer import *
 
 
-def get_environment_data(controller):
+def get_environment_data(controller, get_value = True):
     event = controller.step(action="Pass")
     object_info = []
     for obj in event.metadata['objects']:
         object_info.append({
-            'name': obj['name'],
-            'type': obj['objectType'],
-            'pos': obj['position'],
-            # 'risk_level': 'high' if obj['objectType'] in ['Knife', 'StoveKnob'] else 'low',
+            # Fake Baby
+            'name': obj['name'], # if obj['objectId'] != 'Baby' else 'Baby',
+            'type': obj['objectType'], #if obj['objectId'] != 'Baby' else 'Baby',
+            'pos': obj['position'] if get_value else obj['position'].values(),
             'state':'default'
         })
     # print(object_info)
     return object_info, [obj['name'] for obj in object_info]
 
 # Process AI2-THOR scene data into GNN-compatible format
-def process_graph(data):
+def process_graph(data, get_label =True):
     nodes = data["nodes"]
     edges = data["edges"]
 
@@ -48,14 +48,18 @@ def process_graph(data):
         v_map = {'None':0, 'high':1.0, 'medium':0.5, 'low':0.25}
         edge_feats.append([edge["distance"], 2*v_map[edge['risk_level']]])
         edge_feats.append([edge["distance"], 2*v_map[edge['risk_level']]])
-        edge_labels.append(edge["edge_type"])
-        edge_labels.append(edge["edge_type"])
+        if get_label:
+            edge_labels.append(edge["edge_type"])
+            edge_labels.append(edge["edge_type"])
 
     edge_feats = torch.tensor(edge_feats, dtype=torch.float32)
     edge_labels = torch.tensor(edge_labels, dtype=torch.long)
     edge_index = torch.tensor(edge_index, dtype=torch.long).T
 
-    return Data(x=node_feats, edge_index=edge_index, edge_attr=edge_feats, y=edge_labels)
+    if get_label:
+        return Data(x=node_feats, edge_index=edge_index, edge_attr=edge_feats, y=edge_labels)
+    else:
+        return Data(x=node_feats, edge_index=edge_index, edge_attr=edge_feats)
 
 # Oversample positive samples in the dataset
 class OversampleGraphDataset(Dataset):
@@ -129,6 +133,7 @@ def build_environment_graph(objects):
     nodes = []
     edges = []
 
+
     # Add nodes
     for idx, obj in enumerate(objects):
         nodes.append({
@@ -137,7 +142,7 @@ def build_environment_graph(objects):
             "features": {
                 "temperature": obj.get("temperature", 20),
                 "energy_source": obj.get("energy_source", "none"),
-                "position": obj["pos"]
+                "position": obj["pos"].values()
             }
         })
 
@@ -151,9 +156,11 @@ def build_environment_graph(objects):
                 risk_level = "None"
                 risk_type = []
                 attention_bias = 0
-
+                # if obj1["type"] == 'Baby' or obj2["type"] == 'Baby':
+                #     print('oop')
                 # Check if the object pair exists in danger_map
                 if obj1["type"] in danger_map and obj2["type"] in danger_map[obj1["type"]]:
+                    # print(obj1,obj2)
                     risk_idx = danger_map[obj1["type"]][obj2["type"]]
                     risk_info = dangers[risk_idx]
 
@@ -186,14 +193,14 @@ def receive_safety_notice(nodes, edges):
     Generate a natural language description for detected hazardous edges.
     """
     
-    model_path = "./models/graphormer_trained.pth"
+    model_path = "./model/graphormer_model.pth"
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = Graphormer(in_feats=5, hidden_dim=64, num_classes=2, num_heads=4, edge_feat=2).to(device)
     model.load_state_dict(torch.load(model_path, map_location=device))
     model.eval()
 
     # Process the graph data
-    graph_data = process_graph({"nodes": nodes, "edges": edges})
+    graph_data = process_graph({"nodes": nodes, "edges": edges}, False)
     
     # Move data to the appropriate device
     graph_data = graph_data.to(device)
@@ -201,7 +208,7 @@ def receive_safety_notice(nodes, edges):
     # Model inference
     edge_preds = model(graph_data.x, graph_data.edge_index, graph_data.edge_attr)
     probs = torch.softmax(edge_preds, dim=1)[:, 1]  # Probability of being hazardous
-    hazard_edges = (probs > 0.3).nonzero(as_tuple=True)[0]  # Identify hazardous edges
+    hazard_edges = (probs > 0.1).nonzero(as_tuple=True)[0]  # Identify hazardous edges
 
     if len(hazard_edges) == 0:
         return "No hazardous situations detected."

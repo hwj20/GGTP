@@ -29,12 +29,21 @@ def closest_node(node, nodes, no_robot, clost_node_location):
     return crps
 
 class ControlPolicy:
-    def __init__(self,controller):
+    def __init__(self,controller,tag):
         self.c = controller
         self.action_queue = []
         self.task_over = False
         self.robots = []
         self.robot = None # for single robot system
+        self.handle_safty_issue_targets = []
+        self.tag = tag+"_"
+        # top_view_camera
+        # controller.step(
+        #     action="AddThirdPartyCamera",
+        #     position=dict(x=0, y=2.5, z=0),  
+        #     rotation=dict(x=90, y=0, z=0),
+        #     fieldOfView = 100
+        # )
 
     def init_robots(self, robots):
         self.robots = robots
@@ -61,8 +70,9 @@ class ControlPolicy:
     def add_action_list(self,action_list):
         if not isinstance(action_list, list):
             action_list = [action_list]
-
         for act in action_list:
+            # if 'object_id' in act and act['object_id'] == 'Baby':
+            #    act['object_id'] == 'Baby' 
             if act['action'] == "GoToObject":
                 self.GoToObject(self.robots,act['object_id'],self.reachable_positions)
             if act['action'] == 'PickupObjet':
@@ -73,10 +83,15 @@ class ControlPolicy:
                 self.SwitchOn(self.robot,act['object_id'])
             if act['action'] == 'SwitchOff':
                 self.SwitchOff(self.robot,act['object_id'])
+            if act['action'] == 'HandleSafetyIssue':
+                self.HandleSafetyIssue(self.robot,act['object_id'])
             if act['action'] == "Done":
                 self.action_queue.append({'action':'Done'})
         print(self.action_queue)
-        
+
+    def HandleSafetyIssue(self,robot,target_name):
+        self.action_queue.append({'action':'HandleSafetyIssue', 'target':target_name, 'agent_id':robot})
+
     def GoToObject(self, robots, dest_obj, reachable_positions):
         print("Going to", dest_obj)
         
@@ -121,7 +136,7 @@ class ControlPolicy:
                     robots_reached_goal[ia] = True
                     continue
                 
-                if count_since_update[ia] < 15:
+                if count_since_update[ia] < 5:
                     self.action_queue.append({
                         # 'action': 'ObjectNavExpertAction',
                         'action': 'Teleport',
@@ -429,6 +444,9 @@ class ControlPolicy:
             elif act['action'] == 'ToggleObjectOff':
                 multi_agent_event = self.c.step(action="ToggleObjectOff", objectId=act['objectId'], agentId=act['agent_id'], forceAction=True)
             
+            elif act['action'] == 'HandleSafetyIssue':
+                self.HandleSafetyIssue.append(act['target'])
+                return
             elif act['action'] == 'Done':
                 self.task_over = True
                 # multi_agent_event = self.c.step(action="Done")
@@ -437,14 +455,14 @@ class ControlPolicy:
         except Exception as e:
             print (e)
 
-        print('save')
         for i,e in enumerate(multi_agent_event.events):
             cv2.imshow('agent%s' % i, e.cv2img)
-            f_name = __file__ + "/agent_" + str(i+1) + "/img_" + str(img_counter).zfill(5) + ".png"
+            f_name = __file__+'//' + self.tag+ "agent_" + str(i+1) + "/img_" + str(img_counter).zfill(5) + ".png"
             cv2.imwrite(f_name, e.cv2img)
-        top_view_rgb = cv2.cvtColor(self.c.last_event.events[0].third_party_camera_frames[-1], cv2.COLOR_BGR2RGB)
-        cv2.imshow('Top View', top_view_rgb)
-        f_name = __file__ + "/top_view/img_" + str(img_counter).zfill(5) + ".png"
+        print(len(self.c.last_event.events[0].third_party_camera_frames))  # 看看有没有帧
+        top_view_bgr = cv2.cvtColor(self.c.last_event.events[0].third_party_camera_frames[-1], cv2.COLOR_RGB2BGR)
+        cv2.imshow('Top View', top_view_bgr)
+        f_name = __file__+'//'+self.tag+ "top_view/img_" + str(img_counter).zfill(5) + ".png"
         cv2.imwrite(f_name, e.cv2img)
 
     def task_execution_loop(self):
@@ -458,13 +476,13 @@ class ControlPolicy:
         
         # create new folders to save the images from the agents
         for i in range(self.no_robot):
-            folder_name = "agent_" + str(i+1)
+            folder_name = self.tag+"agent_" + str(i+1)
             folder_path = __file__ + "/" + folder_name
             if not os.path.exists(folder_path):
                 os.makedirs(folder_path)
         
         # create folder to store the top view images
-        folder_name = "top_view"
+        folder_name = self.tag+"top_view"
         folder_path = __file__ + "/" + folder_name
         if not os.path.exists(folder_path):
             os.makedirs(folder_path)
@@ -472,8 +490,8 @@ class ControlPolicy:
         img_counter = 0
         self.task_over = False
         while not self.task_over:
-            print('exec')
             if len(self.action_queue) > 0:
+                print('exec')
                 act = self.action_queue.pop(0)
                 self.execute_action(act,img_counter)
                 time.sleep(0.5) 
