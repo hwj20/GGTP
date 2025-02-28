@@ -12,8 +12,9 @@ from model.graphormer import Graphormer, FocalLoss
 import random
 import numpy as np
 import matplotlib.pyplot as plt
+from graph import *
 
-MODEL_SAVE_PATH = "./graphormer_model.pth"
+MODEL_SAVE_PATH = "./model/graphormer_model.pth"
 
 # Set random seed for reproducibility
 def set_seed(seed=42):
@@ -59,84 +60,6 @@ set_seed(42)
 # Load dataset
 with open("./data/graph_dataset.json", "r") as f:
     dataset = json.load(f)
-
-# Process AI2-THOR scene data into GNN-compatible format
-def process_graph(data):
-    nodes = data["nodes"]
-    edges = data["edges"]
-
-    def get_features(node):
-        temp_map = {"cold": 5.0, "roomtemp": 20.0, "hot": 50.0}
-        temperature = temp_map.get(node["features"].get("temperature", "roomtemp"), 20.0)
-        
-        return [
-            temperature,
-            1.0 if node["features"].get("energy_source", "none") != "none" else 0.0,
-            *node["features"].get("position", [0.0, 0.0, 0.0])
-        ]
-
-    # nodes_type = {node['node_id']:node['node_type'] for node in nodes}
-    node_feats = torch.tensor([get_features(node) for node in nodes], dtype=torch.float32)
-
-    edge_feats, edge_labels, edge_index = [], [], []
-    for edge in edges:
-        u, v = edge["node1_id"], edge["node2_id"]
-        edge_index.append([u, v])
-        edge_index.append([v, u])  # Convert to an undirected graph
-        v_map = {'None':0, 'high':1.0, 'medium':0.5, 'low':0.25}
-        edge_feats.append([edge["distance"], 2*v_map[edge['risk_level']]])
-        edge_feats.append([edge["distance"], 2*v_map[edge['risk_level']]])
-        edge_labels.append(edge["edge_type"])
-        edge_labels.append(edge["edge_type"])
-
-    edge_feats = torch.tensor(edge_feats, dtype=torch.float32)
-    edge_labels = torch.tensor(edge_labels, dtype=torch.long)
-    edge_index = torch.tensor(edge_index, dtype=torch.long).T
-
-    return Data(x=node_feats, edge_index=edge_index, edge_attr=edge_feats, y=edge_labels)
-
-# Oversample positive samples in the dataset
-class OversampleGraphDataset(Dataset):
-    def __init__(self, data_list, oversample_factor=5):
-        self.graphs = []
-
-        for data in data_list:
-            g = process_graph(data)  # Process each graph
-            mask = g.y == 1  # Identify all positive class edges
-
-            if mask.sum() > 0:  # Ensure at least one positive edge exists
-                extra_edges = []
-                extra_edge_attrs = []
-                extra_labels = []
-
-                for _ in range(oversample_factor):  # Duplicate samples
-                    extra_edges.append(g.edge_index[:, mask].clone())  
-                    extra_edge_attrs.append(g.edge_attr[mask].clone())  
-                    extra_labels.append(g.y[mask].clone())  
-
-                # Merge with the original graph
-                g.edge_index = torch.cat([g.edge_index, *extra_edges], dim=1)
-                g.edge_attr = torch.cat([g.edge_attr, *extra_edge_attrs], dim=0)
-                g.y = torch.cat([g.y, *extra_labels], dim=0)
-
-            self.graphs.append(g)
-
-    def __len__(self):
-        return len(self.graphs)
-
-    def __getitem__(self, idx):
-        return self.graphs[idx]
-
-# Standard dataset class without oversampling
-class GraphDataset(Dataset):
-    def __init__(self, data_list):
-        self.data_list = data_list
-
-    def __len__(self):
-        return len(self.data_list)
-
-    def __getitem__(self, idx):
-        return process_graph(self.data_list[idx])
 
 # Load dataset
 train_data = OversampleGraphDataset(dataset["train"], 0)
