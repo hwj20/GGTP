@@ -230,6 +230,6 @@ def receive_safety_notice(nodes, edges):
     return "\n".join(hazard_descriptions)
 
 def receive_safety_notice_ltl(scene_objects ):
-    if "Knife" in scene_objects and "Baby" in scene_objects:
+    if any("Knife" in obj for obj in scene_objects) and any("Baby" in obj for obj in scene_objects):
         return "DANGER: Baby too close to knife!"
     return "Safe"

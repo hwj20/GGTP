@@ -40,24 +40,24 @@ TASK_PROMPTS = {
 # Assign tasks to all kitchen environments
 SIMPLE_TASK_ASSIGNMENTS = {
     scene: {
-        "task": TASK_PROMPTS["simple"][id] ,
+        "tasks": [TASK_PROMPTS["simple"][id] for id in range(1)],  
         "hazardous": scene in DANGEROUS_SCENES
     }
-    for scene in KITCHEN_SCENES for id in range(2)
+    for scene in KITCHEN_SCENES
 }
 INTERMEDIATE_TASK_ASSIGNMENTS = {
     scene: {
-        "task": TASK_PROMPTS["intermediate"][id] ,
+        "tasks": [TASK_PROMPTS["intermediate"][id] for id in range(1)] ,
         "hazardous": scene in DANGEROUS_SCENES
     }
-    for scene in KITCHEN_SCENES for id in range(2)
+    for scene in KITCHEN_SCENES
 }
 COMPLEX_TASK_ASSIGNMENTS = {
     scene: {
-        "task": TASK_PROMPTS["complex"][id] ,
+        "tasks": [TASK_PROMPTS["complex"][0]] ,
         "hazardous": scene in DANGEROUS_SCENES
     }
-    for scene in KITCHEN_SCENES for id in range(1)
+    for scene in KITCHEN_SCENES
 }
 
 def add_virtual_hazard(env_objects, obj_list):
@@ -178,7 +178,9 @@ def run_experiment(controller, scene_id, task, hazardous, difficuty,method):
         except Exception:
             action_queue.append("ERROR PARSING GENERATED ACTION JSON")
     if method == "LTL":
-        safety_notice = receive_safety_notice_ltl(nodes)
+        # print(obj_lists)
+        # input()
+        safety_notice = receive_safety_notice_ltl(obj_lists)
         print(safety_notice)
 
         # Generate and execute task sequence
@@ -246,23 +248,26 @@ def run_experiment(controller, scene_id, task, hazardous, difficuty,method):
 # Function to batch-run all experiments
 def batch_run_experiments(controller):
     for scene_id, details in SIMPLE_TASK_ASSIGNMENTS.items():
-        # run_experiment(controller, scene_id, details["task"], details["hazardous"],"simple", "LLM_only")
-        # run_experiment(controller, scene_id, details["task"], details["hazardous"],"simple", "LLM_safety_prompt")
-        # run_experiment(controller, scene_id, details["task"], details["hazardous"],"simple", "LTL")
-        # run_experiment(controller, scene_id, details["task"], details["hazardous"],"simple", "graphormer")
-        print("-" * 50)
+        for task in details['tasks']:
+            run_experiment(controller, scene_id, task, details["hazardous"],"simple", "LLM_only")
+            run_experiment(controller, scene_id, task, details["hazardous"],"simple", "LLM_safety_prompt")
+            run_experiment(controller, scene_id, task, details["hazardous"],"simple", "graphormer")
+            # run_experiment(controller, scene_id, task, details["hazardous"],"simple", "LTL")
+            print("-" * 50)
     for scene_id, details in INTERMEDIATE_TASK_ASSIGNMENTS.items():
-        # run_experiment(controller, scene_id, details["task"], details["hazardous"],"intermediate", "LLM_only")
-        # run_experiment(controller, scene_id, details["task"], details["hazardous"],"intermediate", "LLM_safety_prompt")
-        # run_experiment(controller, scene_id, details["task"], details["hazardous"],"intermediate", "LTL")
-        # run_experiment(controller, scene_id, details["task"], details["hazardous"],"intermediate", "graphormer")
-        print("-" * 50)
+        for task in details['tasks']:
+            run_experiment(controller, scene_id, task, details["hazardous"],"intermediate", "LLM_only")
+            run_experiment(controller, scene_id, task, details["hazardous"],"intermediate", "LLM_safety_prompt")
+            run_experiment(controller, scene_id, task, details["hazardous"],"intermediate", "graphormer")
+            # run_experiment(controller, scene_id, task, details["hazardous"],"intermediate", "LTL")
+            print("-" * 50)
     for scene_id, details in COMPLEX_TASK_ASSIGNMENTS.items():
-        # run_experiment(controller, scene_id, details["task"], details["hazardous"],"complex", "LLM_only")
-        # run_experiment(controller, scene_id, details["task"], details["hazardous"],"complex", "LLM_safety_prompt")
-        # run_experiment(controller, scene_id, details["task"], details["hazardous"],"complex", "LTL")
-        # run_experiment(controller, scene_id, details["task"], details["hazardous"],"complex", "graphormer")
-        print("-" * 50)
+        for task in details['tasks']:
+            run_experiment(controller, scene_id, task, details["hazardous"],"complex", "LLM_only")
+            run_experiment(controller, scene_id, task, details["hazardous"],"complex", "LLM_safety_prompt")
+            run_experiment(controller, scene_id, task, details["hazardous"],"complex", "graphormer")
+            # run_experiment(controller, scene_id, task, details["hazardous"],"complex", "LTL")
+            print("-" * 50)
 
 
 # Execute all experiments
