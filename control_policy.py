@@ -87,6 +87,9 @@ class ControlPolicy:
                 self.action_queue.append({'action':'Done'})
         print(self.action_queue)
 
+    def set_action_queue(self, action_queue):
+        self.action_queue = action_queue
+        
     def HandleSafetyIssue(self,robot,target_name):
         self.action_queue.append({'action':'HandleSafetyIssue', 'target':target_name, 'agent_id':robot})
 
@@ -444,8 +447,9 @@ class ControlPolicy:
                 multi_agent_event = self.c.step(action="ToggleObjectOff", objectId=act['objectId'], agentId=act['agent_id'], forceAction=True)
             
             elif act['action'] == 'HandleSafetyIssue':
-                self.HandleSafetyIssue.append(act['target'])
+                self.handle_safty_issue_targets.append(act['target'])
                 return
+            
             elif act['action'] == 'Done':
                 self.task_over = True
                 # multi_agent_event = self.c.step(action="Done")

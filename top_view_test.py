@@ -4,18 +4,18 @@ import numpy as np
 
 # 初始化 AI2-THOR
 controller = ai2thor.controller.Controller(
-    scene="FloorPlan1",  # 选择一个厨房场景
+    scene="FloorPlan2",  # 选择一个厨房场景
     gridSize=0.25,
     width=640,
     height=640
 )
 
 # **调整 Top View 角度，确保能看到整个房间**
-top_view_params = {
-    "rotation": {"x": 90, "y": 0, "z": 0},  # 角度从 90° 调整到 45°，避免只看地面
-    "position": {"x": 0, "y": 2.5, "z": 0},  # 提高相机高度，确保整个房间能看到
-    "fieldOfView": 100  # 调整视角宽度，让房间内容更多
-}
+# top_view_params = {
+#     "rotation": {"x": 90, "y": 0, "z": 0},  # 角度从 90° 调整到 45°，避免只看地面
+#     "position": {"x": 0, "y": 2.5, "z": 0},  # 提高相机高度，确保整个房间能看到
+#     "fieldOfView": 100  # 调整视角宽度，让房间内容更多
+# }
 
 # **添加俯视相机**
 # controller.step(
