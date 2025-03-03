@@ -116,7 +116,7 @@ class ControlPolicy:
         dest_obj_center = dest_obj_data["axisAlignedBoundingBox"]["center"]
         dest_obj_pos = [dest_obj_center['x'], dest_obj_center['y'], dest_obj_center['z']]
         
-        # 计算机器人最接近目标物体的可达位置
+        # find the closest reachable node
         crp = closest_node(dest_obj_pos, reachable_positions, no_agents, closest_node_location)
         
         goal_thresh = 0.3
@@ -148,12 +148,12 @@ class ControlPolicy:
                     })
                     locations[ia] = {"x": crp[ia][0], "y": crp[ia][1], "z": crp[ia][2]}
                 else:
-                    # 更新目标点
+                    # force out planning path
                     closest_node_location[ia] += 1
                     count_since_update[ia] = 0
                     crp = closest_node(dest_obj_pos, reachable_positions, no_agents, closest_node_location)
         
-        # 机器人朝向目标物体
+        # Turn robots to face the object
         metadata = self.c.last_event.events[agent_id].metadata
         robot_location = metadata["agent"]["position"]
         robot_rotation = metadata["agent"]["rotation"]["y"]
@@ -289,11 +289,6 @@ class ControlPolicy:
         objs = set([obj["name"] for obj in self.c.last_event.metadata["objects"]])
         objs_ids = {obj['name']:obj['objecId'] for obj in self.c.last_event.metadata["objects"]}
         pick_obj_id = objs_ids[objs[pick_obj]]
-        # for obj in objs:
-        #     match = re.match(pick_obj, obj)
-        #     if match is not None:
-        #         pick_obj_id = obj
-        #         break # find the first instance
             
         self.action_queue.append({'action':'PickupObject', 'objectId':pick_obj_id, 'agent_id':agent_id})
         
@@ -321,30 +316,16 @@ class ControlPolicy:
     def SwitchOn(self,robot, sw_obj):
         robot_name = robot['name']
         agent_id = int(robot_name[-1]) - 1
-        # objs = set([obj["name"] for obj in self.c.last_event.metadata["objects"]])
         objs_ids = {obj['name']:obj['objectId'] for obj in self.c.last_event.metadata["objects"]}
         sw_obj_id= objs_ids[sw_obj]
-        
-        # for obj in objs:
-        #     match = re.match(sw_obj, obj)
-        #     if match is not None:
-        #         sw_obj_id = obj
-        #         break # find the first instance
         
         self.action_queue.append({'action':'ToggleObjectOn', 'objectId':sw_obj_id, 'agent_id':agent_id})      
             
     def SwitchOff(self,robot, sw_obj):
         robot_name = robot['name']
         agent_id = int(robot_name[-1]) - 1
-        # objs = set([obj["name"] for obj in self.c.last_event.metadata["objects"]])
         objs_ids = {obj['name']:obj['objectId'] for obj in self.c.last_event.metadata["objects"]}
         sw_obj_id= objs_ids[sw_obj]
-        
-        # for obj in objs:
-        #     match = re.match(sw_obj, obj)
-        #     if match is not None:
-        #         sw_obj_id = obj
-        #         break # find the first instance
         
         self.action_queue.append({'action':'ToggleObjectOff', 'objectId':sw_obj_id, 'agent_id':agent_id})        
 
@@ -413,12 +394,12 @@ class ControlPolicy:
 
         self.action_queue.append({'action':'CleanObject', 'objectId':sw_obj_id, 'agent_id':agent_id}) 
 
+    # execute an action and save images
     def execute_action(self, act, img_counter):
         try:
             if act['action'] == 'ObjectNavExpertAction':
                 multi_agent_event = self.c.step(dict(action=act['action'], position=act['position'], agentId=act['agent_id']))
                 next_action = multi_agent_event.metadata['actionReturn']
-
                 if next_action != None:
                     multi_agent_event = self.c.step(action=next_action, agentId=act['agent_id'], forceAction=True)
             elif act['action'] =='Teleport':
@@ -471,7 +452,7 @@ class ControlPolicy:
 
     def task_execution_loop(self):
         """
-        机器人执行任务队列
+        execute tasks
         """
         # delete if current output already exist
         # cur_path = __file__ + "/*/"
@@ -504,5 +485,3 @@ class ControlPolicy:
                 print("All tasks completed!", img_counter)
                 break
             img_counter += 1    
-
-        # input()

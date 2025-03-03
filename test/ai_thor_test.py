@@ -1,3 +1,6 @@
+'''
+The script is to verify ai2-THOR environment
+'''
 # import time
 # import random
 # from ai2thor.controller import Controller

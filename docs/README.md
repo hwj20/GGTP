@@ -12,5 +12,6 @@ Clone the repo and install dependencies:
 ```bash
 git clone https://github.com/yourusername/GGTP.git
 cd GGTP
-pip install -r requirements.txt
-
+conda env create -f environment.yml
+conda activate GGTP
+python main.py
