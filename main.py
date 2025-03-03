@@ -1,11 +1,5 @@
 # A demo for the pipline
 
-import openai
-import math
-import re
-import subprocess
-import time
-import threading
 import numpy as np
 import networkx as nx
 from collections import defaultdict, deque
@@ -55,7 +49,7 @@ def main():
             safety_notice = receive_safety_notice_ltl(obj_lists)
     
     # 4. Generate task sequence 
-    task_description = "goto refrigerator"
+    task_description = "pick up an item"
     task_sequence_json = generate_task_sequence(task_description, robot_activities, obj_lists, safety_notice)
     
     # 5. Parse task sequence
@@ -67,9 +61,7 @@ def main():
     print("Starting execution!")
 
     # 6. Execute tasks
-    task_execution_thread = threading.Thread(target=cp.task_execution_loop)
-    task_execution_thread.start()
-    
+    cp.run_task_thread()
 
 if __name__ == "__main__":
     main()

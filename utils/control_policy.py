@@ -1,3 +1,4 @@
+import threading
 import shutil
 import cv2
 import random
@@ -70,9 +71,9 @@ class ControlPolicy:
         for act in action_list:
             if act['action'] == "GoToObject":
                 self.GoToObject(self.robots,act['object_id'],self.reachable_positions)
-            if act['action'] == 'PickupObjet':
+            if act['action'] == 'PickupObject':
                 self.PickupObject(self.robot,act['object_id'])
-            if act['action'] == 'PutObjet':
+            if act['action'] == 'PutObject':
                 self.PutObject(self.robot,act['object_id'])
             if act['action'] == 'SwitchOn':
                 self.SwitchOn(self.robot,act['object_id'])
@@ -286,9 +287,9 @@ class ControlPolicy:
     def PickupObject(self,robot, pick_obj):
         robot_name = robot['name']
         agent_id = int(robot_name[-1]) - 1
-        objs = set([obj["name"] for obj in self.c.last_event.metadata["objects"]])
-        objs_ids = {obj['name']:obj['objecId'] for obj in self.c.last_event.metadata["objects"]}
-        pick_obj_id = objs_ids[objs[pick_obj]]
+        # objs = set([obj["name"] for obj in self.c.last_event.metadata["objects"]])
+        objs_ids = {obj['name']:obj['objectId'] for obj in self.c.last_event.metadata["objects"]}
+        pick_obj_id = objs_ids[pick_obj]
             
         self.action_queue.append({'action':'PickupObject', 'objectId':pick_obj_id, 'agent_id':agent_id})
         
@@ -297,8 +298,10 @@ class ControlPolicy:
         agent_id = int(robot_name[-1]) - 1
         objs = list([obj["name"] for obj in self.c.last_event.metadata["objects"]])
         objs_ids = {obj['name']:obj['object_id'] for obj in self.c.last_event.metadata["objects"]}
-        objs_center = list([obj["axisAlignedBoundingBox"]["center"] for obj in c.last_event.metadata["objects"]])
+        objs_center = list([obj["axisAlignedBoundingBox"]["center"] for obj in self.c.last_event.metadata["objects"]])
         objs_dists = list([obj["distance"] for obj in self.c.last_event.metadata["objects"]])
+
+        recp = objs_ids[recp]
 
         metadata = self.c.last_event.events[agent_id].metadata
         robot_location = [metadata["agent"]["position"]["x"], metadata["agent"]["position"]["y"], metadata["agent"]["position"]["z"]]
@@ -444,18 +447,19 @@ class ControlPolicy:
             cv2.imshow('agent%s' % i, e.cv2img)
             f_name = __file__+'//' + self.tag+ "agent_" + str(i+1) + "/img_" + str(img_counter).zfill(5) + ".png"
             cv2.imwrite(f_name, e.cv2img)
-        print(len(self.c.last_event.events[0].third_party_camera_frames))  # 看看有没有帧
-        top_view_bgr = cv2.cvtColor(self.c.last_event.events[0].third_party_camera_frames[-1], cv2.COLOR_RGB2BGR)
-        cv2.imshow('Top View', top_view_bgr)
+        # print(len(self.c.last_event.events[0].third_party_camera_frames))
+        top_view = self.c.last_event.events[0].third_party_camera_frames[-1]
+        top_view_bgr = cv2.cvtColor(top_view, cv2.COLOR_RGB2BGR)
+        cv2.imshow('Top View', top_view)
         f_name = __file__+'//'+self.tag+ "top_view/img_" + str(img_counter).zfill(5) + ".png"
-        cv2.imwrite(f_name, e.cv2img)
+        cv2.imwrite(f_name, top_view_bgr)
 
     def task_execution_loop(self):
         """
         execute tasks
         """
         # delete if current output already exist
-        # cur_path = __file__ + "/*/"
+        # cur_path = __file__ + f"/{tag}/"
         # for x in glob(cur_path, recursive = True):
         #     shutil.rmtree (x)
         
@@ -485,3 +489,8 @@ class ControlPolicy:
                 print("All tasks completed!", img_counter)
                 break
             img_counter += 1    
+    def run_task_thread(self):
+        print(self.action_queue)
+        task_execution_thread = threading.Thread(target=self.task_execution_loop)
+        task_execution_thread.start()
+
