@@ -1,5 +1,4 @@
 import os
-from dangerous_types import dangerous_types
 import torch.nn.functional as F
 import collections
 import json
@@ -12,7 +11,7 @@ from model.graphormer import Graphormer, FocalLoss
 import random
 import numpy as np
 import matplotlib.pyplot as plt
-from graph import *
+from utils.graph_utils import *
 
 MODEL_SAVE_PATH = "./model/graphormer_model.pth"
 
@@ -27,35 +26,6 @@ def set_seed(seed=42):
 
 set_seed(42)
 
-# def ltl_baseline_evaluate(loader):
-#     """ Simulates an LTL-based model that only considers object types, ignoring spatial awareness. """
-#     total_1 = 0  # True positive count
-#     correct_1 = 0  # Correctly classified danger edges
-#     predicted_1 = 0  # Total predicted danger edges
-
-#     with torch.no_grad():
-#         for batch in loader:
-#             batch = batch.to(device)
-            
-#             # LTL-based rule: classify based on "object type" instead of actual risk
-#             ltl_preds = torch.zeros_like(batch.y, device=device)  # Assume all edges are safe
-            
-#             for i, (src, dst) in enumerate(batch.edge_index.T):
-#                 src_type = batch.x[src][-1].item()  # find it in Edge index
-#                 dst_type = batch.x[dst][-1].item()
-                
-#                 if src_type in dangerous_types or dst_type in dangerous_types:
-#                     ltl_preds[i] = 1  # Mark as risky, ignoring actual spatial position
-
-#             total_1 += (batch.y == 1).sum().item()
-#             correct_1 += ((ltl_preds == 1) & (batch.y == 1)).sum().item()
-#             predicted_1 += (ltl_preds == 1).sum().item()
-
-#     recall = correct_1 / total_1 if total_1 > 0 else 0
-#     precision = correct_1 / predicted_1 if predicted_1 > 0 else 0
-
-#     print(f"LTL Baseline -> Recall: {recall:.4f}, Precision: {precision:.4f}")
-#     return recall, precision
 
 # Load dataset
 with open("./data/graph_dataset.json", "r") as f:
@@ -192,6 +162,43 @@ def plot_threshold_evaluation():
 plot_threshold_evaluation()
 
 
+'''
+The following ltl experiments were scrapped because 
+we initially wanted to experiment with LTL static rules, 
+but we found that LTL either cheated directly at the risk items flagged by our LLM,
+or we customized a rule that included only some of the danger types,
+and we could make the data look bad to show that we were doing well, 
+but we didn't want to do that
+'''
+# def ltl_baseline_evaluate(loader):
+#     """ Simulates an LTL-based model that only considers object types, ignoring spatial awareness. """
+#     total_1 = 0  # True positive count
+#     correct_1 = 0  # Correctly classified danger edges
+#     predicted_1 = 0  # Total predicted danger edges
+
+#     with torch.no_grad():
+#         for batch in loader:
+#             batch = batch.to(device)
+            
+#             # LTL-based rule: classify based on "object type" instead of actual risk
+#             ltl_preds = torch.zeros_like(batch.y, device=device)  # Assume all edges are safe
+            
+#             for i, (src, dst) in enumerate(batch.edge_index.T):
+#                 src_type = batch.x[src][-1].item()  # find it in Edge index
+#                 dst_type = batch.x[dst][-1].item()
+                
+#                 if src_type in dangerous_types or dst_type in dangerous_types:
+#                     ltl_preds[i] = 1  # Mark as risky, ignoring actual spatial position
+
+#             total_1 += (batch.y == 1).sum().item()
+#             correct_1 += ((ltl_preds == 1) & (batch.y == 1)).sum().item()
+#             predicted_1 += (ltl_preds == 1).sum().item()
+
+#     recall = correct_1 / total_1 if total_1 > 0 else 0
+#     precision = correct_1 / predicted_1 if predicted_1 > 0 else 0
+
+#     print(f"LTL Baseline -> Recall: {recall:.4f}, Precision: {precision:.4f}")
+#     return recall, precision
 
 # # Run baseline evaluation on validation and test sets
 # ltl_recall_val, ltl_precision_val = ltl_baseline_evaluate(val_loader)
@@ -219,4 +226,3 @@ plot_threshold_evaluation()
 #     plt.show()
 
 # plot_baseline_comparison()
-

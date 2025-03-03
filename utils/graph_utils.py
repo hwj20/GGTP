@@ -8,18 +8,17 @@ import torch
 from model.graphormer import *
 
 
+# get environment data from AI2-THOR
 def get_environment_data(controller, get_value = True):
     event = controller.step(action="Pass")
     object_info = []
     for obj in event.metadata['objects']:
         object_info.append({
-            # Fake Baby
-            'name': obj['name'], # if obj['objectId'] != 'Baby' else 'Baby',
-            'type': obj['objectType'], #if obj['objectId'] != 'Baby' else 'Baby',
+            'name': obj['name'],
+            'type': obj['objectType'],
             'pos': obj['position'] if get_value else obj['position'].values(),
             'state':'default'
         })
-    # print(object_info)
     return object_info, [obj['name'] for obj in object_info]
 
 # Process AI2-THOR scene data into GNN-compatible format
@@ -62,6 +61,9 @@ def process_graph(data, get_label =True):
         return Data(x=node_feats, edge_index=edge_index, edge_attr=edge_feats)
 
 # Oversample positive samples in the dataset
+# Note: we use oversample with factor=0(no oversampling) in training dataset because
+# __getitem__() in this function doesn't need to call processing graph for ecah call, 
+# which is faster in training. As for the val and test datasets, just let it go :) 
 class OversampleGraphDataset(Dataset):
     def __init__(self, data_list, oversample_factor=5):
         self.graphs = []
@@ -115,13 +117,12 @@ def build_environment_graph(objects):
         - "type": Object type (e.g., Knife, Table)
         - "pos": Object position (x, y, z)
         - "state": Object state (e.g., Open, Closed)
-        - "risk_level": Risk level (e.g., Low, Medium, High)
     
     Returns:
     - nodes (list): List of object nodes with features.
     - edges (list): List of relationships between objects with risk info.
     """
-    with open("./data/danger_info.json") as f:
+    with open("./experiments/data/danger_info.json") as f:
         dangers = json.load(f)
     danger_map = defaultdict(dict)
 
@@ -157,8 +158,6 @@ def build_environment_graph(objects):
                 risk_level = "None"
                 risk_type = []
                 attention_bias = 0
-                # if obj1["type"] == 'Baby' or obj2["type"] == 'Baby':
-                #     print('oop')
                 # Check if the object pair exists in danger_map
                 if obj1["type"] in danger_map and obj2["type"] in danger_map[obj1["type"]]:
                     # print(obj1,obj2)
@@ -187,10 +186,7 @@ def receive_safety_notice(nodes, edges):
     - Processes AI2-THOR scene data into GNN-compatible format.
     - Loads and applies the trained Graphormer model.
     - Returns a safety warning message.
-    """
 
-def receive_safety_notice(nodes, edges):
-    """
     Generate a natural language description for detected hazardous edges.
     """
     
@@ -222,6 +218,7 @@ def receive_safety_notice(nodes, edges):
     for edge_idx in hazard_edges:
         u, v = graph_data.edge_index[:, edge_idx].cpu().numpy()
         obj1, obj2 = id_to_name.get(u, f"Object_{u}"), id_to_name.get(v, f"Object_{v}")
+        # filter repeated advice
         if (obj2, obj1) in added or (obj1,obj2) in added:
             continue
         hazard_descriptions.append(f"Dangerous edge detected: {obj1} → {obj2}")
@@ -229,6 +226,7 @@ def receive_safety_notice(nodes, edges):
 
     return "\n".join(hazard_descriptions)
 
+# A single LTL rule: Baby and Knife cannot show up in one scene both
 def receive_safety_notice_ltl(scene_objects ):
     if any("Knife" in obj for obj in scene_objects) and any("Baby" in obj for obj in scene_objects):
         return "DANGER: Baby too close to knife!"
