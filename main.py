@@ -34,12 +34,13 @@ cp.init_robots(robots)
 print("Robot initialized!")
 
 def main():
-    enable_safety_aware = True
+    enable_safety_aware = False
     method = "graphomer"
     
     # 1. Retrieve object information
     env_objects, obj_lists = get_environment_data(controller=c)
     
+    safety_notice = 'Safe'
     if enable_safety_aware:
         if method == 'graphomer':
             # 2. Construct the environment graph
