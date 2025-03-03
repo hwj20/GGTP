@@ -3,7 +3,7 @@ from collections import defaultdict
 import networkx as nx
 import numpy as np
 import json
-from control_policy import distance_pts
+from utils.control_policy import distance_pts
 import torch
 from model.graphormer import *
 
