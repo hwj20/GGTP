@@ -3,7 +3,7 @@ def execute_task_sequence(task_sequence):
         action, target = step["action"], step.get("target", "")
         print(f"🤖 Executing: {action} {target}")
 
-        # 更新环境状态（模拟）
+        # simulating
         if action == "pick_up":
             print(f"✅ {target} is now in robot's hand.")
         elif action == "cut":

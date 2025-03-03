@@ -10,14 +10,14 @@ import re
 import math
 
 # VERY IMPORTANT !!!
-# VERY IMPORTANT !!!
-# VERY IMPORTANT !!!
-# This is the file save path. if you delete this var, the script will remove ALL subdir in your folder
+# This is the file save dir. if you delete this var, the script will remove ALL subdir in your folder
+# For your data safety, I have disable the lines to use shutil to rmdir :)
 __file__ = './testing'
 
+# L^2 distance
 def distance_pts(p1, p2):
-    # print(p1,p2)
     return ((p1['x'] - p2['x']) ** 2 + (p1['y'] - p2['y']) ** 2 +(p1['z'] - p2['z']) ** 2) ** 0.5
+
 
 def closest_node(node, nodes, no_robot, clost_node_location):
     crps = []
@@ -37,13 +37,7 @@ class ControlPolicy:
         self.robot = None # for single robot system
         self.handle_safty_issue_targets = []
         self.tag = tag+"_"
-        # top_view_camera
-        # controller.step(
-        #     action="AddThirdPartyCamera",
-        #     position=dict(x=0, y=2.5, z=0),  
-        #     rotation=dict(x=90, y=0, z=0),
-        #     fieldOfView = 100
-        # )
+
 
     def init_robots(self, robots):
         self.robots = robots
@@ -67,9 +61,12 @@ class ControlPolicy:
             init_pos = random.choice(reachable_positions_)
             self.c.step(dict(action="Teleport", position=init_pos, agentId=i))
 
+    # Automaticall add LLM output actions to action list in controller
     def add_action_list(self,action_list):
+        # check type
         if not isinstance(action_list, list):
             action_list = [action_list]
+        # add action
         for act in action_list:
             if act['action'] == "GoToObject":
                 self.GoToObject(self.robots,act['object_id'],self.reachable_positions)
@@ -85,16 +82,20 @@ class ControlPolicy:
                 self.HandleSafetyIssue(self.robot,act['object_id'])
             if act['action'] == "Done":
                 self.action_queue.append({'action':'Done'})
-        print(self.action_queue)
+        # print(self.action_queue)
 
+    # manually set action_queue for testing
     def set_action_queue(self, action_queue):
         self.action_queue = action_queue
-        
+    
+    # action HandleSafetyIssue
     def HandleSafetyIssue(self,robot,target_name):
         self.action_queue.append({'action':'HandleSafetyIssue', 'target':target_name, 'agent_id':robot})
 
+    # action GoToObject (TODO: use a mordern path planner :)
     def GoToObject(self, robots, dest_obj, reachable_positions):
         print("Going to", dest_obj)
+        # simulating baby in environment
         if 'Baby' in dest_obj:
             return        
         if not isinstance(robots, list):
@@ -104,7 +105,7 @@ class ControlPolicy:
         count_since_update = [0] * no_agents
         closest_node_location = [0] * no_agents
         
-        # 获取场景中的对象信息
+        # Get metadata of objects in envs
         objects_metadata = self.c.last_event.metadata["objects"]
         objs = {obj["name"]: obj for obj in objects_metadata}
         
