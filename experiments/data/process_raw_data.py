@@ -1,7 +1,10 @@
+'''
+Process raw data from danger_info_gen.py
+'''
 import json
 data = []
 res = []
-with open("raw_danger_info.json", "r") as f:
+with open("./experiments/data/raw_danger_info.json", "r") as f:
     data = json.load(f)
     for item in data:
         item = item['danger_info']

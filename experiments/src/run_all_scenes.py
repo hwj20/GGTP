@@ -8,9 +8,9 @@ from typing import Tuple
 from collections import deque
 import random
 import os
-from graph import *
-from control_policy import *
-from task_agent import *
+from utils.graph_utils import *
+from utils.control_policy import *
+from utils.task_agent import *
 
 # Set seed for reproducibility
 SEED = 42
@@ -210,7 +210,7 @@ def run_experiment(controller, scene_id, task, hazardous, difficuty,method):
             action_queue.append("ERROR PARSING GENERATED ACTION JSON")
 
     # Path for storing experiment data
-    task_data_path = f"./data/{method}_task_data_{difficuty}.json"
+    task_data_path = f"./experiments/data/{method}_task_data_{difficuty}.json"
 
     # Load existing task data if available
     if os.path.exists(task_data_path):

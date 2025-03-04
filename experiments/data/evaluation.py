@@ -8,14 +8,14 @@ import json
 import os
 from collections import defaultdict
 
-# 📂 Directory containing experiment task data
-FOLDER_PATH = './data/'
+# Directory containing experiment task data
+FOLDER_PATH = './experiments/data/'
 
-# 🛠️ Methods and difficulty levels to analyze
+# Methods and difficulty levels to analyze
 METHODS = ['graphormer', "LLM_only", "LLM_safety_prompt", "LTL"]
 DIFFICULTIES = ['simple', 'intermediate', 'complex']
 
-# 📊 Function to analyze experiment results
+# Function to analyze experiment results
 def analyze_experiment_results():
     results = defaultdict(lambda: {"total_tasks": 0, "error_tasks": 0, 
                                    "hazard_tasks": 0, "noticed_tasks": 0, 
@@ -60,8 +60,8 @@ def analyze_experiment_results():
                     if task_success and any(action['action'] == "HandleSafetyIssue" for action in actions):
                         results[key]["handled_tasks"] += 1  # Count cases where hazards were handled
 
-    # 🎯 Compute TSR, SVR, RHS
-    print("\n🔎 **Experiment Results Summary** 🔎\n")
+    #  Compute TSR, SVR, RHS
+    print("\n Experiment Results Summary \n")
     for key, stats in results.items():
         total = stats["total_tasks"]
         errors = stats["error_tasks"]

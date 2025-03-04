@@ -74,7 +74,7 @@ class ControlPolicy:
             if act['action'] == 'PickupObject':
                 self.PickupObject(self.robot,act['object_id'])
             if act['action'] == 'PutObject':
-                self.PutObject(self.robot,act['object_id'])
+                self.PutObject(self.robot,act['object_id'], act['target_id'] if 'target_id' in act else act['object_id'])
             if act['action'] == 'SwitchOn':
                 self.SwitchOn(self.robot,act['object_id'])
             if act['action'] == 'SwitchOff':
@@ -297,23 +297,12 @@ class ControlPolicy:
         robot_name = robot['name']
         agent_id = int(robot_name[-1]) - 1
         objs = list([obj["name"] for obj in self.c.last_event.metadata["objects"]])
-        objs_ids = {obj['name']:obj['object_id'] for obj in self.c.last_event.metadata["objects"]}
+        objs_ids = {obj['name']:obj['objectId'] for obj in self.c.last_event.metadata["objects"]}
         objs_center = list([obj["axisAlignedBoundingBox"]["center"] for obj in self.c.last_event.metadata["objects"]])
         objs_dists = list([obj["distance"] for obj in self.c.last_event.metadata["objects"]])
 
-        recp = objs_ids[recp]
+        recp_obj_id = objs_ids[recp]
 
-        metadata = self.c.last_event.events[agent_id].metadata
-        robot_location = [metadata["agent"]["position"]["x"], metadata["agent"]["position"]["y"], metadata["agent"]["position"]["z"]]
-        dist_to_recp = 9999999 # distance b/w robot and the recp obj
-        for idx, obj in enumerate(objs):
-            match = re.match(recp, obj)
-            if match is not None:
-                dist = objs_dists[idx]# distance_pts(robot_location, [objs_center[idx]['x'], objs_center[idx]['y'], objs_center[idx]['z']])
-                if dist < dist_to_recp:
-                    recp_obj_id =objs_ids[obj]
-                    dest_obj_center = objs_center[idx]
-                    dist_to_recp = dist
         self.action_queue.append({'action':'PutObject', 'objectId':recp_obj_id, 'agent_id':agent_id})
             
     def SwitchOn(self,robot, sw_obj):
@@ -335,65 +324,39 @@ class ControlPolicy:
     def OpenObject(self,robot, sw_obj):
         robot_name = robot['name']
         agent_id = int(robot_name[-1]) - 1
-        objs = list(set([obj["objectId"] for obj in self.c.last_event.metadata["objects"]]))
-        
-        for obj in objs:
-            match = re.match(sw_obj, obj)
-            if match is not None:
-                sw_obj_id = obj
-                break # find the first instance
-        
+        objs_ids = {obj['name']:obj['objectId'] for obj in self.c.last_event.metadata["objects"]}
+        sw_obj_id= objs_ids[sw_obj]
         self.action_queue.append({'action':'OpenObject', 'objectId':sw_obj_id, 'agent_id':agent_id})
         
     def CloseObject(self,robot, sw_obj):
         robot_name = robot['name']
         agent_id = int(robot_name[-1]) - 1
-        objs = list(set([obj["objectId"] for obj in self.c.last_event.metadata["objects"]]))
-        
-        for obj in objs:
-            match = re.match(sw_obj, obj)
-            if match is not None:
-                sw_obj_id = obj
-                break # find the first instance
+        objs_ids = {obj['name']:obj['objectId'] for obj in self.c.last_event.metadata["objects"]}
+        sw_obj_id= objs_ids[sw_obj]
         
         self.action_queue.append({'action':'CloseObject', 'objectId':sw_obj_id, 'agent_id':agent_id}) 
         
     def BreakObject(self,robot, sw_obj):
         robot_name = robot['name']
         agent_id = int(robot_name[-1]) - 1
-        objs = list(set([obj["objectId"] for obj in self.c.last_event.metadata["objects"]]))
-        
-        for obj in objs:
-            match = re.match(sw_obj, obj)
-            if match is not None:
-                sw_obj_id = obj
-                break # find the first instance
+        objs_ids = {obj['name']:obj['objectId'] for obj in self.c.last_event.metadata["objects"]}
+        sw_obj_id= objs_ids[sw_obj]
         
         self.action_queue.append({'action':'BreakObject', 'objectId':sw_obj_id, 'agent_id':agent_id}) 
         
     def SliceObject(self,robot, sw_obj):
         robot_name = robot['name']
         agent_id = int(robot_name[-1]) - 1
-        objs = list(set([obj["objectId"] for obj in self.c.last_event.metadata["objects"]]))
-        
-        for obj in objs:
-            match = re.match(sw_obj, obj)
-            if match is not None:
-                sw_obj_id = obj
-                break # find the first instance
+        objs_ids = {obj['name']:obj['objectId'] for obj in self.c.last_event.metadata["objects"]}
+        sw_obj_id= objs_ids[sw_obj]
         
         self.action_queue.append({'action':'SliceObject', 'objectId':sw_obj_id, 'agent_id':agent_id})      
     
     def CleanObject(self,robot, sw_obj):
         robot_name = robot['name']
         agent_id = int(robot_name[-1]) - 1
-        objs = list(set([obj["objectId"] for obj in self.c.last_event.metadata["objects"]]))
-
-        for obj in objs:
-            match = re.match(sw_obj, obj)
-            if match is not None:
-                sw_obj_id = obj
-                break # find the first instance
+        objs_ids = {obj['name']:obj['objectId'] for obj in self.c.last_event.metadata["objects"]}
+        sw_obj_id= objs_ids[sw_obj]
 
         self.action_queue.append({'action':'CleanObject', 'objectId':sw_obj_id, 'agent_id':agent_id}) 
 

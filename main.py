@@ -49,7 +49,7 @@ def main():
             safety_notice = receive_safety_notice_ltl(obj_lists)
     
     # 4. Generate task sequence 
-    task_description = "pick up an item"
+    task_description = "pick up an apple and put it on any container"
     task_sequence_json = generate_task_sequence(task_description, robot_activities, obj_lists, safety_notice)
     
     # 5. Parse task sequence

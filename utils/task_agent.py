@@ -125,6 +125,7 @@ def generate_task_sequence(task_description, action_list, environment_objects, s
     {
     "action": "<action_name>",  // Available: "GoToObject", "PickupObject", "PutObject", "SwitchOn", "SwitchOff"
     "object_id": "<object_id>"  // object_id in envirnoment
+    "target_id": "<target_container>" // if the action is "PutObject", then set this var
     }
     or
     {

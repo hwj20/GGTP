@@ -28,7 +28,7 @@ set_seed(42)
 
 
 # Load dataset
-with open("./data/graph_dataset.json", "r") as f:
+with open("./experiments/data/graph_dataset.json", "r") as f:
     dataset = json.load(f)
 
 # Load dataset

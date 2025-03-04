@@ -2,30 +2,32 @@ from ai2thor.controller import Controller
 import random, json, math, os
 from collections import defaultdict
 
-# 读取危险信息
-with open("./data/danger_info.json") as f:
+# Load danger information
+with open("./experiments/data/danger_info.json") as f:
     dangers = json.load(f)
+
 danger_map = defaultdict(dict)
 for i in range(len(dangers)):
     danger_info = dangers[i]
     danger_map[danger_info['type1']][danger_info['type2']] = i
     danger_map[danger_info['type2']][danger_info['type1']] = i
 
-# 生成所有 AI2-THOR 正确的场景列表(120个数据集)
+# Generate a complete list of AI2-THOR valid scenes (120 datasets)
 kitchens = [f"FloorPlan{i}" for i in range(1, 31)]
 living_rooms = [f"FloorPlan{200 + i}" for i in range(1, 31)]
 bedrooms = [f"FloorPlan{300 + i}" for i in range(1, 31)]
 bathrooms = [f"FloorPlan{400 + i}" for i in range(1, 31)]
 
-# 合并所有场景
+# Combine all scene categories
 scenes = kitchens + living_rooms + bedrooms + bathrooms
 
+# Shuffle and split the dataset into train, validation, and test sets
 random.shuffle(scenes)
 train_scenes = scenes[:80]
 val_scenes = scenes[80:100]
 test_scenes = scenes[100:]
 
-# 数据集存储
+# Storage structure for dataset
 dataset = {"train": [], "val": [], "test": []}
 
 def generate_scene(scene_name):
@@ -39,7 +41,7 @@ def generate_scene(scene_name):
         edges = []
         node_id = 0
         
-        # 添加物体节点
+        # Add object nodes
         for obj in objects:
             nodes.append({
                 "node_id": node_id,
@@ -52,7 +54,7 @@ def generate_scene(scene_name):
             })
             node_id += 1
         
-        # 确保至少 50% 场景有危险边
+        # Ensure at least 50% of the scenes contain a hazardous edge
         insert_danger = random.random() > 0.5
         human_entities = []
         
@@ -61,19 +63,19 @@ def generate_scene(scene_name):
             if high_risk_objects:
                 dangerous_obj = random.choice(high_risk_objects)
                 dangerous_pos = list(dangerous_obj["position"].values())
-                # 在危险物附近随机放一个人
+                # Randomly place a human near the dangerous object
                 human_entities.append({
-                    "type": "Baby",  # 高风险实验
+                    "type": "Baby",  # High-risk experiment
                     "position": [dangerous_pos[0] + random.uniform(-0.5, 0.5), 0, dangerous_pos[2] + random.uniform(-0.5, 0.5)]
                 })
         
-        # 添加随机人物
+        # Add random human and pet entities
         human_entities += [
             {"type": "Adult", "position": [random.uniform(0, 5), 0, random.uniform(0, 5)]},
             {"type": "Pet", "position": [random.uniform(0, 5), 0, random.uniform(0, 5)]}
         ]
         
-        # 添加人物和宠物节点
+        # Add human and pet nodes
         for entity in human_entities:
             nodes.append({
                 "node_id": node_id,
@@ -86,7 +88,7 @@ def generate_scene(scene_name):
             })
             node_id += 1
         
-        # 计算边并标注危险性
+        # Compute edges and label hazardous interactions
         threshold = 0.5
         for i, node1 in enumerate(nodes):
             for j, node2 in enumerate(nodes):
@@ -125,17 +127,17 @@ def generate_scene(scene_name):
                         "attention_bias": label
                     })
                 except Exception as e:
-                    print(f"⚠️ Error in scene {scene_name} between nodes {i} and {j}: {str(e)}")
+                    print(f"Error in scene {scene_name} between nodes {i} and {j}: {str(e)}")
     
         return {"scene": scene_name, "nodes": nodes, "edges": edges}
     
     finally:
         if controller:
-            controller.stop()  # 释放 AI2-THOR 进程
+            controller.stop()  # Release AI2-THOR process
 
-# 生成所有场景数据
+# Generate dataset for all scenes
 def generate_dataset():
-    os.system("pkill -f ai2thor")  # 运行前清理旧进程
+    os.system("pkill -f ai2thor")  # Clean up any old AI2-THOR processes before running
     for scene in train_scenes:
         dataset["train"].append(generate_scene(scene))
     for scene in val_scenes:
@@ -143,9 +145,9 @@ def generate_dataset():
     for scene in test_scenes:
         dataset["test"].append(generate_scene(scene))
     
-    # 保存 JSON
-    with open("graph_dataset.json", "w") as f:
+    # Save dataset as JSON
+    with open("./experiments/data/graph_dataset.json", "w") as f:
         json.dump(dataset, f, indent=4)
-    print("随机数据生成完成！")
+    print("Randomized dataset generation complete!")
 
 generate_dataset()
