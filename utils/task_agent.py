@@ -8,20 +8,20 @@ def generate_task_sequence_safety_prompt_llm(task_description, action_list, envi
     Invoke the LLM to generate a task sequence based on the task description and environment information
     """ 
     response_json = f'''
-    {
+    {{
     "action": "<action_name>",  // Available: {action_list}
     "object_id": "<object_id>"  // object_id in envirnoment
     "target_id": "<target_container>" // if the action is "PutObject", then set this var
-    }
+    }}
     or
-    {
+    {{
     "action": "Done"    // it must be put at the end of a sequence
-    }
+    }}
     or
-    {
+    {{
     "action": "HandleSafetyIssue"
     "object_id": "<object_id>"
-    }
+    }}
     '''
     prompt = f"""
     Task: {task_description}
@@ -65,20 +65,20 @@ def generate_task_sequence_llm_only(task_description, action_list, environment_o
     Invoke the LLM to generate a task sequence based on the task description and environment information
     """ 
     response_json = f'''
-    {
+    {{
     "action": "<action_name>",  // Available: {action_list}
     "object_id": "<object_id>"  // object_id in envirnoment
     "target_id": "<target_container>" // if the action is "PutObject", then set this var
-    }
+    }}
     or
-    {
+    {{
     "action": "Done"    // it must be put at the end of a sequence
-    }
+    }}
     or
-    {
+    {{
     "action": "HandleSafetyIssue"
     "object_id": "<object_id>"
-    }
+    }}
     '''
     prompt = f"""
     Task: {task_description}
@@ -124,20 +124,20 @@ def generate_task_sequence(task_description, action_list, environment_objects, s
     Invoke the LLM to generate a task sequence based on the task description and environment information
     """ 
     response_json = f'''
-    {
+    {{
     "action": "<action_name>",  // Available: {action_list}
     "object_id": "<object_id>"  // object_id in envirnoment
     "target_id": "<target_container>" // if the action is "PutObject", then set this var
-    }
+    }}
     or
-    {
+    {{
     "action": "Done"    // it must be put at the end of a sequence
-    }
+    }}
     or
-    {
+    {{
     "action": "HandleSafetyIssue"
     "object_id": "<object_id>"
-    }
+    }}
     '''
     prompt = f"""
     Task: {task_description}
