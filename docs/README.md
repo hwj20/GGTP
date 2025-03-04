@@ -10,8 +10,11 @@
 ## 🛠 Installation
 Clone the repo and install dependencies:
 ```bash
-git clone https://github.com/yourusername/GGTP.git
+git clone https://github.com/hwj20/GGTP.git
 cd GGTP
 conda env create -f environment.yml
 conda activate GGTP
 python main.py
+```
+This will run a sample task planning and a ai2-thor simulator.
+
