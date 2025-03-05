@@ -2,7 +2,7 @@
 Deprecated Model: Safe-GAT 
 
 Initially, we considered using a Graph Attention Network (GAT) for safety-aware task planning. 
-However, we later found that Graphormer provides a more **modern and structured** approach to modeling 
+However, we later found that Graphormer provides a more modern and structured approach to modeling 
 spatial and semantic relationships. As a result, this Safe-GAT implementation has been **deprecated** 
 in favor of Graphormer.
 

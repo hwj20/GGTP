@@ -1,4 +1,4 @@
-# A demo for the pipline
+# A demo of the pipline
 
 import numpy as np
 import networkx as nx
