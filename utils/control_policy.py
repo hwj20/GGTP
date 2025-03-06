@@ -323,8 +323,8 @@ class ControlPolicy:
         self.task_over = False
         while not self.task_over:
             if len(self.action_queue) > 0:
-                print('exec')
                 act = self.action_queue.pop(0)
+                print('exec'+str(act))
                 self.execute_action(act,img_counter)
                 time.sleep(0.5) 
             else:
