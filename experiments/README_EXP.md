@@ -10,10 +10,10 @@ python experiments/data/get_all_ai2thor_objects.py
 ```
 - Generates `data/ai2thor_object_types.json`
 
-### 2️⃣ Define Custom Task Data  
+### 2️⃣ Define Human Label Data  
 Modify or create:  
 ```bash
-experiments/data/graphormer_task_data_simple.json
+experiments/data/human_entities.json
 ```
 
 ### 3️⃣ Generate Danger Information  
