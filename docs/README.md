@@ -19,5 +19,5 @@ python main.py
 This will run a sample task planning on ai2-thor floor1.
 
 ## Reproduce Expeirments
-Reach for 'experiments/README_EXP.md'
+See as 'experiments/README_EXP.md'
 
