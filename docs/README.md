@@ -2,10 +2,13 @@
 
 🚀 **Graphormer-Guided Task Planning** is an AI-driven task planning framework that combines LLM-based decision-making with Graphormer-enhanced risk assessment.
 
-## 📦 Features
-- **Adaptive Task Planning**: Dynamically adjusts tasks based on risk perception.
-- **Graphormer-based Safety Modeling**: Provides structured environmental risk awareness.
-- **LLM Integration**: Uses LLMs for semantic reasoning in robotic tasks.
+## 📦 Motivation
+<video width="600" controls>
+  <source src="docs/video.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+
 
 ## 🛠 Installation
 Clone the repo and install dependencies:
