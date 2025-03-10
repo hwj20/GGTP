@@ -2,50 +2,51 @@
 
 ## Reproduce Experiments
 
-To reproduce the dataset labeling process, follow these steps:
+Follow these steps to generate and train the dataset.
 
-### 1. Extract AI2-THOR Object Types  
-Run the following script to generate the list of AI2-THOR object types:  
+### 1️⃣ Extract AI2-THOR Object Types  
 ```bash
 python experiments/data/get_all_ai2thor_objects.py
 ```
-This will create `data/ai2thor_object_types.json`, which contains all objects in AI2-THOR.
+- Generates `data/ai2thor_object_types.json`
 
-### 2. Define Custom Task Data  
-Modify or create ` experiments/data/graphormer_task_data_simple.json` to specify task-related object interactions.
-
-### 3. Generate Danger Information  
-Run the following script to annotate objects and people with safety labels:  
+### 2️⃣ Define Custom Task Data  
+Modify or create:  
 ```bash
-python  experiments/data/danger_info_gen.py
+experiments/data/graphormer_task_data_simple.json
 ```
-This will generate raw danger information.
 
-### 4. Process Raw Data  
-To finalize the labeled dataset, run:
+### 3️⃣ Generate Danger Information  
 ```bash
-python  experiments/data/process_raw_data.py
+python experiments/data/danger_info_gen.py
 ```
-The processed danger labels will be saved in ` experiments/data/danger_info.json`.
+- Outputs: `experiments/data/danger_info.json`
 
-### 5. Build Dataset
+### 4️⃣ Process Raw Data  
 ```bash
-python  experiments/data/train_data_gen.py
+python experiments/data/process_raw_data.py
 ```
-This will generate ` experiments/data/graph_dataset.json`
+- Finalizes danger labels.
 
-### 6. Train Graphormer Model
+### 5️⃣ Build Dataset  
 ```bash
-python  ./model/train.py
+python experiments/data/train_data_gen.py
 ```
-This will generate the model file.
-### 7. Run Experiments
-```bash
-python  experiments/src/run_all_scenes.py
-```
-This will generate "./experiments/data/{method}_task_data_{difficuty}.json"
+- Outputs: `experiments/data/graph_dataset.json`
 
-### 8. Evaluation
+### 6️⃣ Train Graphormer Model  
 ```bash
-python  experiments/src/evaluation.py
+python ./model/train.py
+```
+- Generates the trained model.
+
+### 7️⃣ Run Experiments  
+```bash
+python experiments/src/run_all_scenes.py
+```
+- Outputs: `./experiments/data/{method}_task_data_{difficulty}.json`
+
+### 8️⃣ Evaluation  
+```bash
+python experiments/src/evaluation.py
 ```
