@@ -7,6 +7,10 @@
   <source src="./docs/video.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
+Robots may be great at moving around, but can they *think* before they act?  
+We introduce Graphormer-based task planning with LLM-driven safety perception,  
+helping domestic robots navigate complex environments without, well… accidentally microwaving the cat.
+We aim to enhance task planning in domestic robots by utilzing Graphormer-based and LLM-driven safety perception to dynamically adapt to complex environments.
 
 
 
