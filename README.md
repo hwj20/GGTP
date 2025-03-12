@@ -30,6 +30,20 @@ python main.py
 ```
 This will run a sample task planning on ai2-thor floor1.
 
-## Reproduce Expeirments
+## 📌 Reproduce Expeirments
 See as 'experiments/README_EXP.md'
 
+## 📖 Citation
+If you find our work helpful, please consider citing our paper:  
+
+```bibtex
+@misc{huang2025graphormerguidedtaskplanningstatic,
+      title={Graphormer-Guided Task Planning: Beyond Static Rules with LLM Safety Perception}, 
+      author={Wanjing Huang and Tongjie Pan and Yalan Ye},
+      year={2025},
+      eprint={2503.06866},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2503.06866}, 
+}
+```
