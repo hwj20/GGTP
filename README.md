@@ -47,3 +47,9 @@ If you find our work helpful, please consider citing our paper:
       url={https://arxiv.org/abs/2503.06866}, 
 }
 ```
+
+## 📦 Dataset & Code Availability
+Our full dataset and experimental results are **available in this repository** for reproducibility.  
+However, due to the **large file size**, please ensure you have **sufficient storage and bandwidth** before cloning (300 MB).  
+
+💡 **For a quick overview**, check out our [Paper on Arxiv](https://arxiv.org/abs/2503.06866).
