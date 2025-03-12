@@ -30,6 +30,10 @@ python main.py
 ```
 This will run a sample task planning on ai2-thor floor1.
 
+## 📺 Advertisement Break!
+💡 **Tired of fixing dependencies?** Try our VSCode extension [Auto Config Env](https://marketplace.visualstudio.com/items?itemName=WanjingHuang.auto-config-env) to automatically install missing packages and debug your Python environment like a pro! 🚀
+
+
 ## 📌 Reproduce Expeirments
 See as 'experiments/README_EXP.md'
 
