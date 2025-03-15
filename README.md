@@ -20,6 +20,8 @@ We aim to enhance task planning in domestic robots by utilzing Graphormer-based 
 
 
 ## 🛠 Installation
+Set 'OPENAI_API_KEY' as an environment variable with your own key.
+
 Clone the repo and install dependencies:
 ```bash
 git clone https://github.com/hwj20/GGTP.git
